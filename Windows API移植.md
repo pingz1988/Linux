@@ -3,7 +3,7 @@
 | ------ | ------ |
 | WideCharToMultiByte | wcstombs |
 | MultiByteToWideChar | mbstowcs |
-| _stricmp | strcasecmp |
+| \_stricmp | strcasecmp |
 | strtok_s | strtok_r |
 | sprintf_s | snprintf |
 | vsprintf_s | vsnprintf |
