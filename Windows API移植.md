@@ -1,4 +1,4 @@
-| Win API | Linux |
+| Windows | Linux |
 | ------ | ------ |
 | WideCharToMultiByte | wcstombs |
 | MultiByteToWideChar | mbstowcs |
