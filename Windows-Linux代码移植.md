@@ -78,12 +78,6 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | GetLocalTime | localtime |
 | QueryPerformanceFrequency | 无 |
 
-* 可变参数
-
-| Win32 | Linux |
-| ------ | ------ |
-| vswprintf_s | vsnprintf |
-
 * 格式化
 
 | Win32 | Linux |
@@ -91,6 +85,7 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | sscanf_s | sscanf |
 | \_snscanf_s | sscanf |
 | vsprintf_s | vsnprintf |
+| vswprintf_s | vsnprintf |
 
 * 控制台操作
 linux不支持控制台
