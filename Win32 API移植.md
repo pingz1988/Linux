@@ -1,6 +1,6 @@
 * 字符串 <br/>
 
-| Windows | Linux |
+| Win32 | Linux |
 | ------ | ------ |
 | WideCharToMultiByte | wcstombs |
 | MultiByteToWideChar | mbstowcs |
