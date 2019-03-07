@@ -1,3 +1,5 @@
+尽量避免使用和平台相关的代码，这样的程序才能快速、方便的进行移植。
+
 # 常识
 * 路径分割符 <br/>
 “\”在 linux 上不支持，需要都改为“/”
@@ -7,7 +9,10 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 * 字符集
 
 # 基本类型
+程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
 
+# 宏定义
+一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。
 
 # 关于API
 Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
@@ -25,3 +30,5 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | strcat_s | strncat |
 | \_tcsnpy_s | wcsnpy |
 | vsprintf_s | vsnprintf |
+
+* 时间操作
