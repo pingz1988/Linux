@@ -35,12 +35,23 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_tcsnpy_s | wcsnpy |
 | vsprintf_s | vsnprintf |
 
-* 文件操作
+* 文件、路径操作
 
 | Win32 | Linux |
 | ------ | ------ |
 | \_access | access |
 | \_mkdir | mkdir |
+| SHCreateDirectoryEx | mkdir |
+| DeleteFile | remove |
+| \_trename | rename |
+| GetCurrentDirectory | getcwd |
+| SetCurrentDirectory | chdir |
+| GetModuleFileName | 自实现 |
+| PathFileExists | access |
+| FindFirstFile | 用readdir实现 |
+| PathFindFileName | basename |
+| PathFindExtension | 自实现 |
+
 | \_stat | stat |
 
 * 时间操作
