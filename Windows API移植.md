@@ -9,4 +9,3 @@
 | vsprintf_s | vsnprintf |
 | strcpy_s | strncpy |
 | strcat_s | strncat |
-| | |
