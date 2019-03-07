@@ -34,6 +34,8 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | strcat_s | strncat |
 | \_tcsnpy_s | wcsnpy |
 | vsprintf_s | vsnprintf |
+| \_tcslen | wcslen |
+| \_wtoi | 无 |
 
 * 文件、路径操作
 
@@ -53,13 +55,48 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | PathFindExtension | 自实现 |
 | \_stat | stat |
 | CloseHandle | 无 |
+| strcpy_s | strcpy |
+| strncpy_s | strncpy |
+| wcscpy_s | wcscpy |
+| wcsncpy_s | wcsncpy |
+| \_tcsncpy_s | wcsncpy |
+| \_strlwr_s | 无 |
+| \_strupr_s | 无 |
+| \_wcslwr_s | 无 |
+| \_wcsupr_s | 无 |
+
+* 内存操作
+
+| Win32 | Linux |
+| ------ | ------ |
+| memcpy_s | memcpy |
 
 * 时间操作
 
 | Win32 | Linux |
 | ------ | ------ |
 | GetLocalTime | localtime |
-|||
+| QueryPerformanceFrequency | 无 |
+
+* 可变参数
+
+| Win32 | Linux |
+| ------ | ------ |
+| vswprintf_s | vsnprintf |
+
+* 格式化
+
+| Win32 | Linux |
+| ------ | ------ |
+| sscanf_s | sscanf |
+| \_snscanf_s | sscanf |
+| vsprintf_s | vsnprintf |
 
 * 控制台操作
 linux不支持控制台
+
+* 其它
+
+| Win32 | Linux |
+| ------ | ------ |
+| \_wsystem | 无 |
