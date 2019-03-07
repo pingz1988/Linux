@@ -36,9 +36,11 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | vsprintf_s | vsnprintf |
 
 * 文件操作
+
 | Win32 | Linux |
 | ------ | ------ |
 | \_access | access |
 | \_mkdir | mkdir |
+| \_stat | stat |
 
 * 时间操作
