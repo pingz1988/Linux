@@ -51,7 +51,6 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | FindFirstFile | 用readdir实现 |
 | PathFindFileName | basename |
 | PathFindExtension | 自实现 |
-
 | \_stat | stat |
 
 * 时间操作
