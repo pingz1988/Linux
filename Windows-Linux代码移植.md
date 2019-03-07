@@ -87,7 +87,7 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | vsprintf_s | vsnprintf |
 | vswprintf_s | vsnprintf |
 
-* 控制台操作
+* 控制台操作 <br/>
 linux不支持控制台
 
 * 其它
