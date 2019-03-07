@@ -10,7 +10,7 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 
 
 # 关于API
-Windows下基于MFC的API、基于消息的API、基于注册表的API等在Linux下都是没有的。<br/>
+Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
 * 字符串 <br/>
 
 | Win32 | Linux |
