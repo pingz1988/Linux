@@ -52,5 +52,14 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | PathFindFileName | basename |
 | PathFindExtension | 自实现 |
 | \_stat | stat |
+| CloseHandle | 无 |
 
 * 时间操作
+
+| Win32 | Linux |
+| ------ | ------ |
+| GetLocalTime | localtime |
+|||
+
+* 控制台操作
+linux不支持控制台
