@@ -36,6 +36,15 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | vsprintf_s | vsnprintf |
 | \_tcslen | wcslen |
 | \_wtoi | 无 |
+| strcpy_s | strcpy |
+| strncpy_s | strncpy |
+| wcscpy_s | wcscpy |
+| wcsncpy_s | wcsncpy |
+| \_tcsncpy_s | wcsncpy |
+| \_strlwr_s | 无 |
+| \_strupr_s | 无 |
+| \_wcslwr_s | 无 |
+| \_wcsupr_s | 无 |
 
 * 文件、路径操作
 
@@ -57,16 +66,6 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | PathFindFileName | basename |
 | PathFindExtension | 自实现 |
 | \_stat | stat |
-| CloseHandle | 无 |
-| strcpy_s | strcpy |
-| strncpy_s | strncpy |
-| wcscpy_s | wcscpy |
-| wcsncpy_s | wcsncpy |
-| \_tcsncpy_s | wcsncpy |
-| \_strlwr_s | 无 |
-| \_strupr_s | 无 |
-| \_wcslwr_s | 无 |
-| \_wcsupr_s | 无 |
 
 * 内存操作
 
