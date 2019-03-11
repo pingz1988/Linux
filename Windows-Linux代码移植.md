@@ -46,6 +46,7 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | SHCreateDirectoryEx | mkdir |
 | CreateFile | fopen |
 | DeleteFile | remove |
+| FlushFileBuffers | fflush |
 | CloseHandle | fclose |
 | \_trename | rename |
 | GetCurrentDirectory | getcwd |
