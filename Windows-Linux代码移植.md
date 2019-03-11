@@ -18,7 +18,7 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 # 宏定义
 一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。
 
-# 关于API
+# API
 Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
 * 字符串 <br/>
 
@@ -44,7 +44,9 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_access | access |
 | \_mkdir | mkdir |
 | SHCreateDirectoryEx | mkdir |
+| CreateFile | fopen |
 | DeleteFile | remove |
+| CloseHandle | fclose |
 | \_trename | rename |
 | GetCurrentDirectory | getcwd |
 | SetCurrentDirectory | chdir |
