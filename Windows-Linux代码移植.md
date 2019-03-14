@@ -97,3 +97,4 @@ linux不支持控制台
 | Win32 | Linux |
 | ------ | ------ |
 | \_wsystem | 无 |
+| GetLaseError | 无 |
