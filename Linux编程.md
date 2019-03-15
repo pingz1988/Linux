@@ -10,7 +10,7 @@ sudo apt-get install libc6-dev
 -m32/-m64 ？
 32位系统编译32位.so，64位编译64位.so ？
 
-* 查看.so有哪些函数（.a使用nm -g **.a）
+* 查看.so有哪些函数（.a使用nm -g **.a）  
 nm -D **.so
 筛选／查找： nm **.so | grep XX
 
