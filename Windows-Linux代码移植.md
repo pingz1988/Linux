@@ -67,7 +67,7 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | PathFindExtension | 自实现 |
 | \_stat | stat |
 | \_ftelli64 | ftello |
-| \_fseeki64 |  |
+| \_fseeki64 | fseeko |
 
 * 内存操作
 
