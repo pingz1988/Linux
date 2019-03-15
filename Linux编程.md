@@ -1,7 +1,7 @@
 * ubuntu下最好安装开发环境，安装过程中可能由于网络原因安装失败：
-sudo apt-get install  build-essential
-也可以单个包进行安装，如：
-sudo apt-get install libc6-dev 
+sudo apt-get install  build-essential  
+也可以单个包进行安装，如：  
+sudo apt-get install libc6-dev   
 
 * 缺少io.h文件：
   使用locate命令查找io.h，如果有这个文件，拷贝到/usr/include/sys目录下，编译时-I包含这个目录 
