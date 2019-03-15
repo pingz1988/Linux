@@ -11,14 +11,14 @@ sudo apt-get install libc6-dev
 32位系统编译32位.so，64位编译64位.so ？
 
 * 查看.so有哪些函数（.a使用nm -g **.a）  
-nm -D **.so
+nm -D **.so  
 筛选／查找： nm **.so | grep XX
 
 * 查看.so是32还是64位？
 objdump -a *.so
 
 * 调用.so：
-使用dlopen等函数调用.so时，在链接成目标时需要-ldl参数
+使用dlopen等函数调用.so时，在链接成目标时需要-ldl参数  
 
 * 找不到pthread相关符号时，需要链接-lpthread
 
