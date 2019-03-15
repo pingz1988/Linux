@@ -3,10 +3,10 @@ sudo apt-get install  build-essential
 也可以单个包进行安装，如：  
 sudo apt-get install libc6-dev   
 
-* 缺少io.h文件：
+* 缺少io.h文件：  
   使用locate命令查找io.h，如果有这个文件，拷贝到/usr/include/sys目录下，编译时-I包含这个目录 
 
-* linux 32/64位动态库如何编译
+* linux 32/64位动态库如何编译  
 -m32/-m64 ？
 32位系统编译32位.so，64位编译64位.so ？
 
