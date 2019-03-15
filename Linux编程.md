@@ -1,4 +1,4 @@
-* ubuntu下最好安装开发环境，安装过程中可能由于网络原因安装失败：
+* ubuntu下最好安装开发环境，安装过程中可能由于网络原因安装失败：  
 sudo apt-get install  build-essential  
 也可以单个包进行安装，如：  
 sudo apt-get install libc6-dev   
