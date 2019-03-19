@@ -46,6 +46,9 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_wcslwr_s | 无 |
 | \_wcsupr_s | 无 |
 
+注意可变参数的传递：  
+向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期。
+
 * 文件、路径操作
 
 | Win32 | Linux |
