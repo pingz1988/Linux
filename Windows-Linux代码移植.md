@@ -90,6 +90,8 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_snscanf_s | sscanf |
 | vsprintf_s | vsnprintf |
 | vswprintf_s | vsnprintf |
+| "%I64d" | "%lld" |
+| "%I64u" | "%I64lu" |
 
 注意可变参数的传递：  
 1、 向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期。  
