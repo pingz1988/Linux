@@ -44,14 +44,9 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_strlwr_s | 无 |
 | \_strupr_s | 无 |
 | \_wcslwr_s | 无 |
-| \_wcsupr_s | 无 |
+| \_wcsupr_s | 无 | 
 
-注意可变参数的传递：  
-1、 向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期。  
-2、 格式化宽字符、字符串时，需要添加'l'前缀，使用%lc、%ls  
-<br/>  
-
-* 文件、路径操作
+* 文件操作
 
 | Win32 | Linux |
 | ------ | ------ |
@@ -95,6 +90,11 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_snscanf_s | sscanf |
 | vsprintf_s | vsnprintf |
 | vswprintf_s | vsnprintf |
+
+注意可变参数的传递：  
+1、 向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期。  
+2、 格式化宽字符、字符串时，需要添加'l'前缀，使用%lc、%ls  
+<br/> 
 
 * 控制台操作 <br/>
 linux不支持控制台
