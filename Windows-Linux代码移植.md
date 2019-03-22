@@ -1,10 +1,11 @@
 尽量避免使用和平台相关的代码，这样的程序才能快速、方便的进行移植。如果必须要用OS相关API，可以先考虑跨平台的第三方库。
 
-# 常识
+# 基础
 * 路径分割符 <br/>
 “\”在 linux 上不支持，需要都改为“/”
 * 文件名 <br/>
 Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏感
+* windows \r\n换行，linux \n换行
 * gcc编译代码更为严格 <br/>
 
 # 字符串编码
@@ -12,7 +13,7 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 * C运行库中的mbstowcs和wcstombs是locale相关的，linux下默认的是UTF8，所以这里也要设置，否则运行时会出现转码错误。可在程序开始时设置环境变量LC_ALL=zh_CN.GBK，或者在运行中调用setlocale。
 * 需要注意wchart_t在Windows和Linux下字符长度不一样。
 
-# 基本类型
+# 数据类型
 程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
 
 # 宏定义
