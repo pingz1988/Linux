@@ -8,10 +8,10 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 * windows \r\n换行，linux \n换行
 * gcc编译代码更为严格 <br/>
 
-# 字符串编码
+# 字符串
 * 由于vc中的默认源代码编码为GBK，使用GCC编译时，需要指定源代码编码名称，否则以GCC默认的UTF8解码会出现乱码或者报错，可通过参数-finput-charset=GBK或者手动另存文件格式解决。
 * C运行库中的mbstowcs和wcstombs是locale相关的，linux下默认的是UTF8，所以这里也要设置，否则运行时会出现转码错误。可在程序开始时设置环境变量LC_ALL=zh_CN.GBK，或者在运行中调用setlocale。
-* 需要注意wchart_t在Windows和Linux下字符长度不一样。
+* 需要注意wchart_t在Windows和Linux下字符长度不一样，wchar_t不能以空字符来初始化。
 
 # 数据类型
 程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
