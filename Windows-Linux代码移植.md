@@ -25,8 +25,9 @@ SEH 结构化异常处理是windows中的机制，linux中没有。
 # 模板
   1、两个连续>>之间必须要空格，否则报错  
   
-# C++11特性
-  要使用C++11中的特性，如auto关键字，需要开启c++11编译项
+# 关键字
+  要使用C++11中的特性，如auto关键字，需要开启c++11编译项.
+  不能使用关键字”_in“、”__out“
 
 # API
 Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
@@ -79,6 +80,8 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_ftelli64 | ftello |
 | \_fseeki64 | fseeko |
 | GetPrivateProfileString | 自实现 |
+
+wfstream.open() 第一个参数只能传入char\*或string.
 
 * 内存操作
 
