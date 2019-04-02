@@ -2,6 +2,7 @@
 
 # 开发环境
 | 类别 | Win32 | Linux | 跨平台 |
+| ------ | ------ |
 | IDE | VS | 无官方版 | QT/CB |
 | 编译方式 | VS/Makefile | Makefile | cmake/gyp |
 | 代码编辑 | IDE/SourceInsingt | 无主流 | Vim/Emacs/Sublime Text/Eclipse |
