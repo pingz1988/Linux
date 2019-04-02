@@ -11,10 +11,8 @@
 | 打包 | Windows Installer/第三方工具 | dpkg/checkinstall | - |
 
 # 基础
-* 路径分割符 <br/>
-“\”在 linux 上不支持，需要都改为“/”
-* 文件名 <br/>
-Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏感
+* 路径分割符“\”在 linux 上不支持，需要都改为“/”
+* Windows 下文件名大小写不敏感，而在 linux 下文件名区分大小写
 * windows \r\n换行，linux \n换行
 * 不要假定可执行文件一定有.exe的扩展名
 * 在父类中用typedef定义的类型，在子类并不能直接使用
