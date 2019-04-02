@@ -1,5 +1,14 @@
 尽量避免使用和平台相关的代码，这样的程序才能快速、方便的进行移植。如果必须要用OS相关API，可以先考虑跨平台的第三方库。
 
+# 开发环境
+| 类别 | Win32 | Linux | 跨平台 |
+| IDE | VS | 无官方版 | QT/CB |
+| 编译方式 | VS/Makefile | Makefile | cmake/gyp |
+| 代码编辑 | IDE/SourceInsingt | 无主流 | Vim/Emacs/Sublime Text/Eclipse |
+| 编译器 | cl/devenv/nmake | gcc/make | gcc/clang |
+| 调试 | VS/WinDbg | GDB | - |
+| 打包 | Windows Installer/第三方工具 | dpkg/checkinstall | - |
+
 # 基础
 * 路径分割符 <br/>
 “\”在 linux 上不支持，需要都改为“/”
