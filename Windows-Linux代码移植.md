@@ -33,10 +33,6 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 # 数据类型
   程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
 
-# 宏定义
-  一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
-  #prgram once预编译指令在linux下并不起作用.
-
 # 异常处理
   SEH 结构化异常处理是windows中的机制，linux中没有。  
   LINUX下是不支持抛出异常的，如果继承自标准库的异常类写自己的异常类的时候，在Linux下，子类的析构函数中就需要表明不抛出异常，所以析构函数后面加上throw()就可以了。
@@ -45,7 +41,12 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
   1、两个连续>>之间必须要空格，否则报错  
   2、gcc不支持写法 for(int i=0;,,)，变量i的声明要放到for外面
   3、要使用C++11中的特性，如auto关键字，gcc需要开启c++11编译项.  
-  4、linux没有关键字”__in“、”__out“.
+  4、linux没有关键字”__in“、”__out“.  
+  5、一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
+  6、#prgram once预编译指令在linux下并不起作用.
+  
+# 数据处理
+  使用通用数据描述（XML、JSON、Google ProtocolBuf），持久化存储，字符编码/多语言/国际化（ICU），图片解码，音频/视频解码，资源管理，log等
 
 # API
 Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
@@ -132,12 +133,12 @@ wfstream.open() 第一个参数只能传入char\*或string.
 3、 size_t在printf中的表示，Linux是%zu，Windows是%lu
 <br/> 
 
-* 控制台操作 <br/>
-linux不支持控制台
-
 * 其它
 
 | Win32 | Linux |
 | ------ | ------ |
 | \_wsystem | 无 |
 | GetLaseError | 无 |
+
+# 测试工具
+  各平台都有专门的代码测试、格式化工具
