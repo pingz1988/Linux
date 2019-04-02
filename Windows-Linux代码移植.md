@@ -6,6 +6,9 @@
 * 文件名 <br/>
 Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏感
 * windows \r\n换行，linux \n换行
+* 不要假定可执行文件一定有.exe的扩展名
+* 在父类中用typedef定义的类型，在子类并不能直接使用
+* long类型的变量在32位和64位Windows上都是4个字节，而在64位Linux系统上占8字节
 * gcc编译代码更为严格 <br/>
 
 # 字符串
@@ -14,10 +17,11 @@ Windows 下文件名大小写不敏感，而在 linux 下文件名大小写敏�
 * 需要注意wchart_t在Windows和Linux下字符长度不一样，wchar_t不能以空字符来初始化。
 
 # 数据类型
-程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
+  程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
 
 # 宏定义
-一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。
+  一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
+  #prgram once预编译指令在linux下并不起作用.
 
 # 异常处理
 SEH 结构化异常处理是windows中的机制，linux中没有。
@@ -26,8 +30,8 @@ SEH 结构化异常处理是windows中的机制，linux中没有。
   1、两个连续>>之间必须要空格，否则报错  
   
 # 关键字
-  要使用C++11中的特性，如auto关键字，需要开启c++11编译项.
-  不能使用关键字”_in“、”__out“
+  要使用C++11中的特性，如auto关键字，需要开启c++11编译项.  
+  不能使用关键字”__in“、”__out“.
 
 # API
 Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是没有的。<br/>
@@ -81,6 +85,7 @@ Windows下基于MFC、基于消息、基于注册表的API等在Linux下都是�
 | \_fseeki64 | fseeko |
 | GetPrivateProfileString | 自实现 |
 
+windows中对ini文件进行操作的所有函数在linux下都没有对应函数.
 wfstream.open() 第一个参数只能传入char\*或string.
 
 * 内存操作
