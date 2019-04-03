@@ -15,7 +15,6 @@
 * Windows 下文件名大小写不敏感，而在 linux 下文件名区分大小写
 * windows \r\n换行，linux \n换行
 * 不要假定可执行文件一定有.exe的扩展名
-* 在父类中用typedef定义的类型，在子类并不能直接使用
 * long类型的变量在32位和64位Windows上都是4个字节，而在64位Linux系统上占8字节
 * Linux下gcc/g++不认带BOM标记的源文件
 * gcc编译代码更为严格 <br/>
@@ -41,7 +40,8 @@
   3、要使用C++11中的特性，如auto关键字，gcc需要开启c++11编译项.  
   4、linux没有关键字”__in“、”__out“.  
   5、一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
-  6、#prgram once预编译指令在linux下并不起作用.
+  6、#prgram once预编译指令在linux下并不起作用.  
+  7、在父类中用typedef定义的类型，在子类并不能直接使用
   
 # 数据处理
   使用通用数据描述（XML、JSON、Google ProtocolBuf），持久化存储，字符编码/多语言/国际化（ICU），图片解码，音频/视频解码，资源管理，log等
