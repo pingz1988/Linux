@@ -36,12 +36,13 @@
 
 # 语法
   1、两个连续>>之间必须要空格，否则报错  
-  2、gcc不支持写法 for(int i=0;,,)，变量i的声明要放到for外面  
+  2、gcc不支持写法 for(int i=0;,,)，变量i的声明要放到for外面  （有待验证）  
   3、要使用C++11中的特性，如auto关键字，gcc需要开启c++11编译项.  
   4、linux没有关键字”__in“、”__out“.  
   5、一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
-  6、#prgram once预编译指令在linux下并不起作用.  
+  6、#prgram once预编译指令在linux下并不起作用.  （有待验证）  
   7、在父类中用typedef定义的类型，在子类并不能直接使用
+  8、头文件中，防止类成员模板函数重复定义的方法：inline/extern/static
   
 # 数据处理
   使用通用数据描述（XML、JSON、Google ProtocolBuf），持久化存储，字符编码/多语言/国际化（ICU），图片解码，音频/视频解码，资源管理，log等
