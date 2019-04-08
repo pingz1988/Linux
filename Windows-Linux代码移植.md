@@ -41,7 +41,7 @@
   4、linux没有关键字”__in“、”__out“.  
   5、一些宏定义Windows下有而Linux下没有，需要自己添加到头文件中。  
   6、#prgram once预编译指令在linux下并不起作用.  （有待验证）  
-  7、在父类中用typedef定义的类型，在子类并不能直接使用
+  7、在父类中用typedef定义的类型，在子类并不能直接使用  
   8、头文件中，防止类成员模板函数重复定义的方法：inline/extern/static
   
 # 数据处理
