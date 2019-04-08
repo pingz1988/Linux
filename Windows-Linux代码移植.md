@@ -107,6 +107,7 @@ wfstream.open() 第一个参数只能传入char\*或string.
 | Win32 | Linux |
 | ------ | ------ |
 | memcpy_s | memcpy |
+| ZeroMemory | memset |
 
 * 时间操作
 
