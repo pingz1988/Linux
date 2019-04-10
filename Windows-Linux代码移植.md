@@ -138,5 +138,22 @@ wfstream.open() 第一个参数只能传入char\*或string.
 | \_wsystem | 无 |
 | GetLaseError | 无 |
 
+* Boost
+  ```c++
+  typedef multi_index_container<LinkPtr,
+		indexed_by<
+		ordered_unique<tag<LINK_ID>, LinkID>,
+		ordered_non_unique<tag<S_NODE_ID>, SNodeID>,
+		ordered_non_unique<tag<E_NODE_ID>, ENodeID>
+		>,
+		kl_common::allocator<LinkPtr>
+	> LinkContainer;
+	typedef typename LinkContainer::index<LINK_ID>::type LinkContainerLinkIDView;
+  ```
+  编译报错，“index不是模板却用作模板”，需要改成：
+  ```c++
+  typedef typename LinkContainer::template index<LINK_ID>::type LinkContainerLinkIDView;
+  ```
+
 # 测试工具
   各平台都有专门的代码测试、格式化工具
