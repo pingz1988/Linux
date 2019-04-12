@@ -42,10 +42,10 @@
   8、头文件中，防止类成员模板函数重复定义的方法：inline/extern/static  
   9、函数的形参类型和函数声明中参数列表的类型不匹配linux会报错，有无const或者是否是引用参数，都需要严格对应。
   10、gcc不允许取临时变量的地址  
-  11、导入导出
+  11、linux导入导出使用#define XXX_API __attribute__ ((visibility("default")))
   
 # 链接
-  linux链接多个库时，需要注意库的链接顺序，否则链接报错。
+  linux链接多个库时，需要注意库的链接顺序，否则链接报错。A库调B库函数，先链接A库，再链接B库。
   
 # 数据处理
   使用通用数据描述（XML、JSON、Google ProtocolBuf），持久化存储，字符编码/多语言/国际化（ICU），图片解码，音频/视频解码，资源管理，log等
