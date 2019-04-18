@@ -55,3 +55,20 @@ make xxx 1> build_output_normal.txt 2>build_output_error.txt <br />
 make xxx > build_output_all.txt 2>&1<br />
 其中的2>&1表示错误信息输出到&1中，而&1，指的是前面的那个文件：build_output_all.txt 。<br />
 注意：上面所有的1,2等数字，后面紧跟着大于号'>' ，中间不能有空格。<br />
+
+# GDB调试
+
+| 命令 | 描述 |
+| backtrace（或bt）|	查看各级函数调用及参数 |
+| finish	| 连续运行到当前函数返回为止，然后停下来等待命令 |
+| frame（或f） 帧编号	| 选择栈帧 |
+| info（或i） locals	| 查看当前栈帧局部变量的值 | 
+| list（或l）	| 列出源代码，接着上次的位置往下列，每次列10行 |
+| list 行号	列出从第几行开始的源代码 |
+| list 函数名	列出某个函数的源代码 |
+| next（或n）	执行下一行语句 |
+| print（或p）	打印表达式的值，通过表达式可以修改变量的值或者调用函数 |
+| quit（或q）	退出gdb调试环境 |
+| set var	修改变量的值 |
+| start	开始执行程序，停在main函数第一行语句前面等待命令 |
+| step（或s）	执行下一行语句，如果有函数调用则进入到函数中 |
