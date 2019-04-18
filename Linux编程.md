@@ -64,6 +64,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | r v1 v2 | 设置调试参数为v1、v2 |
 | set args v1 v2 | 设置调试参数为v1、v2 |
 | show args | 显示调试参数 |
+| info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | backtrace（或bt）|	查看各级函数调用及参数 |
 | until(或u) | 执行完当前的循环 |
 | finish	| 执行到当前函数返回为止，然后停下来等待命令 |
@@ -72,7 +73,6 @@ make xxx > build_output_all.txt 2>&1<br />
 | list N | 列出从第N行开始的源代码 |
 | list func | 列出函数func的源代码 |
 | list file:N | 定位到指定文件的指定行或者函数 |
-| list n1 n2 | 列出指定区域(n1到n2之间)的代码 |
 | next（或n） |	执行下一行语句 |
 | print（或p） |	打印表达式的值，通过表达式可以修改变量的值或者调用函数 |
 | quit（或q） |退出gdb调试环境 |
