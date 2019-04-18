@@ -61,13 +61,18 @@ make xxx > build_output_all.txt 2>&1<br />
 # GDB调试
 | 命令 | 描述 |
 | ------ | ------ |
+| r v1 v2 | 设置调试参数为v1、v2 |
+| set args v1 v2 | 设置调试参数为v1、v2 |
+| show args | 显示调试参数 |
 | backtrace（或bt）|	查看各级函数调用及参数 |
-| finish	| 连续运行到当前函数返回为止，然后停下来等待命令 |
-| frame（或f） 帧编号	| 选择栈帧 |
+| until(或u) | 执行完当前的循环 |
+| finish	| 执行到当前函数返回为止，然后停下来等待命令 |
 | info（或i） locals	| 查看当前栈帧局部变量的值 | 
 | list（或l）	| 列出源代码，接着上次的位置往下列，每次列10行 |
-| list 行号	| 列出从第几行开始的源代码 |
-| list 函数名 | 列出某个函数的源代码 |
+| list N | 列出从第N行开始的源代码 |
+| list func | 列出函数func的源代码 |
+| list file:N | 定位到指定文件的指定行或者函数 |
+| list n1 n2 | 列出指定区域(n1到n2之间)的代码 |
 | next（或n） |	执行下一行语句 |
 | print（或p） |	打印表达式的值，通过表达式可以修改变量的值或者调用函数 |
 | quit（或q） |退出gdb调试环境 |
@@ -76,12 +81,6 @@ make xxx > build_output_all.txt 2>&1<br />
 | step（或s） | 执行下一行语句，如果有函数调用则进入到函数中 |
 | watch var | 观察一个变量 |
 | current | 跳转到下个断点，或则跳转到观察点 |
-| until(或u) | 执行完当前的循环 |
-| list file:N | 定位到指定文件的指定行或者函数 |
-| set args v1 v2 | 设置调试参数为v1、v2 |
-| r v1 v2 | 设置调试参数为v1、v2 |
-| show args | 显示调试参数 |
-| list n1 n2 | 列出指定区域(n1到n2之间)的代码 |
 | break(或b) n | 在第n行设置断点 |
 | break(或b）n if i == 100 | 在第n行设置条件断点 |
 | break(或b) func | 在函数func处设置断点 |
@@ -95,3 +94,4 @@ make xxx > build_output_all.txt 2>&1<br />
 | print \*a@10 | 显示数组a的10个元素 |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
+| frame（或f） 帧编号	| 选择栈帧 |
