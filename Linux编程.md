@@ -72,3 +72,24 @@ make xxx > build_output_all.txt 2>&1<br />
 | set var	| 修改变量的值 |
 | start	| 开始执行程序，停在main函数第一行语句前面等待命令 |
 | step（或s） | 执行下一行语句，如果有函数调用则进入到函数中 |
+| watch var | 观察一个变量 |
+| current | 跳转到下个断点，或则跳转到观察点 |
+| until(或u) | 执行完当前的循环 |
+| list file:N | 定位到指定文件的指定行或者函数 |
+| set args v1 v2 | 设置调试参数为v1、v2 |
+| r v1 v2 | 设置调试参数为v1、v2 |
+| show args | 显示调试参数 |
+| list n1 n2 | 列出指定区域(n1到n2之间)的代码 |
+| break(或b) n | 在第n行设置断点 |
+| break(或b）n if i == 100 | 在第n行设置条件断点 |
+| break(或b) func | 在函数func处设置断点 |
+| break(或b) fileName:N | 在文件第N行设置断点 |
+| info break. | 显示当前所有的断点，断点号，断点位置 |
+| clear | 清除所有断点 |
+| clear n | 清除第n行的断点 |
+| continue(或c) | 继续执行到下一断点 |
+| print(或p) var | 显示变量var的值 |
+| print(或p) /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
+| print \*a@10 | 显示数组a的10个元素 |
+| whatis var | 显示一个变量var的类型 |
+| ptype var | 以更详细的方式显示变量var的类型 |
