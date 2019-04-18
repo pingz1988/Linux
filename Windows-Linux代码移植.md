@@ -7,7 +7,7 @@
 | 编译方式 | VS/Makefile | Makefile | cmake/gyp |
 | 代码编辑 | IDE/SourceInsingt | 无主流 | Vim/Emacs/Sublime Text/Eclipse |
 | 编译器 | cl/devenv/nmake | gcc/make | gcc/clang |
-| 调试 | VS/WinDbg | GDB | - |
+| 调试 | VS/WinDbg | GDB(+DDD) | - |
 | 打包 | Windows Installer/第三方工具 | dpkg/checkinstall | - |
 
 # 基础
