@@ -22,7 +22,7 @@
 # 字符串
 * 由于vc中的默认源代码编码为GBK，使用GCC编译时，需要指定源代码编码名称，否则以GCC默认的UTF8解码会出现乱码或者报错，可通过参数-finput-charset=GBK或者手动另存文件格式解决。
 * C运行库中的mbstowcs和wcstombs是locale相关的，linux下默认的是UTF8，所以这里也要设置，否则运行时会出现转码错误。可在程序开始时设置环境变量LC_ALL=zh_CN.GBK，或者在运行中调用setlocale。
-* 需要注意wchart_t在Windows和Linux下字符长度不一样，wchar_t不能以空字符来初始化。
+* 需要注意wchar_t在Windows和Linux下字符长度不一样，wchar_t不能以空字符来初始化。
 
 # 数据类型
   程序里不能使用Windows特有的数据类型，例如，FAR PASCAL、HWND、HMENU、HFONT等，因为这些类型在Linux下无法找到替代它们的类型。
@@ -133,11 +133,12 @@ wfstream.open() 第一个参数只能传入char\*或string.
 | vswprintf_s | vsnprintf |
 | "%I64d" | "%lld" |
 | "%I64u" | "%I64lu" |
+| 宽字符"%c" | "lc" |
+| 宽字符串"%s" | "ls" |
+| size_t"zu" | "%lu" |
 
 注意可变参数的传递：  
-1、 向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期。  
-2、 格式化宽字符、字符串时，需要添加'l'前缀，使用%lc、%ls  
-3、 size_t在printf中的表示，Linux是%zu，Windows是%lu
+   向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期
 <br/> 
 
 * 其它
