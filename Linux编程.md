@@ -64,7 +64,6 @@ make xxx > build_output_all.txt 2>&1<br />
 | r v1 v2 | 设置调试参数为v1、v2 |
 | set args v1 v2 | 设置调试参数为v1、v2 |
 | show args | 显示调试参数 |
-| info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | backtrace（或bt）|	查看各级函数调用及参数 |
 | until(或u) | 执行完当前的循环 |
 | finish	| 执行到当前函数返回为止，然后停下来等待命令 |
@@ -85,7 +84,8 @@ make xxx > build_output_all.txt 2>&1<br />
 | break(或b）n if i == 100 | 在第n行设置条件断点 |
 | break(或b) func | 在函数func处设置断点 |
 | break(或b) fileName:N | 在文件第N行设置断点 |
-| info break. | 显示当前所有的断点，断点号，断点位置 |
+| info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
+| info breakpoints | 显示当前所有的断点，断点号，断点位置 |
 | clear | 清除所有断点 |
 | clear n | 清除第n行的断点 |
 | continue(或c) | 继续执行到下一断点 |
