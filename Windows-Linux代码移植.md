@@ -133,9 +133,9 @@ wfstream.open() 第一个参数只能传入char\*或string.
 | vswprintf_s | vsnprintf |
 | "%I64d" | "%lld" |
 | "%I64u" | "%I64lu" |
-| 宽字符"%c" | "lc" |
-| 宽字符串"%s" | "ls" |
-| size_t"zu" | "%lu" |
+| 宽字符 "%c" | "lc" |
+| 宽字符串 "%s" | "ls" |
+| size_t "%zu" | "%lu" |
 
 注意可变参数的传递：  
    向函数传递可变参数时，不能只传参数'format...'，还需要传入参数列表'va_list'，否则结果不可预期
