@@ -65,6 +65,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | set args v1 v2 | 设置调试参数为v1、v2 |
 | show args | 显示调试参数 |
 | backtrace（或bt）|	查看各级函数调用及参数 |
+| frame (或f) N | 查看第N帧堆栈 |
 | until(或u) | 执行完当前的循环 |
 | finish	| 执行到当前函数返回为止，然后停下来等待命令 |
 | info（或i） locals	| 查看当前栈帧局部变量的值 | 
