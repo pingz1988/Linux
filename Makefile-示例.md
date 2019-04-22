@@ -1,3 +1,5 @@
+```Makefile
+
 # define directory
 SQLITE_UPDATE_DIR = ./Src/update/sqlite_update
 NDS_UPDATE_DIR = ./Src/update/nds_update
@@ -35,3 +37,5 @@ $(OBJS):$(SOURCE)
 clean:
 	rm -fr *.o
 	rm -fr $(TARGET)
+
+```
