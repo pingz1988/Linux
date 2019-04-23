@@ -96,7 +96,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
 
-* 调试过程中显示完整字符串：
+* 调试过程中显示完整字符串：  
 如果超过了默认的最大长度，那只打印默认最大长度的字符串内容，并在其后显示"..."表示打印内容不完整。可设置字符串长度不受限制：  
 set print elements 0  
 show print elements
