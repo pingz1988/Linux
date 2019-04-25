@@ -133,7 +133,7 @@ wfstream.open() 第一个参数只能传入char\*或string.
 | vsprintf_s | vsnprintf |
 | vswprintf_s | vsnprintf |
 | "%I64d" | "%lld" |
-| "%I64u" | "%I64lu" |
+| "%I64u" | "%llu" |
 | 宽字符 "%c" | "%lc" |
 | 宽字符串 "%s" | "%ls" |
 | size_t "%zu" | "%lu" |
