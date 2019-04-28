@@ -1,5 +1,5 @@
 * 标准c++ main函数   
-``c++
+```c++
 int main(void) //不需要参数  
 int main(int argc, char \*argv[]) //需要参数，argc为给程序的参数的个数，argv中保存的是给函数的参数，都是字符串。  
 ```
