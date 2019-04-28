@@ -1,3 +1,9 @@
+* 标准c++ main函数   
+``c++
+int main(void) //不需要参数  
+int main(int argc, char \*argv[]) //需要参数，argc为给程序的参数的个数，argv中保存的是给函数的参数，都是字符串。  
+```
+
 * ubuntu下最好安装开发环境，安装过程中可能由于网络原因安装失败：  
 sudo apt-get install  build-essential  
 也可以单个包进行安装，如：  
