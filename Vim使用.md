@@ -8,3 +8,6 @@
 * winmanager<br/>
 文件管理器<br/>
 * cvim<br/>
+
+常用命令：  
+
