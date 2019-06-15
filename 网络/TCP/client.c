@@ -1,4 +1,3 @@
-```C
 /*
 步骤：
 1、通过 socket() 系统调用创建一个套接字；  
@@ -11,7 +10,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-void error(char* msg){
+void error(char* msg)
+{
   fprintf(stderr, "%s\n", msg);
   exit(1);
 }
@@ -54,4 +54,3 @@ int main(int argc, char* argv[])
   printf("%s\n", buffer);
   return 0;
 }
-```
