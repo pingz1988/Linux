@@ -1,3 +1,11 @@
+/* TCP服务器的设置步骤如下：
+1、通过 socket() 系统调用创建一个套接字；  
+2、使用 bind() 系统调用将所创建的套接字绑定到指定的端口上；  
+3、通过 listen() 将进行端口绑定的套接字进行端口侦听，使客户端能够连接；  
+4、通过 accept() 接受客户端的连接，该函数将会被阻塞，直至客户端连接上来；  
+5、数据收发 read / write；  
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
