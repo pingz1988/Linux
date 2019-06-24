@@ -24,8 +24,9 @@ nm -D **.so
 * 查看.so是32还是64位？
 objdump -a *.so
 
-* 调用.so：
-使用dlopen等函数调用.so时，在链接成目标时需要-ldl参数  
+* 调用.so的两种方法：
+  1、使用dlopen等函数调用.so时，在链接成目标时加上-ldl参数  
+  2、包含.h，直接调用so函数，链接LIBS时候加上so路径
 
 * 找不到pthread相关符号时，需要链接-lpthread
 
