@@ -106,7 +106,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | GCC -ggdb3 | 使gdb可以调试宏 |
 | info macro | 查看这个宏在哪些文件里被引用，以及宏定义 |
 | macro | 查看宏展开 |
-| set print array on | 显示数组元素时，每个数组占一行 |
+| set print array on | 显示数组元素时，每个元素占一行 |
 | set print elements 0 | 不限制数组的最大显示长度 |
 | set print null-stop on | 显示字符串时，遇到结束符则停止显示 |
 | set print pretty on | 优雅显示结构体 |
@@ -121,8 +121,4 @@ make xxx > build_output_all.txt 2>&1<br />
 | set scheduler-locking on | 锁定其他线程，只有当前线程执行 |
 
 * cgdb是gdb的增强版，可以显示源码窗口
-
-* 调试过程中显示完整字符串：  
-如果超过了默认的最大长度，那只打印默认最大长度的字符串内容，并在其后显示"..."表示打印内容不完整。可设置字符串长度不受限制：  
-  
-show print elements
+* 内存泄漏工具：valgrind
