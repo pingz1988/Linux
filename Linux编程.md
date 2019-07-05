@@ -102,7 +102,17 @@ make xxx > build_output_all.txt 2>&1<br />
 | print \*a@10 | 显示数组a的10个元素 |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
-
+| 调试宏 | GCC编译时加上-ggdb3参数 |
+| info macro | 查看这个宏在哪些文件里被引用，以及宏定义 |
+| macro | 查看宏展开 |
+| x | help x 可以查看x命令用法 |
+| command | 自动化调试 |
+| info threads | 查看当前进程的线程 |
+| thread <ID> | 切换调试的线程为指定ID的线程 |
+| b file.c:100 thread all | 在file.c文件第100行处为所有经过这里的线程设置断点 |
+| set scheduler-locking off|on|step | 切换调试的线程为指定ID的线程 |
+| thread <ID> | 切换调试的线程为指定ID的线程 |
+  
 * 调试过程中显示完整字符串：  
 如果超过了默认的最大长度，那只打印默认最大长度的字符串内容，并在其后显示"..."表示打印内容不完整。可设置字符串长度不受限制：  
 set print elements 0  
