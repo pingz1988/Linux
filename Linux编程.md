@@ -112,6 +112,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | set print pretty on | 优雅显示结构体 |
 | x | help x 可以查看x命令用法 |
 | command | 自动化调试 |
+| save br .gdb_bp | gdb会把本次会话的断点存在.gdb_bp中，启动gdb的时，加上-x .gdb_bp，让gdb把.gdb_bp当做命令文件逐条重新执行 |
 | pstree -p 40900 | 查看主线程40900及其子线程间的关系 |
 | pstack | 查看线程栈结构 |
 | info threads | 查看当前进程的线程 |
