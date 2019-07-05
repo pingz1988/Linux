@@ -71,29 +71,30 @@ make xxx > build_output_all.txt 2>&1<br />
 | r v1 v2 | 设置调试参数为v1、v2 |
 | set args v1 v2 | 设置调试参数为v1、v2 |
 | show args | 显示调试参数 |
-| backtrace（或bt）|	查看各级函数调用及参数 |
-| frame（或f） 帧编号	| 选择栈帧 |
+| bt |	查看各级函数调用及参数 |
+| f 帧编号	| 选择栈帧 |
 | until(或u) | 执行完当前的循环 |
-| finish	| 执行到当前函数返回为止，然后停下来等待命令 |
-| info（或i） locals	| 查看当前栈帧局部变量的值 | 
-| list（或l）	| 列出源代码，接着上次的位置往下列，每次列10行 |
-| list N | 列出从第N行开始的源代码 |
-| list func | 列出函数func的源代码 |
-| list file:N | 定位到指定文件的指定行或者函数 |
-| next（或n） |	执行下一行语句 |
-| print（或p） |	打印表达式的值，通过表达式可以修改变量的值或者调用函数 |
-| quit（或q） |退出gdb调试环境 |
+| finish| 执行到当前函数返回为止，然后停下来等待命令 |
+| l	| 列出源代码，接着上次的位置往下列，每次列10行 |
+| l N | 列出从第N行开始的源代码 |
+| l func | 列出函数func的源代码 |
+| l file:N | 定位到指定文件的指定行或者函数 |
+| n |	执行下一行语句 |
+| p |	打印表达式的值，通过表达式可以修改变量的值或者调用函数 |
+| q |退出gdb调试环境 |
 | set var	| 修改变量的值 |
 | start	| 开始执行程序，停在main函数第一行语句前面等待命令 |
-| step（或s） | 执行下一行语句，如果有函数调用则进入到函数中 |
+| s | 执行下一行语句，如果有函数调用则进入到函数中 |
 | watch var | 观察一个变量 |
 | current | 跳转到下个断点，或则跳转到观察点 |
-| break(或b) n | 在第n行设置断点 |
-| break(或b）n if i == 100 | 在第n行设置条件断点 |
-| break(或b) func | 在函数func处设置断点 |
-| break(或b) fileName:N | 在文件第N行设置断点 |
+| b n | 在第n行设置断点 |
+| b n if i == 100 | 在第n行设置条件断点 |
+| b func | 在函数func处设置断点 |
+| b fileName:N | 在文件第N行设置断点 |
 | info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | info breakpoints | 显示当前所有的断点，断点号，断点位置 |
+| info（或i） locals	| 查看当前栈帧局部变量的值 |
+| info args	| 打印出当前函数的参数名及其值 |
 | clear | 清除所有断点 |
 | clear n | 清除第n行的断点 |
 | continue(或c) | 继续执行到下一断点 |
@@ -102,18 +103,26 @@ make xxx > build_output_all.txt 2>&1<br />
 | print \*a@10 | 显示数组a的10个元素 |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
-| 调试宏 | GCC编译时加上-ggdb3参数 |
+| GCC -ggdb3 | 使gdb可以调试宏 |
 | info macro | 查看这个宏在哪些文件里被引用，以及宏定义 |
 | macro | 查看宏展开 |
+| set print array on | 显示数组元素时，每个数组占一行 |
+| set print elements 0 | 不限制数组的最大显示长度 |
+| set print null-stop on | 显示字符串时，遇到结束符则停止显示 |
+| set print pretty on | 优雅显示结构体 |
 | x | help x 可以查看x命令用法 |
 | command | 自动化调试 |
+| pstree -p 40900 | 查看主线程40900及其子线程间的关系 |
+| pstack | 查看线程栈结构 |
 | info threads | 查看当前进程的线程 |
-| thread <ID> | 切换调试的线程为指定ID的线程 |
+| thread ID | 切换调试的线程为指定ID的线程 |
 | b file.c:100 thread all | 在file.c文件第100行处为所有经过这里的线程设置断点 |
-| set scheduler-locking off|on|step | 切换调试的线程为指定ID的线程 |
-| thread <ID> | 切换调试的线程为指定ID的线程 |
-  
+| break frik.c:13 thread 28 if bartab > lim | 为线程28设置条件断点 |
+| set scheduler-locking on | 锁定其他线程，只有当前线程执行 |
+
+* cgdb是gdb的增强版，可以显示源码窗口
+
 * 调试过程中显示完整字符串：  
 如果超过了默认的最大长度，那只打印默认最大长度的字符串内容，并在其后显示"..."表示打印内容不完整。可设置字符串长度不受限制：  
-set print elements 0  
+  
 show print elements
