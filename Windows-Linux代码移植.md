@@ -16,6 +16,7 @@
 * windows \r\n换行，linux \n换行
 * 不要假定可执行文件一定有.exe的扩展名
 * long类型的变量在32位和64位Windows上都是4个字节，而在64位Linux系统上占8字节
+* 汉字在linux utf8下占3个字节
 * Linux下gcc/g++不认带BOM标记的源文件
 * gcc编译代码更为严格 <br/>  
 
