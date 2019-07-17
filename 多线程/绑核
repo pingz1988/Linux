@@ -1,0 +1,70 @@
+* 查看进程号
+pidof exeName
+* 查看进程中所有线程运行在哪个CPU上
+ps -To 'pid,lwp,psr,cmd' -p 35789
+
+```c
+
+#define _GNU_SOURCE
+#include <sched.h>
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void *stats_1()
+{
+    int cpu_id = 1;
+
+    cpu_set_t cpu_set_mask;
+    CPU_ZERO(&cpu_set_mask);
+    CPU_SET(cpu_id, &cpu_set_mask);
+    sched_setaffinity(0, sizeof(cpu_set_mask), &cpu_set_mask);
+
+    printf("---stats 1.\n");
+
+    while(1)
+        sleep(100);
+}
+
+void *stats_2()
+{
+    int cpu_id = 2;
+
+    cpu_set_t cpu_set_mask;
+    CPU_ZERO(&cpu_set_mask);
+    CPU_SET(cpu_id, &cpu_set_mask);
+    sched_setaffinity(0, sizeof(cpu_set_mask), &cpu_set_mask);
+
+    printf("---stats 2.\n");
+
+    while(1)
+        sleep(100);
+}
+
+int main(int argc, char *argv[])
+{
+    pthread_t thd1,thd2;
+
+    if(pthread_create(&thd1, NULL, stats_1, NULL))
+    {
+        exit(-1);
+    }
+    pthread_detach(thd1);
+
+    if(pthread_create(&thd2, NULL, stats_2, NULL))
+    {
+        exit(-1);
+    }
+    pthread_detach(thd2);
+
+    while(1)
+    {
+        sleep(100);
+    }
+
+    printf("main end.\n");
+
+    return 0;
+}
+
+```
