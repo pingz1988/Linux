@@ -31,3 +31,5 @@ dd
 * 撤销  
 u
 
+* 比较文件
+vim -d file1 file2
