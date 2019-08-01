@@ -6,3 +6,6 @@ pidstat -p `pidof 进程名` -r -t 1
 
 * 抓包
 tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
+
+* 允许生成core dump文件
+ulimit -c unlimited
