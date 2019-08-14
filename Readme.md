@@ -86,6 +86,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | start	| 开始执行程序，停在main函数第一行语句前面等待命令 |
 | s | 执行下一行语句，如果有函数调用则进入到函数中 |
 | watch var | 观察一个变量 |
+| display（disp) | 程序每次断住时，就显示某个变量或表达式的值 |
+| info display | 查看哪些变量被设置了display |
+| delete display num | num为info disp变量前的编号,不带num时清除所有 |
 | current | 跳转到下个断点，或则跳转到观察点 |
 | b n | 在第n行设置断点 |
 | b n if i == 100 | 在第n行设置条件断点 |
@@ -97,10 +100,10 @@ make xxx > build_output_all.txt 2>&1<br />
 | info args	| 打印出当前函数的参数名及其值 |
 | clear | 清除所有断点 |
 | clear n | 清除第n行的断点 |
-| continue(或c) | 继续执行到下一断点 |
-| print(或p) var | 显示变量var的值 |
-| print(或p) /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
-| print \*a@10 | 显示数组a的10个元素 |
+| c | 继续执行到下一断点 |
+| p var | 显示变量var的值 |
+| p /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
+| p \*a@10 | 显示数组a的10个元素 |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
 | GCC -ggdb3 | 使gdb可以调试宏 |
