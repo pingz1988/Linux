@@ -86,7 +86,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | start	| 开始执行程序，停在main函数第一行语句前面等待命令 |
 | s | 执行下一行语句，如果有函数调用则进入到函数中 |
 | watch var | 观察一个变量 |
-| display（disp) | 程序每次断住时，就显示某个变量或表达式的值 |
+| display（disp) var | 程序每次断住时，就显示某个变量或表达式的值 |
 | info display | 查看哪些变量被设置了display |
 | delete display num | num为info disp变量前的编号,不带num时清除所有 |
 | current | 跳转到下个断点，或则跳转到观察点 |
