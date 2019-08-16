@@ -1,3 +1,6 @@
+* 查看进程号
+pidof xxx
+
 * 查看进程使用cpu情况
 pidstat -p `pidof 进程名` -t 1
 
