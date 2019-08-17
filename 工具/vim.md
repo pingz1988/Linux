@@ -16,6 +16,9 @@
 * 替换全部字符串  
 :%s/old_str/new_str/gg
 
+* 替换路径  
+:%s#/home/szs/stb/stsdk/A36/rpmbuild/BUILD#/home/yinjiabin/qt#g
+
 * 复制粘贴当前行  
 yy
 p
