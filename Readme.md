@@ -14,7 +14,9 @@ sudo apt-get install libc6-dev
   
 # 可执行程序
 * 查看可执行程序有哪些函数  
-objdump -T xxx_exe
+objdump -T xxx_exe  
+* 后台方式运行可执行程序  
+nohup command > outFile 2>&1 
 
 # 静态库&动态库
 * linux 32/64位动态库如何编译  
