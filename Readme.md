@@ -11,6 +11,10 @@ sudo apt-get install libc6-dev
 
 * 缺少io.h文件：  
   使用locate命令查找io.h，如果有这个文件，拷贝到/usr/include/sys目录下，编译时-I包含这个目录 
+  
+# 可执行程序
+* 查看可执行程序有哪些函数  
+objdump -T xxx_exe
 
 # 静态库&动态库
 * linux 32/64位动态库如何编译  
