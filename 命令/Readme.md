@@ -3,6 +3,7 @@
 pidof xxx
 
 * 获取进程当前路径  
+···c
 sprintf(link, "/proc/%d/exe", getpid()); 
 int i = readlink(link, path, sizeof(path));
 if (-1 == i)
@@ -11,6 +12,7 @@ if (-1 == i)
 	return -1;
 }
 path[i] = '\0';
+```
 
 * 查看进程启动的线程
 ps -T -p xxxPID
