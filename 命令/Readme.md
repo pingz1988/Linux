@@ -2,6 +2,16 @@
 * 查看进程号  
 pidof xxx
 
+* 获取进程当前路径  
+sprintf(link, "/proc/%d/exe", getpid()); 
+int i = readlink(link, path, sizeof(path));
+if (-1 == i)
+{
+	print_screen("get current path err: %s\n", strerror(errno));
+	return -1;
+}
+path[i] = '\0';
+
 * 查看进程启动的线程
 ps -T -p xxxPID
 
