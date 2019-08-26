@@ -3,7 +3,7 @@
 pidof xxx
 
 * 获取进程当前路径  
-···c
+```c
 sprintf(link, "/proc/%d/exe", getpid()); 
 int i = readlink(link, path, sizeof(path));
 if (-1 == i)
