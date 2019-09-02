@@ -10,7 +10,7 @@ pid_t pid = fork();
 	
 	if (0 == pid) // 子进程
 	{
-		setsid();
+		setsid();	// 很重要！父子进程分离
 		while(1)
 	{
 		printf("fa switch: %d\n", g_fa_flag);
