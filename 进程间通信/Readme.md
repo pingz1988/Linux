@@ -112,7 +112,8 @@ int main(int argc, char **argv)
 
     signal(SIGCHLD, signal_handler);
 
-    while (1) {
+    while (1) 
+    {
         pid_t pid = fork();
         if (pid > 0)
 	{
