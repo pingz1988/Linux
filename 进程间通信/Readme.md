@@ -2,16 +2,16 @@
 ```c
 
 pid_t pid = fork();
-	if (pid < 0)
-	{
-		printf("fork err\n");
-		return -1;
-	}
+if (pid < 0)
+{
+	printf("fork err\n");
+	return -1;
+}
 	
-	if (0 == pid) // 子进程
-	{
-		setsid();	// 很重要！父子进程分离
-		while(1)
+if (0 == pid) // 子进程
+{
+	setsid();	// 很重要！父子进程分离
+	while(1)
 	{
 		printf("fa switch: %d\n", g_fa_flag);
 		if (0 == is_process_running(fa_name))
@@ -55,26 +55,25 @@ pid_t pid = fork();
 		
 		sleep(1);
 	}
-	}
-	else  // 父进程
+}
+else  // 父进程
+{
+	S32 ret = init_vty_command();
+	if (0 == ret)
 	{
-		S32 ret = init_vty_command();
-		if (0 == ret)
-		{
-			printf("init vty finished\n");
-		}
-		else
-		{
-			printf("init vty failed\n");
-		}
-		
-		while(1)
-		{
-			sleep(1);
-		}
+		printf("init vty finished\n");
 	}
-  
-  ```
+	else
+	{
+		printf("init vty failed\n");
+	}
+		
+	while(1)
+	{
+		sleep(1);
+	}
+}
+```
 
 *  用SIGCHLD信号，防止僵尸进程
 ```c
