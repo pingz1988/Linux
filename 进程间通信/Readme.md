@@ -85,37 +85,46 @@ else  // 父进程
 #include <time.h>
 #include <sys/wait.h>
 
-void signal_handler(int signo) {
-    if (signo == SIGCHLD) {
+void signal_handler(int signo)
+{
+    if (signo == SIGCHLD)
+    {
         pid_t pid;
-        while ((pid = waitpid(-1, NULL, WNOHANG)) > 0) {
+        while ((pid = waitpid(-1, NULL, WNOHANG)) > 0)
+	{
             printf("SIGCHLD pid %d\n", pid);
         }
     }
 }
 
-void mysleep(int sec) {
+void mysleep(int sec)
+{
     time_t start = time(NULL), elapsed = 0;
-    while (elapsed < sec) {
+    while (elapsed < sec)
+    {
         sleep(sec - elapsed);
         elapsed = time(NULL) - start;
     }
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
 
     signal(SIGCHLD, signal_handler);
 
     while (1) {
         pid_t pid = fork();
-        if (pid > 0) {
+        if (pid > 0)
+	{
             // parent process
             mysleep(5);
-        } else if (pid == 0) {
+        } else if (pid == 0)
+	{
             // child process
             printf("child pid %d\n", getpid());
             return 0;
-        } else {
+        } else
+	{
             fprintf(stderr, "fork error\n");
             return 2;
         }
