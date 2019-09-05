@@ -16,7 +16,7 @@ path[i] = '\0';
 ps -T -p xxxPID
 
 * 查看进程使用cpu情况  
-pidstat -p xxxPID -t 1
+pidstat -p xxxPID -t
 
 * 查看进程内存情况  
 pidstat -p xxxPID -r -t 1
