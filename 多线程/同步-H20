@@ -1,0 +1,30 @@
+# 题目
+* 背景  
+有两个线程，H 线程打印字母 H，O 线程打印字母 O
+* 输入  
+输入 3*N 个字符，其中有2*N个H字符，N个O字符  
+* 输出  
+输出一个个水分子的组合，比如 N =1 时，输出 HOH、HHO、OHH 3种结果中的一种；N为2时，输出 HOHHOH、HHOHOH、OHHHOH 等9种结果中任意一种结果
+
+# 解答
+
+```c
+#include <stdio.h>
+
+void make_h()
+{
+  printf("H");
+}
+
+void make_o()
+{
+  printf("O");
+}
+
+int main()
+{
+  
+
+  return 0;
+}
+```
