@@ -3,17 +3,19 @@ kill -l
 
 * 信号简要说明：
 
-SIGHUP            终止进程    终端线路挂断
-SIGINT　　       终止进程    中断进程
-SIGQUIT　     　建立CORE文件　　 终止进程，并且生成core文件
-SIGILL　　        建立CORE文件      非法指令
-SIGTRAP　     　建立CORE文件      跟踪自陷
-SIGBUS　　      建立CORE文件      总线错误
-SIGSEGV　    　建立CORE文件      段非法错误
-SIGFPE　　       建立CORE文件      浮点异常
-SIGIOT　　       建立CORE文件      执行I/O自陷
-SIGKILL　      　终止进程    杀死进程
-SIGPIPE　　      终止进程    向一个没有读进程的管道写数据
+| 宏 | 动作 | 说明 |
+|---|---|---|
+| SIGHUP | 终止进程 | 终端线路挂断 |
+SIGINT　　       终止进程    中断进程  
+SIGQUIT　     　建立CORE文件　　 终止进程，并且生成core文件  
+SIGILL　　        建立CORE文件      非法指令  
+SIGTRAP　     　建立CORE文件      跟踪自陷  
+SIGBUS　　      建立CORE文件      总线错误  
+SIGSEGV　    　建立CORE文件      段非法错误  
+SIGFPE　　       建立CORE文件      浮点异常  
+SIGIOT　　       建立CORE文件      执行I/O自陷  
+SIGKILL　      　终止进程    杀死进程  
+SIGPIPE　　      终止进程    向一个没有读进程的管道写数据  
 SIGALARM   　　终止进程    计时器到时
 SIGTERM　     　终止进程    软件终止信号
 SIGSTOP　     　停止进程    非终端来的停止信号
