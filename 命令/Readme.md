@@ -1,4 +1,8 @@
 ```shell
+* 查看文件
+more fileName  
+空格向下一屏，b 向上一屏
+
 * 查看进程号  
 pidof xxx  
 ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
