@@ -1,10 +1,11 @@
 ```shell
 * 查看进程号  
-pidof xxx
+pidof xxx  
+ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
 
 * 进程id作为其它命令的参数
+pidstat -p `pidof xxxExe` -t  
 pidstat -p `ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'` -t  
-pidstat -p `pidof xxxExe` -t
 
 * 获取进程当前路径  
 sprintf(link, "/proc/%d/exe", getpid()); 
