@@ -1,6 +1,6 @@
 ```shell
 * 查看文件
-more fileName  
+more/less fileName  
 空格向下一屏，b 向上一屏
 
 * 查看进程号  
