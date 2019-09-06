@@ -24,7 +24,10 @@ ps -T -p xxxPID
 pidstat -p xxxPID -t
 
 * 查看进程内存情况  
-pidstat -p xxxPID -r -t 1
+pidstat -p xxxPID -r -t 1  
+
+* 查看信号值含义
+kill -l
 
 * 抓包  
 tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
