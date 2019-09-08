@@ -1,3 +1,6 @@
+* 进程控制的主要函数
+fork、exec、waitpid
+
 * fork 子进程
 ```c
 
