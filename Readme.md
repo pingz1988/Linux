@@ -1,3 +1,7 @@
+* man 帮助  
+查看 ls 命令第一部分  
+man 1 ls  
+
 * linux下两种 c++ main函数   
 ```c++
 int main(void)
