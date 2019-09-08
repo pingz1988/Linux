@@ -2,6 +2,9 @@
 查看 ls 命令第一部分：  
 man 1 ls  
 
+* 打印错误信息  
+perror(argv[0]) ： ./a.out: No suck file or directory
+
 * linux下两种 c++ main函数   
 ```c++
 int main(void)
