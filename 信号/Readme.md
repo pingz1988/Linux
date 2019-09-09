@@ -1,5 +1,6 @@
 * 查看信号值及宏定义  
-kill -l
+kill -l  
+man 7 SIGNAL
 
 * 信号简要说明：
 
