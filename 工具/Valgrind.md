@@ -6,4 +6,6 @@ yum install valgrind
 
 * 内存泄漏检查  
 valgrind --leak-check=full --show-leak-kinds=all ./xxx_d  
+
+* 说明  
 valgrind 有几种工具，默认启用内存泄漏工具
