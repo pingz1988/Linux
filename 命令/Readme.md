@@ -1,4 +1,8 @@
 ```shell
+* 批量重命名  
+rename str1 str2 str*  
+rename .txt .log *.txt
+
 * 查看文件
 more/less fileName  
 空格向下一屏，b 向上一屏
