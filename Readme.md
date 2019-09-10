@@ -3,7 +3,7 @@
 man 1 ls  
 
 * 打印错误信息  
-perror(argv[0]) ： ./a.out: No suck file or directory
+perror(argv[0]) ： ./a.out: No such file or directory
 
 * linux下两种 c++ main函数   
 ```c++
