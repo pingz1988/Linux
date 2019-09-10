@@ -1,0 +1,81 @@
+* 题目  
+有3个线程，第一个线程打印数字0，第二个线程打印奇数，第三个线程打印偶数。输入数字N，按顺序输出 010203 直到 0N  
+
+* 代码
+```c
+#include <stdio.h>
+#include <pthread.h>
+#include <semaphore.h>
+
+sem_t sem_zero,sem_odd,sem_even;
+
+void *make_zero(void *p)
+{
+	int n = *((int*)p);
+	int i = 0;
+	for (; i < n; i++)
+	{
+		sem_wait(&sem_zero);
+		printf("0");
+		fflush(stdout); // 立即打印，或者printf中加入\n，否则多线程中可能不能及时打印出内容
+	
+		if (i%2 == 0)
+			sem_post(&sem_odd);	
+		else
+			sem_post(&sem_even);	
+	}
+}
+
+void *make_odd(void *p)
+{
+	int n = *((int*)p);
+	int i = 1;
+	for (; i <= n; i += 2)
+	{
+		sem_wait(&sem_odd);
+		printf("%d",i);
+		fflush(stdout); 
+		sem_post(&sem_zero);
+	}
+	sem_post(&sem_zero);
+}
+
+void *make_even(void *p)
+{
+	int n = *((int*)p);
+	int i = 2;
+	for (; i <= n; i += 2)
+	{
+		sem_wait(&sem_even);
+		printf("%d",i);
+		fflush(stdout); 
+		sem_post(&sem_zero);
+	}
+	sem_post(&sem_zero);
+}
+
+int main()
+{
+	printf("input N: \n");
+	int n = 0;
+	scanf("%d", &n);
+
+	sem_init(&sem_zero,0,1);
+	sem_init(&sem_odd,0,0);
+	sem_init(&sem_even,0,0);
+
+	pthread_t thd_zero,thd_odd,thd_even;
+	pthread_create(&thd_zero,NULL,make_zero,(void*)&n);
+	pthread_create(&thd_odd,NULL,make_odd,(void*)&n);
+	pthread_create(&thd_even,NULL,make_even,(void*)&n);
+
+	pthread_join(thd_zero,NULL);
+	pthread_join(thd_odd,NULL);
+	pthread_join(thd_even,NULL);
+
+	printf("\n");
+	
+	return 0;
+}
+
+```
