@@ -1,6 +1,6 @@
 ```shell
 * 批量重命名  
-rename str1 str2 str1* : 把 str1 开头的文件名重命名为 str2 开关
+rename str1 str2 str1* : 把 str1 开头的文件名重命名为 str2 开头
 rename .txt .log *.txt : 把以.txt 为后缀的文件名修改为 .log 后缀
 
 * 查看文件
