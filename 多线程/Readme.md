@@ -1,7 +1,7 @@
 * 设置线程名称的两种方法  
 ```c
-prctl(PR_SET_NAME,(unsigned long)(thread_name));
-int pthread_setname_np(pthread_t thread, const char *name);
+prctl(PR_SET_NAME,(unsigned long)(thread_name));  // 只能设置/获取当前线程的名字
+int pthread_setname_np(pthread_t thread, const char *name);  // 也可在进程中设置其他线程的名字
 ```
 
 * 小结  
