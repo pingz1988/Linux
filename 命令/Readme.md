@@ -5,7 +5,11 @@ rename .txt .log *.txt : 把以.txt 为后缀的文件名修改为 .log
 
 * 查看文件
 more/less fileName  
-空格向下一屏，b 向上一屏
+空格向下一屏，b 向上一屏  
+
+* 查看隐藏文件
+l. ： 只显示隐藏目录和隐藏文件  
+ll -a : 显示所有文件，包括隐藏目录和隐藏文件
 
 * 查看进程号  
 pidof xxx  
