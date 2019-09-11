@@ -1,6 +1,7 @@
-* 设置线程名称  
+* 设置线程名称的两种方法  
 ```c
 prctl(PR_SET_NAME,(unsigned long)(thread_name));
+int pthread_setname_np(pthread_t thread, const char *name);
 ```
 
 * 小结  
