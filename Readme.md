@@ -53,7 +53,7 @@ ldd x.so
 如果有找不到的依赖库拷贝至/usr/lib目录
 
 # Makefile
-* 简单的编译命令 
+* 简单的编译命令   
 gcc xxx.c  : 生成 a.out   
 gcc -o xxx xxx.c  : 生成 xxx 
 
