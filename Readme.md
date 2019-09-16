@@ -92,7 +92,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | bt |	查看各级函数调用及参数 |
 | f 帧编号	| 选择栈帧 |
 | up n/down n	| 向上或向下选择选择栈帧，默认n=1 |
-| until(或u) | 执行完当前的循环 |
+| u(until) | 执行完当前的循环 |
 | finish| 执行到当前函数返回为止，然后停下来等待命令 |
 | l	| 列出源代码，接着上次的位置往下列，每次列10行 |
 | l N | 列出从第N行开始的源代码 |
@@ -108,7 +108,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | wa a thread 2 | 只有线程2改变a的值才会停下来 |
 | rw(rwatch) a | 每次读取 a 的值都会让程序停下来 |
 | aw(awatch) a | 当发生读取 a 或改变变量 a 值的行为时，程序就会暂停住 |
-| display（disp) var | 程序每次断住时，就显示某个变量或表达式的值 |
+| disp(display) var | 程序每次断住时，就显示某个变量或表达式的值 |
 | info display | 查看哪些变量被设置了display |
 | delete display num | num为info disp变量前的编号,不带num时清除所有 |
 | current | 跳转到下个断点，或则跳转到观察点 |
@@ -120,7 +120,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | tb(tbreak) N | 让断点只生效一次，断点参数跟break命令一样 |
 | info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | info breakpoints | 显示当前所有的断点，断点号，断点位置 |
-| info（或i） locals	| 查看当前栈帧局部变量的值 |
+| i（info） locals	| 查看当前栈帧局部变量的值 |
 | info args	| 打印出当前函数的参数名及其值 |
 | info functions thre* | 列出以thre开头的函数名 |
 | clear | 清除所有断点 |
@@ -129,6 +129,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | p var | 显示变量var的值 |
 | p /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
 | p \*a@10 | 显示数组a的10个元素 |
+| p array[index]@num | 打印数组中从index处开始（index从0开始）的num个元素 |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
 | GCC -ggdb3 | 使gdb可以调试宏 |
