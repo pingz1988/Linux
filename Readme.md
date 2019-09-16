@@ -91,6 +91,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | show args | 显示调试参数 |
 | bt |	查看各级函数调用及参数 |
 | f 帧编号	| 选择栈帧 |
+| up n/down n	| 向上或向下选择选择栈帧，默认n=1 |
 | until(或u) | 执行完当前的循环 |
 | finish| 执行到当前函数返回为止，然后停下来等待命令 |
 | l	| 列出源代码，接着上次的位置往下列，每次列10行 |
@@ -112,10 +113,12 @@ make xxx > build_output_all.txt 2>&1<br />
 | b n if i == 100 | 在第n行设置条件断点 |
 | b func | 在函数func处设置断点 |
 | b fileName:N | 在文件第N行设置断点 |
+| b Foo::foo | 对命名空间Foo中的foo函数设置断点 |
 | info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | info breakpoints | 显示当前所有的断点，断点号，断点位置 |
 | info（或i） locals	| 查看当前栈帧局部变量的值 |
 | info args	| 打印出当前函数的参数名及其值 |
+| info functions thre* | 列出以thre开头的函数名 |
 | clear | 清除所有断点 |
 | clear n | 清除第n行的断点 |
 | c | 继续执行到下一断点 |
