@@ -104,7 +104,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | set var	| 修改变量的值 |
 | start	| 开始执行程序，停在main函数第一行语句前面等待命令 |
 | s | 执行下一行语句，如果有函数调用则进入到函数中 |
-| watch var | 观察一个变量 |
+| watch var | 观察一个变量，当一个变量值发生变化时会断下来。软件实现的观察点会导致程序运行很慢。 |
 | display（disp) var | 程序每次断住时，就显示某个变量或表达式的值 |
 | info display | 查看哪些变量被设置了display |
 | delete display num | num为info disp变量前的编号,不带num时清除所有 |
@@ -114,6 +114,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | b func | 在函数func处设置断点 |
 | b fileName:N | 在文件第N行设置断点 |
 | b Foo::foo | 对命名空间Foo中的foo函数设置断点 |
+| tb(tbreak) N | 让断点只生效一次，断点参数跟break命令一样 |
 | info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | info breakpoints | 显示当前所有的断点，断点号，断点位置 |
 | info（或i） locals	| 查看当前栈帧局部变量的值 |
@@ -142,7 +143,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | info threads | 查看当前进程的线程 |
 | thread ID | 切换调试的线程为指定ID的线程 |
 | b file.c:100 thread all | 在file.c文件第100行处为所有经过这里的线程设置断点 |
-| break frik.c:13 thread 28 if bartab > lim | 为线程28设置条件断点 |
+| b frik.c:13 thread 28 if bartab > lim | 为线程28设置条件断点 |
 | set scheduler-locking on | 锁定其他线程，只有当前线程执行 |
 
 * cgdb是gdb的增强版，可以显示源码窗口
