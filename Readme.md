@@ -95,7 +95,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | u(until) | 执行完当前的循环 |
 | finish| 执行到当前函数返回为止，然后停下来等待命令 |
 | l	| 列出源代码，接着上次的位置往下列，每次列10行 |
+| l -/+ | 向前/后列出源码 |
 | l N | 列出从第N行开始的源代码 |
+| l 1,10 | 列出指定行范围的源码 |
 | l func | 列出函数func的源代码 |
 | l file:N | 定位到指定文件的指定行或者函数 |
 | n |	执行下一行语句 |
@@ -142,6 +144,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | set print null-stop on | 显示字符串时，遇到结束符则停止显示 |
 | set print pretty on | 优雅显示结构体 |
 | set print array-indexes on | 打印数组时，显示索引下标 |
+| set follow-fork-mode child | 调试子进程，进入fork()=0逻辑 |
 | x | help x 可以查看x命令用法 |
 | x/16xb a | 以16进制格式打印数组前 a 16个byte的值 |
 | command | 自动化调试 |
