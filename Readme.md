@@ -130,8 +130,10 @@ make xxx > build_output_all.txt 2>&1<br />
 | p /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
 | p \*a@10 | 显示数组a的10个元素 |
 | p array[index]@num | 打印数组中从index处开始（index从0开始）的num个元素 |
+| p 'file1.c'::var | 打印file1中的静态变量var |
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
+| i variables ^var$ | 查看变量var的定义 |
 | GCC -ggdb3 | 使gdb可以调试宏 |
 | info macro | 查看这个宏在哪些文件里被引用，以及宏定义 |
 | macro | 查看宏展开 |
@@ -139,7 +141,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | set print elements 0 | 不限制数组的最大显示长度 |
 | set print null-stop on | 显示字符串时，遇到结束符则停止显示 |
 | set print pretty on | 优雅显示结构体 |
+| set print array-indexes on | 打印数组时，显示索引下标 |
 | x | help x 可以查看x命令用法 |
+| x/16xb a | 以16进制格式打印数组前 a 16个byte的值 |
 | command | 自动化调试 |
 | save br .gdb_bp | gdb会把本次会话的断点存在.gdb_bp中，启动gdb的时，加上-x .gdb_bp，让gdb把.gdb_bp当做命令文件逐条重新执行 |
 | pstree -p 40900 | 查看主线程40900及其子线程间的关系 |
