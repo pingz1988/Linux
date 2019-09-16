@@ -93,7 +93,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | f 帧编号	| 选择栈帧 |
 | up n/down n	| 向上或向下选择选择栈帧，默认n=1 |
 | u(until) | 执行完当前的循环 |
-| finish| 执行到当前函数返回为止，然后停下来等待命令 |
+| fin(finish) | 执行到当前函数返回为止，然后停下来等待命令 |
 | l	| 列出源代码，接着上次的位置往下列，每次列10行 |
 | l -/+ | 向前/后列出源码 |
 | l N | 列出从第N行开始的源代码 |
@@ -136,7 +136,7 @@ make xxx > build_output_all.txt 2>&1<br />
 | whatis var | 显示一个变量var的类型 |
 | ptype var | 以更详细的方式显示变量var的类型 |
 | i variables ^var$ | 查看变量var的定义 |
-| GCC -ggdb3 | 使gdb可以调试宏 |
+| gcc -g3 | 使gdb可以调试宏。gcc -g编译的程序不显示宏信息 |
 | info macro | 查看这个宏在哪些文件里被引用，以及宏定义 |
 | macro | 查看宏展开 |
 | set print array on | 显示数组元素时，每个元素占一行 |
@@ -152,11 +152,14 @@ make xxx > build_output_all.txt 2>&1<br />
 | save br .gdb_bp | gdb会把本次会话的断点存在.gdb_bp中，启动gdb的时，加上-x .gdb_bp，让gdb把.gdb_bp当做命令文件逐条重新执行 |
 | pstree -p 40900 | 查看主线程40900及其子线程间的关系 |
 | pstack | 查看线程栈结构 |
-| info threads | 查看当前进程的线程 |
+| i(info) threads | 查看当前进程中的线程，前面带“\*”为当前线程 |
 | thread ID | 切换调试的线程为指定ID的线程 |
 | b file.c:100 thread all | 在file.c文件第100行处为所有经过这里的线程设置断点 |
 | b frik.c:13 thread 28 if bartab > lim | 为线程28设置条件断点 |
-| set scheduler-locking on | 锁定其他线程，只有当前线程执行 |
+| set scheduler-locking on | 锁定其他线程，只调试当前线程，让其它线程暂停执行 |
+| p $\_exitcode | 程序退出码 |
+| i signals | 查看如何处理信号 |
+| set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |
 
 * cgdb是gdb的增强版，可以显示源码窗口
 * 内存泄漏工具：valgrind
