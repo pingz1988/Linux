@@ -6,6 +6,11 @@ yum install -y numactl-devel.x86_64 numactl-libs.x86_64
 yum install -y pciutils  
 yum install kernel-devel-$(uname -r)  
 
+* 安装命令  
+tar xf dpdk-18.11.2.tar.xz  
+cd dpdk-18.11.2
+make install T=x86_64-native-linuxapp-gcc  
+
 * 缺少numa.h  
 yum install numactl-devel*x86_64  
 
