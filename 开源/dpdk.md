@@ -1,4 +1,4 @@
-# 编译准备  
+# 编译  
 * 安装依赖库  
 yum makecache  
 yum install -y gcc gcc-c++  kernel-devel kernel-headers kernel.x86_64 net-tools  
@@ -6,14 +6,14 @@ yum install -y numactl-devel.x86_64 numactl-libs.x86_64
 yum install -y pciutils  
 yum install kernel-devel-$(uname -r)  
 
-* 安装命令  
+* 命令  
 tar xf dpdk-18.11.2.tar.xz  
 dpdk-stable-18.11.2  
 make install T=x86_64-native-linuxapp-gcc  // T参数必须符合固定格式  
-make config T=x86_64-native-linuxapp-gcc
-sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config
-make
-modprobe uio_pci_generic  // 加载 uio 模块  
+make config T=x86_64-native-linuxapp-gcc  
+sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config  
+make  
+modprobe uio_pci_generic  // 加载 uio 模块   
 
 * 导出变量  
 export RTE_SDK=/root/dpdk-stable-18.11.2  
