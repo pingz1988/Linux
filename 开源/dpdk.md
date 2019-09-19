@@ -13,6 +13,8 @@ make install T=x86_64-native-linuxapp-gcc  // T参数必须符合固定格式
 make config T=x86_64-native-linuxapp-gcc  
 sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config  
 make  
+
+* 模块  
 modprobe uio_pci_generic  // 加载 uio 模块   
 
 * 导出变量  
