@@ -8,8 +8,8 @@ yum install kernel-devel-$(uname -r)
 
 * 安装命令  
 tar xf dpdk-18.11.2.tar.xz
-cd dpdk-18.11.2
-make install T=x86_64-native-linux-icc  // 编译，T参数必须符合固定格式  
+cd dpdk-18.11.2  
+make install T=x86_64-native-linuxapp-gcc  // 编译，T参数必须符合固定格式    
 modprobe uio_pci_generic  // 加载 uio 模块  
 
 * 缺少numa.h  
