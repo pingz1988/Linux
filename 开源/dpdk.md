@@ -1,4 +1,5 @@
-# 编译准备
+# 编译准备  
+* 安装依赖库
 yum makecache  
 yum install -y gcc gcc-c++  kernel-devel kernel-headers kernel.x86_64 net-tools  
 yum install -y numactl-devel.x86_64 numactl-libs.x86_64  
