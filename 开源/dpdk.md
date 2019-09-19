@@ -15,6 +15,11 @@ sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config
 make
 modprobe uio_pci_generic  // 加载 uio 模块  
 
+* 导出变量  
+export RTE_SDK=/root/dpdk-stable-18.11.2  
+export RTE_TARGET=x86_64-native-linuxapp-gcc  
+
+# 问题
 * 缺少numa.h  
 yum install numactl-devel*x86_64  
 
