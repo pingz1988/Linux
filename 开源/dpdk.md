@@ -1,3 +1,10 @@
+# 编译准备
+yum makecache  
+yum install -y gcc gcc-c++  kernel-devel kernel-headers kernel.x86_64 net-tools  
+yum install -y numactl-devel.x86_64 numactl-libs.x86_64  
+yum install -y pciutils  
+yum install kernel-devel-$(uname -r)  
+
 * 缺少numa.h  
 yum install numactl-devel*x86_64  
 
