@@ -18,9 +18,9 @@ make
 * 模块  
 modprobe uio_pci_generic    // 加载 uio 模块   
 
-* 导出变量  
-export RTE_SDK=/root/dpdk-stable-18.11.2  
-export RTE_TARGET=x86_64-native-linuxapp-gcc  
+* 必须导出的变量  
+export RTE_SDK=/root/dpdk-stable-18.11.2  // 安装目录
+export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 
 #  运行 sample 程序  
 * 编译  
@@ -48,3 +48,9 @@ yum -y install flex bison
 从 http://www.tcpdump.org/ 下载最新版本 libpcap  
 ./configure
 make && make install
+
+# 使用  
+* 使用前检查项  
+numastat -m  
+CPU布局，影响EAL -c 或 -l 参数的设置  
+
