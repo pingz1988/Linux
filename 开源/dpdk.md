@@ -52,6 +52,7 @@ make && make install
 # 使用  
 * 使用前检查项  
 ```shell
+# numa统计
 numastat -m    
 # Build DPDK target.  
 cd dpdk_folder  
