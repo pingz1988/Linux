@@ -51,6 +51,7 @@ make && make install
 
 # 使用  
 * 使用前检查项  
+```shell
 numastat -m    
 \# Build DPDK target.  
 cd dpdk_folder  
@@ -67,3 +68,4 @@ mkdir -p /mnt/huge
 mount -t hugetlbfs nodev /mnt/huge  
 \# 查看cpu布局  
 lscpu   
+```
