@@ -51,6 +51,25 @@ make && make install
 
 # 使用  
 * 使用前检查项  
-numastat -m  
-CPU布局，影响EAL -c 或 -l 参数的设置  
+numastat -m    
+\# Build DPDK target.  
+cd dpdk_folder  
+make install T=x86_64-native-linux-gcc -j  
 
+\# Get the hugepage size.  
+awk '/Hugepagesize/ {print $2}' /proc/meminfo  
+
+\# Get the total huge page numbers.  
+awk '/HugePages_Total/ {print $2} ' /proc/meminfo  
+
+\# Unmount the hugepages.  
+umount `awk '/hugetlbfs/ {print $2}' /proc/mounts`  
+
+\# Create the hugepage mount folder.  
+mkdir -p /mnt/huge  
+
+\# Mount to the specific folder.  
+mount -t hugetlbfs nodev /mnt/huge  
+
+\# 查看cpu布局  
+lscpu   
