@@ -53,19 +53,19 @@ make && make install
 * 使用前检查项  
 ```shell
 numastat -m    
-\# Build DPDK target.  
+# Build DPDK target.  
 cd dpdk_folder  
 make install T=x86_64-native-linux-gcc -j  
-\# Get the hugepage size.  
+# Get the hugepage size.  
 awk '/Hugepagesize/ {print $2}' /proc/meminfo  
-\# Get the total huge page numbers.  
+# Get the total huge page numbers.  
 awk '/HugePages_Total/ {print $2} ' /proc/meminfo  
-\# Unmount the hugepages.  
+# Unmount the hugepages.  
 umount `awk '/hugetlbfs/ {print $2}' /proc/mounts`  
-\# Create the hugepage mount folder.  
+# Create the hugepage mount folder.  
 mkdir -p /mnt/huge  
-\# Mount to the specific folder.  
+# Mount to the specific folder.  
 mount -t hugetlbfs nodev /mnt/huge  
-\# 查看cpu布局  
+# 查看cpu布局  
 lscpu   
 ```
