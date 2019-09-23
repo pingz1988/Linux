@@ -11,8 +11,7 @@ yum install kernel-devel-$(uname -r)
 * 命令 
 ```shell
 tar xf dpdk-18.11.2.tar.xz  
-dpdk-stable-18.11.2  
-make install T=x86_64-native-linuxapp-gcc    // T参数必须符合固定格式  
+cd dpdk-stable-18.11.2  
 make config T=x86_64-native-linuxapp-gcc  
 sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config  
 make  
