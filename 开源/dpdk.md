@@ -58,7 +58,7 @@ ln -s /usr/src/kernels/3.10.0-693.el7.x86_64/ ./build （/usr/src/kernels/3.10.0
 * 缺少pcap.h  
 yum -y install flex bison   
 从 http://www.tcpdump.org/ 下载最新版本 libpcap  
-./configure
+./configure  
 make && make install
 
 # 使用  
