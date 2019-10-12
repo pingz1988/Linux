@@ -3,6 +3,10 @@
 查看 ls 命令第一部分：  
 man 1 ls  
 
+* 查看系统环境变量  
+env  
+env | grep XXX  
+
 * 打印错误信息  
 perror(argv[0]) ： ./a.out: No such file or directory
 
