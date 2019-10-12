@@ -1,4 +1,5 @@
 # 编译  
+
 * 安装依赖库 
 ```shell
 yum makecache  
@@ -18,10 +19,7 @@ make
 ```
 以上编译命令可以直接使用 dpdk-setup.py\/dpdk-setup.sh 完成。
 
-* 模块 
-```shell
-modprobe uio_pci_generic    // 加载 uio 模块 
-```
+# 设置环境  
 
 * 必须导出的变量  
 ```shell
@@ -29,18 +27,24 @@ export RTE_SDK=/root/dpdk-stable-18.11.2  // 安装目录
 export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 ```
 
-# 设置环境  
-* 大页  
+* 大页 
+
+* 模块 
+```shell
+modprobe uio_pci_generic    // 加载 uio 模块 
+```
+
 * 绑定/解绑  
   + 查看用法  
     dpdk-devbind.py --h
   + 查看网卡绑定状态  
     dpdk-devbind.py -s  
   + 绑定网卡  
-    dpdk-devbind.py -b 
+    dpdk-devbind.py -b=uio_pci_generic ens33
   + 解绑网卡  
 
 #  运行 sample 程序  
+
 * 编译 
 ```shell
 cd examples/helloworld  
@@ -51,7 +55,7 @@ make
 ```shell
 cd usertools  
 ./dpdk-devbind.py -s   // 查看网口绑定状态   
-./dpdk-devbind.py -b=uio_pci_generic ens33   // 绑定网口前，需确保指定的驱动模块加载成功（modprobe 命令加载模块）
+   // 绑定网口前，需确保指定的驱动模块加载成功（modprobe 命令加载模块）
 ```
 * 设置大页  
 
