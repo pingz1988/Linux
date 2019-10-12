@@ -53,6 +53,8 @@ cd usertools
 ./dpdk-devbind.py -s   // 查看网口绑定状态   
 ./dpdk-devbind.py -b=uio_pci_generic ens33   // 绑定网口
 ```
+* 运行程序  
+* 查看状态/结果
 
 # 问题
 * 缺少numa.h  
