@@ -32,7 +32,7 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 # 设置环境  
 * 大页  
 * 绑定/解绑  
-  + 查看用法
+  + 查看用法  
     dpdk-devbind.py --h
   + 查看网卡绑定状态  
     dpdk-devbind.py -s  
