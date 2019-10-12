@@ -29,12 +29,12 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 
 * 设置大页 
 
-* 模块 
+* 加载驱动对应的模块 
 ```shell
 modprobe uio_pci_generic    // 加载 uio 模块 
 ```
 
-* 绑定/解绑  
+* 绑定/解绑网卡  
   + 查看用法  
     dpdk-devbind.py --h
   + 查看网卡绑定状态  
