@@ -16,7 +16,7 @@ make config T=x86_64-native-linuxapp-gcc
 sed -ri 's,(PMD_PCAP=).\*,\1y,' build/.config  
 make  
 ```
-以上编译命令可以直接使用 dpdk-setup.py 完成。
+以上编译命令可以直接使用 dpdk-setup.py\/dpdk-setup.sh 完成。
 
 * 模块 
 ```shell
