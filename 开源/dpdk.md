@@ -31,8 +31,8 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 
 # 设置环境  
 * 大页  
-* 绑定  
-* 解绑  
+* 绑定网卡  
+* 解绑网卡  
 
 #  运行 sample 程序  
 * 编译 
