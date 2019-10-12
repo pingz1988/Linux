@@ -29,6 +29,10 @@ export RTE_SDK=/root/dpdk-stable-18.11.2  // 安装目录
 export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 ```
 
+# 设置环境  
+* 大页  
+* 绑定  
+
 #  运行 sample 程序  
 * 编译 
 ```shell
