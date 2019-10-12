@@ -50,8 +50,8 @@ make
 * 绑定网口到 DPDK 
 ```shell
 cd usertools  
-./dpdk-devbind.py --status   // 查看网口绑定状态   
-./dpdk-devbind.py --bind=uio_pci_generic ens33   // 绑定网口
+./dpdk-devbind.py -s   // 查看网口绑定状态   
+./dpdk-devbind.py -b=uio_pci_generic ens33   // 绑定网口
 ```
 
 # 问题
