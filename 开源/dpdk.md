@@ -49,18 +49,12 @@ modprobe uio_pci_generic    // 加载 uio 模块
 ```shell
 cd examples/helloworld  
 make 
-```
-
-* 绑定网口到 DPDK 
-```shell
-cd usertools  
-./dpdk-devbind.py -s   // 查看网口绑定状态   
-   // 绑定网口前，需确保指定的驱动模块加载成功（modprobe 命令加载模块）
-```
-* 设置大页  
+``` 
 
 * 运行程序  
-* 查看结果/状态/性能
+
+* 查看结果/状态/性能  
+
 
 # 问题
 * 缺少numa.h  
