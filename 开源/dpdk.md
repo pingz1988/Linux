@@ -51,10 +51,12 @@ make
 ```shell
 cd usertools  
 ./dpdk-devbind.py -s   // 查看网口绑定状态   
-./dpdk-devbind.py -b=uio_pci_generic ens33   // 绑定网口
+./dpdk-devbind.py -b=uio_pci_generic ens33   // 绑定网口前，需确保指定的驱动模块加载成功（modprobe 命令加载模块）
 ```
+* 设置大页  
+
 * 运行程序  
-* 查看状态/结果
+* 查看结果/状态/性能
 
 # 问题
 * 缺少numa.h  
