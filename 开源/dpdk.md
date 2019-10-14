@@ -79,6 +79,7 @@ make && make install
 ```shell
 # numa 统计
 numastat -m  
+numactl -H  
 
 # Build DPDK target.  
 cd dpdk_folder  
@@ -99,6 +100,6 @@ mkdir -p /mnt/huge
 # Mount to the specific folder.  
 mount -t hugetlbfs nodev /mnt/huge  
 
-# 查看cpu布局  
+# 查看cpu信息，包括布局、cache等  
 lscpu   
 ```
