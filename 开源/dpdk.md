@@ -76,7 +76,6 @@ make && make install
 
 # 其它  
 
-* 使用前检查项  
 ```shell
 # numa 统计
 numastat -m  
