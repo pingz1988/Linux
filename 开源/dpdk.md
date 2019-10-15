@@ -74,7 +74,8 @@ yum -y install flex bison
 ./configure  
 make && make install
 
-# 使用  
+# 其它  
+
 * 使用前检查项  
 ```shell
 # numa 统计
@@ -102,4 +103,7 @@ mount -t hugetlbfs nodev /mnt/huge
 
 # 查看cpu信息，包括布局、cache等  
 lscpu   
+
+# 编译 intel-cmt-cat-master/pqos  
+export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 ```
