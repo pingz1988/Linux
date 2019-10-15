@@ -104,6 +104,6 @@ mount -t hugetlbfs nodev /mnt/huge
 # 查看cpu信息，包括布局、cache等  
 lscpu   
 
-# 编译 intel-cmt-cat-master/pqos  
+# 编译 intel-cmt-cat-master/pqos 时需设置 libpqos.so 目录  
 export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 ```
