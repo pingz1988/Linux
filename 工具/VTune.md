@@ -8,7 +8,8 @@ inter下程序性能分析工具
 * 带界面运行  
 amplxe-gui  
 * 命令行运行  
-amplxe-cl  
+amplxe-cl -collect [参数]  
+amplxe-cl -report summary  
 
 # 其它
 
