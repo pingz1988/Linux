@@ -4,10 +4,12 @@ perf 性能剖析工具
 
 # 用法  
 
-* 帮助信息 
+* 帮助信息  
 perf -h  
 
 * 常用命令  
+perf -e     // 采样事件  
+perf -p [pid]  // 指定进程
 perf list  // 查看当前系统支持的性能事件  
 perf test  // 对系统进行健全性测试  
 perf stat [参数] // 性能统计  
