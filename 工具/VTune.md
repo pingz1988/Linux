@@ -9,3 +9,9 @@ inter下程序性能分析工具
 amplxe-gui  
 * 命令行运行  
 amplxe-cl  
+
+# 其它
+
+* 找不到 amplxe-cl 命令时，运行  
+source /opt/intel/vtune_amplifier_2019.6.0.602217/amplxe-vars.sh  
+/opt/intel/vtune_amplifier_2019.6.0.602217 为默认安装目录
