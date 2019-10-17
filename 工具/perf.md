@@ -3,7 +3,7 @@ perf 性能剖析工具
 # 安装
 
 # 用法   
-perf -h                                         // 帮助信息
+perf -h                                         // 帮助信息  
 perf -e                                         // 采样事件  
 perf -p [pid]                                   // 指定进程  
 perf list [hw/sw/cache/pmu]                     // 查看当前系统支持的性能事件，即其它命令中的 -e 参数  
