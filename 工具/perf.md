@@ -3,24 +3,24 @@ perf 性能剖析工具
 # 安装
 
 # 用法   
-perf -h  // 帮助信息
-perf -e     // 采样事件  
-perf -p [pid]  // 指定进程  
-perf list [hw/sw/cache/pmu]  // 查看当前系统支持的性能事件，即其它命令中的 -e 参数  
-perf test  // 对系统进行健全性测试  
-perf stat [-a/--all-cpus -C <cpu> -e <event> -p/--pid <pid> -t/--tid <tid>] // 性能统计  
-perf top [-e <event> -p <pid> -K -U -g]  // 实时查看当前系统进程函数占用率情况  
-perf lock  // 分析锁性能  
-perf mem  // 分析内存slab性能  
-pref record [-e <event> -a/--all-cpus -p <pid> -C <cpu>] // 记录信息到perf.data，可以精确到函数级别
-perf report  // 生成报告  
-perf diff  // 对两个记录进行diff  
-perf evlist  // 列出记录的性能事件  
-perf annotate  // 显示perf.data函数代码  
-perf archive  // 将相关符号打包，方便在其它机器进行分析  
-perf script  // 将perf.data输出可读性文本  
-perf timechart record  // 记录事件  
-perf timechart  // 生成output.svg文档  
+perf -h                                         // 帮助信息
+perf -e                                         // 采样事件  
+perf -p [pid]                                   // 指定进程  
+perf list [hw/sw/cache/pmu]                     // 查看当前系统支持的性能事件，即其它命令中的 -e 参数  
+perf test                                       // 对系统进行健全性测试  
+perf stat [-a/--all-cpus -C <cpu> -e <event> -p/--pid <pid> -t/--tid <tid>]     // 性能统计  
+perf top [-e <event> -p <pid> -K -U -g]         // 实时查看当前系统进程函数占用率情况  
+perf lock                                       // 分析锁性能  
+perf mem                                        // 分析内存slab性能  
+pref record [-e <event> -a/--all-cpus -p <pid> -C <cpu>]    // 记录信息到perf.data，可以精确到函数级别  
+perf report                                     // 生成报告  
+perf diff                                       // 对两个记录进行diff  
+perf evlist                                     // 列出记录的性能事件  
+perf annotate                                   // 显示perf.data函数代码  
+perf archive                                    // 将相关符号打包，方便在其它机器进行分析  
+perf script                                     // 将perf.data输出可读性文本  
+perf timechart record                           // 记录事件  
+perf timechart                                  // 生成output.svg文档  
     
 top适合监控整个系统的性能，stat比较适合单个程序的性能分析，record/report更适合对程序进行更细粒度的分析。  
 ```shell
