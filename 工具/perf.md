@@ -36,7 +36,7 @@ perf -h record
 # 统计cache miss
 perf stat -e cache-misses ./a.out
 
-# 以cpu-clock为指标，记录程序各函数调用
+# 以cpu-clock为指标，记录程序各函数调用（-g开关）
 perf record -e cpu-clock -g ./a.out
 
 # 记录cache misses
