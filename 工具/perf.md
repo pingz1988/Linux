@@ -27,6 +27,12 @@ perf timechart record  // 记录事件
 perf timechart  // 生成output.svg文档  
     
 top适合监控整个系统的性能，stat比较适合单个程序的性能分析，record/report更适合对程序进行更细粒度的分析。  
+```shell
+perf stat -e cache-misses ./a.out
+perf record -e cache-misses ./a.out
+perf report
+```
+
 查看 perf 用法：  
 ```shell
 perf -h
