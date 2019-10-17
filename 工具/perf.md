@@ -10,7 +10,7 @@ perf -h
 * 常用命令  
 perf -e     // 采样事件  
 perf -p [pid]  // 指定进程
-perf list [hw/sw/cache/pmu]  // 查看当前系统支持的性能事件  
+perf list [hw/sw/cache/pmu]  // 查看当前系统支持的性能事件，即其它命令中的 -e 参数
 perf test  // 对系统进行健全性测试  
 perf stat [-a/--all-cpus -C <cpu> -e <event> -p/--pid <pid> -t/--tid <tid>] // 性能统计  
 perf top [-e <event> -p <pid> -K -U -g]  // 实时查看当前系统进程函数占用率情况  
@@ -28,8 +28,16 @@ perf timechart  // 生成output.svg文档
     
 top适合监控整个系统的性能，stat比较适合单个程序的性能分析，record/report更适合对程序进行更细粒度的分析。  
 ```shell
+# 统计cache miss
 perf stat -e cache-misses ./a.out
+
+# 以cpu-clock为指标，记录程序各函数调用
+perf record -e cpu-clock -g ./a.out
+
+# 记录cache misses
 perf record -e cache-misses ./a.out
+
+# 分析上述record命令后的结果
 perf report
 ```
 
