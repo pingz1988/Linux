@@ -5,8 +5,8 @@ perf 性能剖析工具
 # 用法   
 perf -h  // 帮助信息
 perf -e     // 采样事件  
-perf -p [pid]  // 指定进程
-perf list [hw/sw/cache/pmu]  // 查看当前系统支持的性能事件，即其它命令中的 -e 参数
+perf -p [pid]  // 指定进程  
+perf list [hw/sw/cache/pmu]  // 查看当前系统支持的性能事件，即其它命令中的 -e 参数  
 perf test  // 对系统进行健全性测试  
 perf stat [-a/--all-cpus -C <cpu> -e <event> -p/--pid <pid> -t/--tid <tid>] // 性能统计  
 perf top [-e <event> -p <pid> -K -U -g]  // 实时查看当前系统进程函数占用率情况  
