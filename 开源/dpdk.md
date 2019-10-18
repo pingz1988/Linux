@@ -40,8 +40,9 @@ modprobe uio_pci_generic    // 加载 uio 模块
   + 查看网卡绑定状态  
     dpdk-devbind.py -s  
   + 绑定网卡  
-    dpdk-devbind.py -b=uio_pci_generic ens33
+    dpdk-devbind.py -b uio_pci_generic ens33
   + 解绑网卡  
+    dpdk-devbind.py -u
 
 #  运行 sample 程序  
 
