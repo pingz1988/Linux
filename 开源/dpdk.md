@@ -31,7 +31,8 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 
 * 加载驱动对应的模块 
 ```shell
-modprobe uio_pci_generic    // 加载 uio 模块 
+modprobe igb_uio    // 加载 uio 模块 
+insmod igb_uio  // 加载DPDK编译出的 ko 文件
 ```
 
 * 绑定/解绑网卡  
