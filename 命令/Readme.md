@@ -18,7 +18,7 @@ ll -a : 显示所有文件，包括隐藏目录和隐藏文件
 pidof xxx  
 ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
 
-* 进程id作为其它命令的参数
+# 进程id作为其它命令的参数
 pidstat -p `pidof xxxExe` -t  
 pidstat -p `ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'` -t  
 
