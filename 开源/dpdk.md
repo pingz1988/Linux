@@ -24,7 +24,7 @@ make
 * 必须导出的变量  
 ```shell
 export RTE_SDK=/root/dpdk-stable-18.11.2  // 安装目录
-export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
+export RTE_TARGET=x86_64-native-linux-gcc  // T参数
 ```
 
 * 设置大页 
@@ -32,7 +32,7 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc  // T参数
 * 加载驱动对应的模块 
 ```shell
 modprobe igb_uio    // 加载 uio 模块 
-insmod ./igb_uio.ko  // 进入DPDK编译目录，加载编译出的 ko 文件
+insmod ./igb_uio.ko  // 进入DPDK编译目录（./x86_64-native-linux-gcc/kmod），加载编译出的 ko 文件
 ```
 
 * 绑定/解绑网卡  
