@@ -22,6 +22,9 @@ ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
 pidstat -p `pidof xxxExe` -t  
 pidstat -p `ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'` -t  
 
+# 查看进程启动路径
+ll /proc/`pidof xxxExe`
+
 # 获取进程当前路径  
 sprintf(link, "/proc/%d/exe", getpid()); 
 int i = readlink(link, path, sizeof(path));
