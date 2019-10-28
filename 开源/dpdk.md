@@ -28,6 +28,9 @@ export RTE_TARGET=x86_64-native-linux-gcc  // T参数
 ```
 
 * 设置大页 
+```
+./dpdk-setup.sh  # 根据提示选择设置大页项，输入数量
+```
 
 * 加载驱动对应的模块 
 ```shell
@@ -95,6 +98,9 @@ awk '/HugePages_Total/ {print $2} ' /proc/meminfo
 
 # Unmount the hugepages.  
 umount `awk '/hugetlbfs/ {print $2}' /proc/mounts`  
+
+# 设置Numa节点nodo0的大页数量为10，每个大页大小系统默认指定; node1类似相同操作。  
+echo 10 /sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
 # Create the hugepage mount folder.  
 mkdir -p /mnt/huge  
