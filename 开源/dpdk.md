@@ -99,7 +99,7 @@ awk '/HugePages_Total/ {print $2} ' /proc/meminfo
 # Unmount the hugepages.  
 umount `awk '/hugetlbfs/ {print $2}' /proc/mounts`  
 
-# 设置Numa节点nodo0的大页数量为10，每个大页大小系统默认指定; node1类似相同操作。  
+# 设置Numa节点nodo0的大页数量为10，每个大页大小由系统指定（参见上面“Get the hugepage size”命令）; node1类似相同操作。  
 echo 10 /sys/devices/system/node/node0/hugepages/hugepages-1048576kB/nr_hugepages
 
 # Create the hugepage mount folder.  
