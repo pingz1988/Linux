@@ -44,7 +44,7 @@ insmod ./igb_uio.ko  // 进入DPDK编译目录（./x86_64-native-linux-gcc/kmod�
   + 查看网卡绑定状态  
     dpdk-devbind.py -s  
   + 绑定网卡  
-    dpdk-devbind.py -b uio_pci_generic ens33
+    dpdk-devbind.py -b igd_uio 05:00.0 05:00.1
   + 解绑网卡  
     dpdk-devbind.py -u
 
