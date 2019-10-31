@@ -51,7 +51,7 @@ cat /proc/cpuinfo
 cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l  // 查看物理CPU个数  
 cat /proc/cpuinfo| grep "cpu cores"| uniq  // 每个物理CPU的核数
 # 总逻辑CPU数 = CPU总核数 * 超线程数 
-一般超线程数为2，总逻辑CPU数可通过【lscpu】命令查看  
+# 一般超线程数为2，总逻辑CPU数可通过【lscpu】命令查看  
 
 
 # 查看信号值含义
