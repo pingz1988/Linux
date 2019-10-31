@@ -44,6 +44,9 @@ pidstat -p xxxPID -t
 # 查看进程内存情况  
 pidstat -p xxxPID -r -t 1  
 
+# 查看逻辑核，两个的processor下的core id相同表示支持超线程，且它们属于同一个物理核      
+cat /proc/cpuinfo  
+
 # 查看信号值含义
 kill -l
 
