@@ -62,7 +62,7 @@ ldd x.so
 gcc xxx.c  : 生成 a.out   
 gcc -o xxx xxx.c  : 生成 xxx 
 
-* make后传递程序参数，则makefile中同名的变量会被统一替换为指定的值  
+* make直接传递makefile中变量的值，则makefile中同名的变量会被统一替换为指定的值  
 make DIR=/Home  
 
 * 多makefile中共用变量   
