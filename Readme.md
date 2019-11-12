@@ -72,7 +72,6 @@ make DIR=/Home
 * 打印变量值  
 $(info xxxVar=$(xxxVar))   
 
-* 基本赋值  
 | 符号 | 说明 |
 | ------ | ------ |
 | = | 变量的值将会是整个makefile中最后被指定的值 |
