@@ -1,4 +1,8 @@
 ```shell
+# 查看环境变量  
+env  
+echo $(xxxVar)  
+
 # 解压 *.tar.xz 文件
 tar xf *.tar.xz
 
