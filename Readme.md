@@ -65,7 +65,7 @@ gcc -o xxx xxx.c  : 生成 xxx
 * make后传递程序参数，则makefile中同名的变量会被统一替换为指定的值  
 make DIR=/Home  
 
-* 多makefile中共用变量 
+* 多makefile中共用变量   
 1、make DIR=/Home  
 2、export DIR=/Home  // 注意，export命令最好不要放在子目标中  
 
