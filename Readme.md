@@ -65,8 +65,12 @@ gcc -o xxx xxx.c  : 生成 xxx
 * make后传递程序参数，则makefile中同名的变量会被统一替换为指定的值  
 make DIR=/Home  
 
+* 多makefile中共用变量 
+1、make DIR=/Home  
+2、export DIR=/Home  // 注意，export命令最好不要放在子目标中  
+
 * 打印变量值
-$(info xxxVar=$(xxxVar))
+$(info xxxVar=$(xxxVar))   
 
 * 注意：
   + 1、makefile编译时，不要编译任何.h/.hpp头文件，本身它们是不参与编译的，如果把它们编译生成的.o文件链接成目标文件就会报错（x.o文件不能被识别）。如果其它.c文件用到这些头文件，在编译.c文件时，用-I包含头文件即可
