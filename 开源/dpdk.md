@@ -47,7 +47,8 @@ insmod ./igb_uio.ko  // 进入DPDK编译目录（./x86_64-native-linux-gcc/kmod�
   + 绑定网卡  
     dpdk-devbind.py --bind=igb_uio 05:00.0 05:00.1
   + 解绑网卡  
-    dpdk-devbind.py -u
+    dpdk-devbind.py -u  
+绑定几个口，eu.ini配置文件中也要配置几个口，否则报错    
 
 #  运行 sample 程序  
 
