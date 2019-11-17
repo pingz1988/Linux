@@ -164,8 +164,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | set print array on | 显示数组元素时，每个元素占一行 |
 | set print elements 0 | 不限制数组的最大显示长度 |
 | set print null-stop on | 显示字符串时，遇到结束符则停止显示 |
-| set print pretty on | 优雅显示结构体 |
+| set print pretty on | 按格式打印结构体 |
 | set print array-indexes on | 打印数组时，显示索引下标 |
+| set print union | 打印struct时按格式打印内部的union |
 | set follow-fork-mode child | gdb默认只会追踪父进程的运行，子进程会独立运行，要想调试子进程，进入fork()=0逻辑，使用此命令 |
 | set detach-on-fork off | 同时调试父子进程，在调试一个进程时，另外一个进程处于挂起状态， |
 | x | help x 可以查看x命令用法 |
