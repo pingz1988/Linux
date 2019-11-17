@@ -106,6 +106,7 @@ make xxx > build_output_all.txt 2>&1<br />
 # GDB调试
 | 命令 | 描述 |
 | ------ | ------ |
+| gdb attach pid | 附加进程调试 |
 | r v1 v2 | 设置调试参数为v1、v2 |
 | set args v1 v2 | 设置调试参数为v1、v2 |
 | show args | 显示调试参数 |
