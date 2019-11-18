@@ -1,4 +1,4 @@
-生成目录：
+生成目录的语法如下，（）中的内容即为实际目录标题，如果是字母必须小写：
 # Contents  
 - [Abstract](#abstract)  
 - [Preface](#preface)  
