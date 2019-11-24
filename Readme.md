@@ -69,7 +69,7 @@ ldd x.so
 gcc xxx.c  : 生成 a.out   
 gcc -o xxx xxx.c  : 生成 xxx 
 
-* 快速编译  
+* 多线程编译  
 make -j 
 
 * make直接传递makefile中变量的值，则makefile中同名的变量会被统一替换为指定的值  
@@ -195,5 +195,6 @@ make xxx > build_output_all.txt 2>&1<br />
 | i signals | 查看如何处理信号 |
 | set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |
 
+# 其它工具  
 * cgdb是gdb的增强版，可以显示源码窗口
 * 内存泄漏工具：valgrind
