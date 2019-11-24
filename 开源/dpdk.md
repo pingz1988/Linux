@@ -116,3 +116,17 @@ lscpu
 # 使用CAT功能，需要libpqos.so，编译 intel-cmt-cat-master/pqos 时需设置 libpqos.so 目录  
 export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 ```
+# DPDK程序优化  
+* 架构  
+设计上尽量避免全局共享、锁
+* 分支预测
+likely/unlikely 宏    
+* Cache预取  
+1. rte_prefetch0() // 预取数据想要重复使用  
+2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档  
+3. 内存对齐  
+结构体成员需从大到小排序和以及强制对齐，__attribute__((__aligned__(a)))  
+* 常量优化  
+gcc内置函数__builtin_constant_p() 来判断值是否常量，用于手动编译优化  
+* 使用dpdk重新实现的库函数  
+比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化
