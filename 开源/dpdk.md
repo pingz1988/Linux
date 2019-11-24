@@ -119,7 +119,7 @@ export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 # DPDK程序优化  
 * 架构  
 设计上尽量避免全局共享、锁
-* 分支预测
+* 分支预测  
 likely/unlikely 宏    
 * Cache预取  
 1. rte_prefetch0() // 预取数据想要重复使用  
