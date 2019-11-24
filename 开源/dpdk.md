@@ -117,6 +117,8 @@ lscpu
 export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 ```
 # DPDK程序优化  
+* 选型  
+dpdk支持两种模式，可对比测试各自性能  
 * 架构  
 设计上尽量避免全局共享、锁
 * 分支预测  
@@ -129,4 +131,6 @@ likely/unlikely 宏
 * 常量优化  
 gcc内置函数__builtin_constant_p() 来判断值是否常量，用于手动编译优化  
 * 使用dpdk重新实现的库函数  
-比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化
+比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。
+* 每个核单独使用的变量  
+用 RTE_PER_LCORE 宏修饰  
