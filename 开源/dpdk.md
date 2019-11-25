@@ -1,5 +1,11 @@
-# 编译  
+# 目录  
+- [编译](#编译)  
+- [设置环境](#设置环境)  
+- [常见问题](#常见问题)  
+- [其它命令 ](#其它命令)
+- [DPDK程序优化](#DPDK程序优化)
 
+# 编译  
 * 安装依赖库 
 ```shell
 yum makecache  
@@ -63,7 +69,7 @@ make
 * 查看结果/状态/性能  
 
 
-# 问题
+# 常见问题
 * 缺少numa.h  
 yum install numactl-devel*x86_64  
 
@@ -81,7 +87,7 @@ yum -y install flex bison
 ./configure  
 make && make install
 
-# 其它  
+# 其它命令  
 
 ```shell
 # numa 统计
