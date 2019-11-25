@@ -148,8 +148,8 @@ dpdk支持两种模式，可对比测试各自性能
 #define unlikely(x) \_\_builtin_expect(!!(x), 0)  
 
 ## 编码     
-* 每个核单独使用的变量  
-用 RTE_PER_LCORE 宏修饰  
+* 需要时，每个核单独使用变量  
+用 RTE_PER_LCORE 宏修饰，每个核内的变量独立于其它核，核内变量值不会景程其它核内变量    
 * 尽量少用if、switch分支，要使用时，将条件按出现概率从大到小摆放。  
 * 多语句宏、想用goto语句时，用do...while(0)  
 * Cache预取  
