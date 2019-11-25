@@ -127,7 +127,8 @@ export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 * 选型  
 dpdk支持两种模式，可对比测试各自性能  
 * 架构  
-设计上尽量避免全局共享、锁  
+设计上尽量避免全局共享、锁。  
+可借助 rte_ring（rte_ring_create函数、rte_ring_lookup函数、rte_mempool_lookup函数） 实现进程、线程间通信。  
 
 ## 编译  
 * 内存对齐  
