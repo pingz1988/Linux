@@ -125,7 +125,7 @@ dpdk支持两种模式，可对比测试各自性能
 
 ## 编译  
 * 内存对齐  
-结构体成员需从大到小排序和以及强制对齐 \_\_attribute__((__aligned__(64))) 
+结构体成员需从大到小排序和以及强制对齐 \_\_attribute__((\_\_aligned__(64))) 
 * 变量修饰  
 1. const  
 2. static  
@@ -135,14 +135,14 @@ dpdk支持两种模式，可对比测试各自性能
 1. 强制内联：inline \_\_attribute__((always_inline)) 
 2. static
 * 分支预测  
-likely(x) \_\_builtin_expect(!!(x), 1)  
-unlikely(x) \_\_builtin_expect(!!(x), 0)  
+#define likely(x) \_\_builtin_expect(!!(x), 1)  
+#define unlikely(x) \_\_builtin_expect(!!(x), 0)  
 
 ## 编码     
+* 每个核单独使用的变量  
+用 RTE_PER_LCORE 宏修饰  
 * Cache预取  
 1. rte_prefetch0() // 预取数据想要重复使用  
 2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档    
 * 使用dpdk重新实现的库函数  
-比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。
-* 每个核单独使用的变量  
-用 RTE_PER_LCORE 宏修饰  
+比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。 
