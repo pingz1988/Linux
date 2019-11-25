@@ -117,19 +117,31 @@ lscpu
 export LD_LIBRARY_PATH=/home/pingz/intel-cmt-cat-master/lib
 ```
 # DPDK程序优化  
+## 设计  
 * 选型  
 dpdk支持两种模式，可对比测试各自性能  
 * 架构  
-设计上尽量避免全局共享、锁
+设计上尽量避免全局共享、锁  
+
+## 编译  
+* 内存对齐  
+结构体成员需从大到小排序和以及强制对齐 \_\_attribute__((__aligned__(64))) 
+* 变量修饰  
+1. const  
+2. static  
+3. 常量优化  
+\_\_builtin_constant_p() 来判断值是否常量  
+* 函数修饰  
+1. 强制内联：inline \_\_attribute__((always_inline)) 
+2. static
 * 分支预测  
-likely/unlikely 宏    
+likely(x) \_\_builtin_expect(!!(x), 1)  
+unlikely(x) \_\_builtin_expect(!!(x), 0)  
+
+## 编码     
 * Cache预取  
 1. rte_prefetch0() // 预取数据想要重复使用  
-2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档  
-3. 内存对齐  
-结构体成员需从大到小排序和以及强制对齐，__attribute__((__aligned__(a)))  
-* 常量优化  
-gcc内置函数__builtin_constant_p() 来判断值是否常量，用于手动编译优化  
+2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档    
 * 使用dpdk重新实现的库函数  
 比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。
 * 每个核单独使用的变量  
