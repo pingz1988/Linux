@@ -148,6 +148,8 @@ dpdk支持两种模式，可对比测试各自性能
 ## 编码     
 * 每个核单独使用的变量  
 用 RTE_PER_LCORE 宏修饰  
+* 尽量少用if、switch分支，要使用时，将条件按出现概率从大到小摆放。  
+* 多语句宏、想用goto语句时，用do...while(0)  
 * Cache预取  
 1. rte_prefetch0() // 预取数据想要重复使用  
 2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档    
