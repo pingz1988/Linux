@@ -140,7 +140,9 @@ dpdk支持两种模式，可对比测试各自性能
 \_\_builtin_constant_p() 来判断值是否常量  
 * 函数修饰  
 1. 强制内联：inline \_\_attribute__((always_inline)) 
-2. static
+2. static  
+3. 函数返回值**仅仅依赖于输入参数**时（不涉及staic变量、全局变量、指针等），用\_\_attribute__((const))修饰函数，编译器会使得相同的输入只会计算一次。比如求一个数的平方。    
+4. 编译器对函数参数进行非空检查：\_\_attribute__((nonnull)，也可指定检查第几个参数（参数序号从1开始）\_\_attribute__((nonnull(2)))  
 * 分支预测  
 #define likely(x) \_\_builtin_expect(!!(x), 1)  
 #define unlikely(x) \_\_builtin_expect(!!(x), 0)  
