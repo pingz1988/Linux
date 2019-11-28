@@ -1,4 +1,4 @@
-inter下程序性能分析工具
+Inter下程序性能分析工具
 
 # 安装  
 见解压目录中的 pdf 文件  
@@ -10,6 +10,7 @@ amplxe-gui
 * 命令行运行  
 amplxe-cl -collect [参数]  
 amplxe-cl -report summary  
+* 可在linux下采集数据，在windows带界面的VTune查看结果，操作更简单，更直观
 
 # 其它
 
