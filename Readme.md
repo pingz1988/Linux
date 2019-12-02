@@ -82,6 +82,10 @@ make DIR=/Home
 * 打印变量值  
 $(info xxxVar=$(xxxVar))  
 
+* 获取当前makefile路径  
+DIR := $(shell dirname $(mkfile_path))  // 绝对路径  
+DIR := $(shell dirname $(pwd))  // 相对路径，跟调用者路径相关，最好使用上面的绝对路径     
+
 * makefile 调试参数
 1. make -n  // 把规则和连带规则下的命令打印出来  
 2. make -p  // 如果目标不存在，其会打印相关的出错信息  
