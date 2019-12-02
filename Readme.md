@@ -89,6 +89,8 @@ DIR := $(shell dirname $(pwd))  // 相对路径，跟调用者路径相关，最
 * makefile 调试参数
 1. make -n  // 把规则和连带规则下的命令打印出来  
 2. make -p  // 如果目标不存在，其会打印相关的出错信息  
+3. make -p -f /dev/null  // 可以打印出内置变量和内置规则
+4. make -h  // 可查看其它make参数  
 <br>
 
 | 符号 | 说明 |
