@@ -80,7 +80,11 @@ make DIR=/Home
 2、export DIR=/Home  // 注意，export命令最好不要放在子目标中  
 
 * 打印变量值  
-$(info xxxVar=$(xxxVar))   
+$(info xxxVar=$(xxxVar))  
+
+* makefile 调试
+1. make -n  // 把规则和连带规则下的命令打印出来  
+2. make -p  // 如果目标不存在，其会打印相关的出错信息  
 
 | 符号 | 说明 |
 | ------ | ------ |
