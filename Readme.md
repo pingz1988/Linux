@@ -82,7 +82,7 @@ make DIR=/Home
 * 打印变量值  
 $(info xxxVar=$(xxxVar))  
 
-* makefile 调试
+* makefile 调试参数
 1. make -n  // 把规则和连带规则下的命令打印出来  
 2. make -p  // 如果目标不存在，其会打印相关的出错信息  
 <br>
