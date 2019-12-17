@@ -66,4 +66,7 @@ tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
 
 # 允许生成core dump文件  
 ulimit -c unlimited
+
+# 设置网口mtu
+ifconfig eth1 mtu 9000 up
 ```
