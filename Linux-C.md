@@ -12,7 +12,7 @@ int k;
 sscanf( "AAA123BBB456" , "%*[^0-9]%i" , &k)；  // k要取地址，执行后，k=123
 
 char buf[512] = {0};
-sscanf( "12345helloWORLD" , "%*[1-9]%[a-z]" , buf)；  // %*[1-9]表示过滤掉数字1-9，然后取小写字符串给bug，buf 为 hello
+sscanf( "12345helloWORLD" , "%*[1-9]%[a-z]" , buf)；  // %*[1-9]表示过滤掉数字1-9，然后取小写字符串给buf，buf 为 hello
 
 int a, b, c;
 sscanf("2006:03:18", "%d:%d:%d", a, b, c); // 分隔字符串
