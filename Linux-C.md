@@ -19,4 +19,26 @@ sscanf("2006:03:18", "%d:%d:%d", a, b, c); // 分隔字符串
 
 char sztime1[16] = "", sztime2[16] = "";
 sscanf("2006:03:18 - 2006:04:18", "%s - %s", sztime1, sztime2);  // 分隔字符串
+
+// --------------------------------------------------------------------------------
+#include <stdio.h>
+#include <errno.h>
+int main()
+{
+        char *p;
+        int n;
+
+        errno = 0;
+        n = scanf("%m[0-7]", &p);  // 动态分配p的内存大小，并指定每个字符的范围只能是字符0~7
+        if (n == 1) {
+                printf("read: %s\n", p);
+                free(p);
+        } else if (errno != 0) {
+                perror("scanf");
+        } else {
+                fprintf(stderr, "No matching characters\n");
+        }
+
+        return 0;
+}
 ```
