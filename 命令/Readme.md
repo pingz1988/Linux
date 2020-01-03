@@ -48,6 +48,9 @@ pidstat -p xxxPID -t
 # 查看进程内存情况  
 pidstat -p xxxPID -r -t 1  
 
+# 查看进程启动时间
+ps -eo pid,lstart,etime,cmd | grep xxxKeyword  
+
 # 查看逻辑核等信息  
 # 两个的processor下的core id相同表示支持超线程，且它们属于同一个物理核      
 cat /proc/cpuinfo 
