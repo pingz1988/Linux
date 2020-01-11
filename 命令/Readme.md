@@ -1,4 +1,7 @@
 ```shell
+# 搜索历史命令  
+ctrl + r  
+
 # 查看环境变量  
 env  
 echo $(xxxVar)  
