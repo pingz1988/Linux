@@ -1,6 +1,8 @@
 ```shell
 # 搜索历史命令  
-ctrl + r  
+Ctrl + R  
+# 清屏  
+Ctrl + L
 
 # 查看环境变量  
 env  
