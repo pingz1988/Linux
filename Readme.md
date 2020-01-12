@@ -162,16 +162,17 @@ make xxx > build_output_all.txt 2>&1<br />
 | b fileName:N | 在文件第N行设置断点 |
 | b Foo::foo | 对命名空间Foo中的foo函数设置断点 |
 | tb(tbreak) N | 让断点只生效一次，断点参数跟break命令一样 |
-| info source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
-| info b | 显示当前所有的断点，断点号，断点位置 |
-| i（info） locals	| 查看当前栈帧局部变量的值 |
-| info args	| 打印出当前函数的参数名及其值 |
-| info functions thre* | 列出以thre开头的函数名 |
+| i(info) source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
+| i b | 显示当前所有的断点，断点号，断点位置 |
+| i locals	| 查看当前栈帧局部变量的值 |
+| i args	| 打印出当前函数的参数名及其值 |
+| i functions thre* | 列出以thre开头的函数名 |
 | d | 删除所有断点 |
 | d n | 删除第n个断点 |
 | clear | 清除所有断点 |
 | clear n | 清除第n行的断点 |
 | c | 继续执行到下一断点 |
+| where | 查看当前运行到哪（也可用bt命令） |
 | p var | 显示变量var的值 |
 | p /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
 | p \*a@10 | 显示数组a的10个元素 |
