@@ -40,6 +40,8 @@
 * 代码提示 snip
 * Remote SSH  
 远程调试插件，左侧菜单栏-远程资源管理器-新建连接-选择配置文件-输入登录用户名、密码，连接成功后，可进行远程操作。保存登录密码，在windows主机上输入cmd命令（win10自带ssh client）：
+* 括号颜色
+Bracket Pair Colorizer  
 ```shell
 ssh-keygen -t rsa -b 4096
 SET REMOTEHOST=root@192.168.1.245
