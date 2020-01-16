@@ -191,9 +191,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | set print array-indexes on | 打印数组时，显示索引下标 |
 | set print union | 打印struct时按格式打印内部的union |
 | set follow-fork-mode child | gdb默认只会追踪父进程的运行，子进程会独立运行，要想调试子进程，进入fork()=0逻辑，使用此命令 |
-| set detach-on-fork off | 同时调试父子进程，在调试一个进程时，另外一个进程处于挂起状态， |
+| set detach-on-fork off | 同时调试父子进程，在调试一个进程时，另外一个进程处于挂起状态 |
 | x | help x 可以查看x命令用法 |
-| x/16xb a | 以16进制格式打印数组前 a 16个byte的值 |
+| x/16xb a | 以16进制格式打印数组a的前16个byte的值。x/ (n,f,u为可选参数)，n: 需要显示的内存单元个数，也就是从当前地址向后显示几个内存单元的内容，一个内存单元的大小由后面的u定义；f：显示格式，可以是x/u/d/o/c等；u：每个单元的大小，按字节数来计算，默认是4 bytes，可以是b:1 byte h:2 bytes     w:4 bytes g:8 bytes |
 | command | 自动化调试 |
 | save br .gdb_bp | gdb会把本次会话的断点存在.gdb_bp中，启动gdb的时，加上-x .gdb_bp，让gdb把.gdb_bp当做命令文件逐条重新执行 |
 | pstree -p 40900 | 查看主线程40900及其子线程间的关系 |
