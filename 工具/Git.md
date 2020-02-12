@@ -2,9 +2,9 @@
 
 ## 安装部署
 
-## GitFlow流程
-
 ## 概念
+
+## GitFlow流程
 
 ## 基本操作
 * pull **VS** fetch+merge    
@@ -13,3 +13,4 @@
   
   pull命令会在未经确认的时候更新本地内容，fetch+merge方式更安全。
 
+* 忽略文件（不加入版本库）
