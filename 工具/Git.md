@@ -7,7 +7,13 @@ GitLab
 
 ## 概念
 
-## GitFlow流程
+## 流程
+* Git flow  
+清晰可控，但相对复杂，需长期维护master、dev这2个分支，适用于版本发布，即一段时间产生一个版本
+* Github flow  
+适用于持续发布（如网络项目）
+* Gitlab flow  
+是上述2个流程的结合
 
 ## 基本操作
 * clone  
