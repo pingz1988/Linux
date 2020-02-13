@@ -2,7 +2,7 @@
 
 ## 安装部署
 * 服务端  
-GitLab
+GitLab: https://docs.gitlab.com/ee/README.html
 * 客户端
 
 ## 概念
