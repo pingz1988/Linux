@@ -14,10 +14,12 @@ TortoiseGit
 * Git flow  
 清晰可控，但相对复杂，需长期维护master、dev这2个分支，适用于版本发布，即一段时间产生一个版本
 * Github flow  
-适用于持续发布（如网络项目）
+适用于持续发布（如网络项目）  
+它是针对以下问题（痛点）： 
 * **Gitlab flow**  
 是上述2个流程的结合，采取“上游优先”原则，尽可能在上游修改，下游去取最新代码来合并。  
 11个规则：https://www.cnblogs.com/linuxprobe/p/5778525.html
+它是针对以下问题（痛点）：
 
 ## 基本操作
 * clone  
