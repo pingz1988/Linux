@@ -8,7 +8,7 @@ TortoiseGit
 
 ## 概念
 
-## Git **VS** SVN
+## Git **vs** SVN
 
 ## 流程
 * Git flow  
