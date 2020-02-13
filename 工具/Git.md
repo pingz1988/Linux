@@ -8,6 +8,8 @@ TortoiseGit
 
 ## 概念
 
+## Git **VS** SVN
+
 ## 流程
 * Git flow  
 清晰可控，但相对复杂，需长期维护master、dev这2个分支，适用于版本发布，即一段时间产生一个版本
