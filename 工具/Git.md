@@ -38,6 +38,8 @@ git clone https://github.com/XXX.git   //注意是.git后缀
 
 * 多产品来自同一个master，此时如何作分支管理？
 
+* 产品发布一段时间后，线上出现了bug，从交付分支拉出hotfix分支，修复后merge到交付分支和master分支（或开发分支），如果在产品发布后的这段时间里，master分支（或开发分支）进行了重大重构，hotfix如何merger回master分支（或开发分支）？
+
 ## 应用场景
 * 当前**分支A**的代码没写完，被告知紧急处理另外一个**分支B**的bug  
 在A分支执行git stash，保存未写完的代码，切换到B分支（git checkout B），解决B分支的bug后（commit+push），切回到A分支，执行git stash pop，取出当时未写完的代码
