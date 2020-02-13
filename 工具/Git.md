@@ -3,7 +3,7 @@
 ## 安装部署
 * 服务端  
 GitLab: https://docs.gitlab.com/ee/README.html
-* 客户端
+* 客户端  
 TortoiseGit
 
 ## 概念
