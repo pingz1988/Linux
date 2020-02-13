@@ -1,4 +1,4 @@
-官方文档： https://git-scm.com/docs
+Git官方文档： https://git-scm.com/docs
 
 ## 安装部署
 * 服务端  
