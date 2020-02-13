@@ -30,7 +30,10 @@ git clone https://github.com/XXX.git   //注意是.git后缀
 
 * 忽略文件（不加入版本库）
 
-## 场景
+## 问题  
+* 删除分支后，其它与该分支有关系的分支历史记录会不会被删除？
+
+## 应用场景
 * 当前**分支A**的代码没写完，被告知紧急处理另外一个**分支B**的bug  
 在A分支执行git stash，保存未写完的代码，切换到B分支（git checkout B），解决B分支的bug后（commit+push），切回到A分支，执行git stash pop，取出当时未写完的代码
 
