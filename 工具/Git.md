@@ -1,7 +1,8 @@
 官方文档： https://git-scm.com/docs
 
 ## 安装部署
-* 服务端
+* 服务端  
+GitLab
 * 客户端
 
 ## 概念
