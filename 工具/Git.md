@@ -18,7 +18,7 @@ TortoiseGit
 它是针对以下问题（痛点）： 
 * **Gitlab flow**  
 是上述2个流程的结合，采取“上游优先”原则，尽可能在上游修改，下游去取最新代码来合并。  
-11个规则：https://www.cnblogs.com/linuxprobe/p/5778525.html
+11个规则：https://www.cnblogs.com/linuxprobe/p/5778525.html  
 它是针对以下问题（痛点）：
 
 ## 基本操作
