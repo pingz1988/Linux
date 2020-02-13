@@ -17,7 +17,7 @@ GitLab
 
 ## 基本操作
 * clone  
-git clone https://github.com/XXX.git //注意是.git后缀
+git clone https://github.com/XXX.git   //注意是.git后缀
 
 * pull **VS** fetch+merge    
   
