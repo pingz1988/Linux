@@ -26,6 +26,8 @@ git clone https://github.com/XXX.git   //注意是.git后缀
   
   pull命令会在未经确认的时候更新本地内容，fetch+merge方式更安全。
 
+* 权限控制  
+
 * 忽略文件（不加入版本库）
 
 ## 场景
