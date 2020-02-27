@@ -50,7 +50,27 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 * 尽量用位运算  
 
 ## 循环  
-* 循环展开
+* 循环融合  
+把内层循环可以做的操作放到外层循环  
+* 循环交换  
+交换内外层循环，使外层循环次数少，内层循环次数多  
+* 循环展开  
+```c
+for (i = 1; i < n+1; i++)
+{
+    res = res + i;
+}
+
+// 利用寄存器优化  
+for (i = 1; i < n; i+=2)
+{
+    res1 = res1 + i;
+    res2 = res2 + (i+1);
+}
+```
+* 其它  
+循环条件<、>优于<=、>=  
+++i优于i++
 
 ## 分支预测
 * 排列代码使得分支预测符合静态分支预测结果：静态分支预测**if(condition)中的前向条件为不采取**，可以把逻辑改成**if(!condition)**；静态分支预测while(condition)/for(condition)中的后向条件为采取
