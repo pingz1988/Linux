@@ -51,6 +51,20 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 
 ## 循环  
 * 循环融合  
+```c
+#pragma omp parallel for
+    for (i = 0; i < 8; i++)
+        for (j = 0; j < 9; j++)
+            a[i][j] = b[j] * c[i];
+
+#pragma omp parallel for
+    for (ij = 0; ij < 72; ij++)
+    {
+        int i = ij / 9;
+        int j = ij % 9;
+        a[i][j] = b[j] * c[i];
+    }
+```
 把内层循环可以做的操作放到外层循环  
 * 循环交换  
 交换内外层循环，使外层循环次数少，内层循环次数多  
