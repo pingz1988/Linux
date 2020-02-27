@@ -64,10 +64,10 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
         int j = ij % 9;
         a[i][j] = b[j] * c[i];
     }
-```
-把内层循环可以做的操作放到外层循环  
+```  
 * 循环交换  
-交换内外层循环，使外层循环次数少，内层循环次数多  
+交换内外层循环，使外层循环次数少，内层循环次数多.  
+把内层循环可以做的操作放到外层循环。  
 * 循环展开  
 ```c
 for (i = 1; i < n+1; i++)
