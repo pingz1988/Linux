@@ -22,16 +22,17 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 * Intel Thread Profiler  
 
 # 关键点  
-* 内存(包括对齐、cache、内存分配等）
-* 分支预测
+* 数据结构及算法
+* 内存管理(包括对齐、cache、内存分配等）  
 
-# 代码调优  
-以下为一般性优化操作
-
-## 设计  
+## 设计层面  
+* 业务流程、架构优化
 * 优先多核，然后多线程
 * 数据本地化、无锁化  
 
+## 编译层面  
+
+# 代码层面
 ## 变量 
 * 尽可能用无符号变量
 * 尽量少用全局变量，可先赋值给局部变量再使用  
