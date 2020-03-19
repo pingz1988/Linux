@@ -25,7 +25,7 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 * 内存(包括对齐、cache、内存分配等）
 * 分支预测
 
-# 实操  
+# 代码调优  
 以下为一般性优化操作
 
 ## 设计  
