@@ -65,11 +65,11 @@ ldd x.so
 如果有找不到的依赖库拷贝至/usr/lib目录  
 
 * 编译  
-static_library:   
+静态库:     
     gcc -c *.c   
     ar  -cr xxx.a *.o  
  
-shared_library:  
+动态库:  
     gcc -shared -fpic -o xxx.so *.c  
 
 # Makefile
