@@ -62,7 +62,15 @@ ar rc liball.a *.o  //多个.o合成.a
 
 * 查看.so依赖库：
 ldd x.so  
-如果有找不到的依赖库拷贝至/usr/lib目录
+如果有找不到的依赖库拷贝至/usr/lib目录  
+
+* 编译  
+static_library:   
+    gcc -c *.c   
+    ar  -cr xxx.a *.o  
+ 
+shared_library:  
+    gcc -shared -fpic -o xxx.so *.c  
 
 # Makefile
 * 简单的编译命令   
