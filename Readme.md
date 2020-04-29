@@ -213,7 +213,8 @@ make xxx > build_output_all.txt 2>&1<br />
 | set scheduler-locking on | 锁定其他线程，只调试当前线程，让其它线程暂停执行 |
 | p $\_exitcode | 程序退出码 |
 | i signals | 查看如何处理信号 |
-| set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |
+| set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |  
+| disassemble func_name | 反汇编代码 |
 
 # 其它工具  
 * cgdb是gdb的增强版，可以显示源码窗口
