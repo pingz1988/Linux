@@ -1,5 +1,7 @@
-* 基础
-** 格式化
+# 基础
+
+## 格式化
+
 | 标识符 | 类型 |
 | ------ | ------ |
 | %O | off_t |
@@ -9,12 +11,4 @@
 | %p | void * |
 | %V | ngx_str_t * |
 | %s | u_char * (null-terminated) |
-| %*s | size_t + u_char * |
-	
-	
-	
-	
-	
-	
-	
-	
+| %*s | size_t + u_char * |	
