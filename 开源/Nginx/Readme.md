@@ -1,3 +1,5 @@
+# 简介  
+
 # 基础
 
 ## 格式化
@@ -12,3 +14,5 @@
 | %V | ngx_str_t * |
 | %s | u_char * (null-terminated) |
 | %*s | size_t + u_char * |	
+
+# 原理  
