@@ -1,4 +1,5 @@
 ## 工作流程  
+![avatar]( [https://github.com/pingz1988/Linux/blob/master/%E7%BD%91%E7%BB%9C/FTP/ftp.png](https://github.com/pingz1988/Linux/blob/master/网络/FTP/ftp.png) )
 
 ## 命令
 
