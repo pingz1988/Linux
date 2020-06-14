@@ -28,10 +28,10 @@
 
 # 原理  
 ## 如何处理 HTTP 请求（处理过程） 
-1、Nginx 在启动时，会解析配置文件 nginx.conf，得到需要监听的端口与 IP 地址，然后在 Nginx 的 Master 进程里面先初始化好这个监控的Socket(创建 S ocket，设置 addr、reuse 等选项，绑定到指定的 ip 地址端口，再 listen 监听)；
-2、在master-worker模式下， fork出N个子进程出来；
-3、子进程会竞争 accept 新的连接。此时，客户端就可以向 nginx 发起连接了。当客户端与nginx进行三次握手，与 nginx 建立好一个连接后。此时，某一个子进程会 accept 成功，得到这个建立好的连接的 Socket ，然后创建 nginx 连接；
-4、设置nginx连接的读写事件处理函数，并添加读写事件到epoll中，与客户端进行数据的交换。
+1、Nginx 在启动时，会解析配置文件 nginx.conf，得到需要监听的端口与 IP 地址，然后在 Nginx 的 Master 进程里面先初始化好这个监控的Socket(创建 S ocket，设置 addr、reuse 等选项，绑定到指定的 ip 地址端口，再 listen 监听)；  
+2、在master-worker模式下， fork出N个子进程出来；  
+3、子进程会竞争 accept 新的连接。此时，客户端就可以向 nginx 发起连接了。当客户端与nginx进行三次握手，与 nginx 建立好一个连接后。此时，某一个子进程会 accept 成功，得到这个建立好的连接的 Socket ，然后创建 nginx 连接；  
+4、设置nginx连接的读写事件处理函数，并添加读写事件到epoll中，与客户端进行数据的交换。  
 5、Nginx或客户端来主动关掉连接。
 
 # 与Apche的对比  
