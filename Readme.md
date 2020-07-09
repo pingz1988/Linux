@@ -135,6 +135,7 @@ make xxx > build_output_all.txt 2>&1<br />
 # GDB调试
 | 命令 | 描述 |
 | ------ | ------ |
+| gdb -p PID| 附加调试进程 |
 | gdb attach pid | 附加进程调试 |
 | r v1 v2 | 设置调试参数为v1、v2 |
 | set args v1 v2 | 设置调试参数为v1、v2 |
@@ -181,7 +182,9 @@ make xxx > build_output_all.txt 2>&1<br />
 | clear n | 清除第n行的断点 |
 | c | 继续执行到下一断点 |
 | where | 查看当前运行到哪（也可用bt命令） |
+| bt | 查看堆栈 |
 | p var | 显示变量var的值 |
+| dp f1.c:10, "a = %d", a| 不改源码，在文件f1第10处打印a的值 |
 | p /x(/d /t /c) var | 以16进制（10进制 2进制 字符格式）显示变量var |
 | p \*a@10 | 显示数组a的10个元素 |
 | p array[index]@num | 打印数组中从index处开始（index从0开始）的num个元素 |
