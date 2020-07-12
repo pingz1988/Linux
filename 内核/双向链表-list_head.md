@@ -47,7 +47,7 @@ list_for_each(pos, head);
 list_for_each_prev(pos, head);
 ```
 
-* 获取宿主结构地址的接口
+* 获取宿主结构地址的接口（理解即可，不直接调用）
 ```c
 /*
 ptr： 成员变量mem的地址    
