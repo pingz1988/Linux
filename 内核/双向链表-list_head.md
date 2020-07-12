@@ -85,7 +85,7 @@ const struct list_head *__mptr  = (&first_task.mylist);
 
 ```
 
-* 遍历宿主结构的接口
+* 遍历宿主结构（自定义结构）的接口
 ```c
 list_for_each_entry(pos, head, member);
 
@@ -105,7 +105,6 @@ list_for_each_entry (pos, &header_task, mylist)
 #define list_first_entry(ptr, type, member) \
 	list_entry((ptr)->next, type, member)
 	
-
 #define list_next_entry(pos, member) \
 	list_entry((pos)->member.next, typeof(*(pos)), member)
 	
