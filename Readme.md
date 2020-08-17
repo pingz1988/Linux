@@ -80,6 +80,9 @@ gcc -o xxx xxx.c  : 生成 xxx
 * 多线程编译  
 make -j 
 
+* 编译时隐藏符号  
+使用 -s 选项可隐藏符号。如果在GDB调试提示“Function xxx not defined”，有可能就是使用了 -s 选项。
+
 * make直接传递makefile中变量的值，则makefile中同名的变量会被统一替换为指定的值  
 make DIR=/Home  
 
@@ -99,7 +102,6 @@ DIR := $(shell dirname $(pwd))  // 相对路径，跟调用者路径相关，最
 2. make -p  // 如果目标不存在，其会打印相关的出错信息  
 3. make -p -f /dev/null  // 可以打印出内置变量和内置规则
 4. make -h  // 可查看其它make参数  
-<br>
 
 | 符号 | 说明 |
 | ------ | ------ |
