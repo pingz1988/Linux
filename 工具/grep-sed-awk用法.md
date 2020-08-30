@@ -1,6 +1,6 @@
-- [基础](##　grep)  
-- [可执行程序](##　sed)  
-- [静态库及动态库](##　awk)  
+- [grep](##　grep)  
+- [sed](##　sed)  
+- [awk](##　awk)  
 
 
 ## grep
