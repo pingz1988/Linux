@@ -1,9 +1,9 @@
-[grep](##grep)  
-[sed](##sed)  
-[awk](##awk)  
+[grep](#grep)  
+[sed](#sed)  
+[awk](#awk)  
 
 
-## grep
+# grep
 
 ### 用法
 
@@ -28,7 +28,7 @@ grep [option] pattern file
 
 
 
-## sed
+# sed
 
 ### 简介
 
@@ -104,7 +104,7 @@ seq 9 | sed -n "n;p"  # 打印2 4 6 8。执行过程：读取第一行内容1，
 
 
 
-## awk
+# awk
 
 ### 简介
 
