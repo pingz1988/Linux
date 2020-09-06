@@ -133,6 +133,9 @@ make xxx > build_output_all.txt 2>&1<br />
 其中的2>&1表示错误信息输出到&1中，而&1，指的是前面的那个文件：build_output_all.txt 。<br />
 注意：上面所有的1,2等数字，后面紧跟着大于号'>' ，中间不能有空格。<br />
 
+# 僵尸进程  
+ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自定义字段，ppid即为父进程id，需用命令杀掉父进程 kill -9 ppid
+
 # GDB调试
 | 命令 | 描述 |
 | ------ | ------ |
