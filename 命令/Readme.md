@@ -1,4 +1,7 @@
 ```shell
+# Centos7 提升用户至root
+sudo su  # 不加 sudo 会提示 “su故障”
+
 # 搜索历史命令  
 Ctrl + R  
 # 清屏  
