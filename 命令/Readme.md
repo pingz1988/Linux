@@ -11,6 +11,9 @@ Ctrl + L
 env  
 echo $(xxxVar)  
 
+# 压缩目录
+tar zcvf xxx.tar.gz xxx
+
 # 解压 *.tar.xz 文件
 tar xf *.tar.xz
 
