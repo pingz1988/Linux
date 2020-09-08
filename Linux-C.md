@@ -11,9 +11,16 @@
 * 动态内存分配  
 malloc()后需memset()初始化内存，或者用calloc()  
 
-* 字符串处理  
+* 字符串处理 
+
 可用 sscanf、scanf、fscanf 函数对字符串作简单的处理，比如类似正则匹配的操作：  
 ```c
+// 字符串前面补0
+char a[20] = {0};
+char b[]="xxxx";
+sprintf(a, "%0*d%s", 15-strlen(b), 0, b);  //先计算需要补0的长度
+printf("%s\n",a);
+
 int k;
 sscanf( "AAA123BBB456" , "%*[^0-9]%i" , &k)；  // 过滤掉字符串中的数字。k要取地址，执行后，k=123
 
