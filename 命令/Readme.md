@@ -8,6 +8,18 @@ mkdir -p dir1/dir2/dir3
 # 递归拷贝目录
 cp -r dir dst 
 
+# 常用固定命令可用别名来简化
+alias cd2tmp='cd /home/pingz/temp'
+# 使别名对当前用户一直生效
+vim ~/.bashrc
+alias cd2tmp='cd /home/pingz/temp'  # alias命令追加到.bashrc文件末尾
+source ~/.bashrc  # 立即生效
+# 取消别名
+unalias cd2tmp
+# 查看别名
+alias
+alias | grep XXX
+
 # 搜索历史命令  
 Ctrl + R  
 # 清屏  
