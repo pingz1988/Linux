@@ -2,6 +2,9 @@
 # Centos7 提升用户至root
 sudo su  # 不加 sudo 会提示 “su故障”
 
+# 新建多级目录  
+mkdir -p dir1/dir2/dir3
+
 # 递归拷贝目录
 cp -r dir dst 
 
