@@ -8,9 +8,9 @@ mkdir -p dir1/dir2/dir3
 # 递归拷贝目录
 cp -r dir dst 
 
-# 常用固定命令可用别名来简化
+# 设置临时别名（常用固定命令可用别名来简化）
 alias cd2tmp='cd /home/pingz/temp'
-# 使别名对当前用户一直生效
+# 设置永久别名（对当前用户一直生效）
 vim ~/.bashrc
 alias cd2tmp='cd /home/pingz/temp'  # alias命令追加到.bashrc文件末尾
 source ~/.bashrc  # 立即生效
