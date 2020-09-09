@@ -19,6 +19,8 @@ unalias cd2tmp
 # 查看别名
 alias
 alias | grep XXX
+# 使用命令本身而不是别名
+\vi  # 在命令前使用反斜线\
 
 # 搜索历史命令  
 Ctrl + R  
