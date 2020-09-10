@@ -49,3 +49,5 @@
 | :10,20s/#//g | 删除10到20行#注释 |
 | :n1,n2 w filename | 将n1到n2行的内容储存到 filename  |
 | vim -d file1 file2 | 比较文件 |
+| :set invlist | 显示不可见字符 |
+| :set nolist | 不显示不可见字符 |
