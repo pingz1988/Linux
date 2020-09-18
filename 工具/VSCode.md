@@ -35,6 +35,7 @@
 | Ctrl + Shift + Y | 打开调试控制台 |
 | Ctrl + B | 显示/隐藏侧边栏 |
 | Shitft + F12 | 查找所有引用 |
+| Ctrl + Shitft + V | 预览markdown文件 |
 
 ## 常用插件
 * 中文  
