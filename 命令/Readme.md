@@ -33,9 +33,10 @@ echo $(xxxVar)
 
 # 压缩目录
 tar zcvf xxx.tar.gz xxx
-
 # 解压 *.tar.xz 文件
 tar xf *.tar.xz
+# 解压 *.gz
+gzip -d *.gz
 
 # 批量重命名  
 rename str1 str2 str1* : 把 str1 开头的文件名重命名为 str2 开头
