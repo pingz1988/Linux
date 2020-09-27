@@ -90,8 +90,9 @@ make && make install
 # 其它命令  
 
 ```shell
-# numa 统计
+# numa 及大页信息
 numastat -m  
+# numa CPU信息
 numactl -H  
 
 # Build DPDK target.  
