@@ -51,3 +51,19 @@ SET REMOTEHOST=root@192.168.1.245
 scp C:\Users\Administrator\.ssh\id_rsa.pub %REMOTEHOST%:~/tmp.pub
 ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys && rm -f ~/tmp.pub"
 ```
+* power mode
+在“设置”中直接搜索如下配置项进行设置
+```json
+{
+    //powser mode   
+  "powermode.enabled": true,
+  //样式
+  "powermode.presets": "fireworks",
+  // 时间间隔
+  "powermode.comboTimeout":8,
+  // 抖动
+  "powermode.enableShake": false,
+  "powermode.backgroundMode": "mask",
+}
+```
+
