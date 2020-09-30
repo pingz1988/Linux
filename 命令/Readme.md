@@ -30,6 +30,7 @@
 ## 程序
 ```shell
 man ascii  # 查看ascii码表
+date +%s   # 当前时间的时间戳
 
 ctrl + z   # 将当前程序放到后台运行
 
