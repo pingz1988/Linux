@@ -17,8 +17,9 @@
 
 ## 程序
 ```shell
-# 设置临时别名（常用固定命令可用别名来简化）
-alias cd2tmp='cd /home/pingz/temp'
+man ascii  # 查看ascii码表
+
+alias cd2tmp='cd /home/pingz/temp'  # 设置临时别名（常用固定命令可用别名来简化）
 # 设置永久别名（对当前用户一直生效）
 vim ~/.bashrc
 alias cd2tmp='cd /home/pingz/temp'  # alias命令追加到.bashrc文件末尾
