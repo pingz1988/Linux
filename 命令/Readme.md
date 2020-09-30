@@ -1,3 +1,21 @@
+## 基本
+| 命令                    | 用途                                               |
+| ----------------------- | -------------------------------------------------- |
+| l.                      | 只显示隐藏目录和隐藏文件                           |
+| ll -a                   | 显示所有文件，包括隐藏目录和隐藏文件               |
+| ll -aF                  | -F：显示区分目录和文件，显示目录时带/，软链接时带~ |
+| mkdir -p dir1/dir2/dir3 | 新建多级目录                                       |
+| cp -r dir dst           | 递归拷贝目录                                       |
+| ctrl + r                | 搜索历史命令                                       |
+| ctrl + l                | 清屏                                               |
+| tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                      |
+| tar xf \*.tar.xz         | 解压 .tar.xz 文件                                  |
+| gzip -d \*.gz            | 解压 .gz                                           |
+| rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头             |
+| rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀            |
+| more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏             |
+
+## 程序
 ```shell
 # Centos7 提升用户至root
 sudo su  # 不加 sudo 会提示 “su故障”
