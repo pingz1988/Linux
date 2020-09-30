@@ -24,6 +24,8 @@
 | > file.txt              | 新建/清空文件，eg: echo "abcd" > file.txt  # 写入内容;  > file.txt  # 清空内容 |
 | >> file.txt             | 新建/追加内容到文件，用法同上                                |
 | mkdir \`date +%y%m%d\`  | 创建以当前日期命名的目录,注意 date 后的空格只能这么写                                     |
+| split --numeric-suffixes=1 -l100 http.log | 按第个文件100行分割文件，文件名后缀从数字1开始 |
+| split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
 
 ## 程序
 ```shell
