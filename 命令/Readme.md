@@ -22,7 +22,7 @@
 | aa \|\| ls              | 并行执行 aa 和 ls，没有先后顺序                              |
 | > file.txt              | 新建/清空文件，eg: echo "abcd" > file.txt  # 写入内容;  > file.txt  # 清空内容 |
 | >> file.txt             | 新建/追加内容到文件，用法同上                                |
-| mkdir \`date+%Y%m%d\`    | 创建以当前日期命名的目录                                     |
+| mkdir \`date +%y%m%d\`  | 创建以当前日期命名的目录,注意 date 后的空格只能这么写                                     |
 
 ## 程序
 ```shell
