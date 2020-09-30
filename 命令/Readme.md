@@ -7,6 +7,7 @@
 | ll -a                   | 显示所有文件，包括隐藏目录和隐藏文件                         |
 | ll -aF                  | -F：显示区分目录和文件，显示目录时带/，软链接时带~           |
 | cat -b file.txt         | 显示行号及内容          |
+| cat 1.txt 2.txt 3.txt > all.txt         | 合并多个文件到一个文件          |
 | mkdir -p dir1/dir2/dir3 | 新建多级目录                                                 |
 | cp -r dir dst           | 递归拷贝目录                                                 |
 | ctrl + r                | 搜索历史命令                                                 |
