@@ -17,15 +17,6 @@
 
 ## 程序
 ```shell
-# Centos7 提升用户至root
-sudo su  # 不加 sudo 会提示 “su故障”
-
-# 新建多级目录  
-mkdir -p dir1/dir2/dir3
-
-# 递归拷贝目录
-cp -r dir dst 
-
 # 设置临时别名（常用固定命令可用别名来简化）
 alias cd2tmp='cd /home/pingz/temp'
 # 设置永久别名（对当前用户一直生效）
@@ -40,33 +31,9 @@ alias | grep XXX
 # 使用命令本身而不是别名
 \vi  # 在命令前使用反斜线\
 
-# 搜索历史命令  
-Ctrl + R  
-# 清屏  
-Ctrl + L
-
 # 查看环境变量  
 env  
 echo $(xxxVar)  
-
-# 压缩目录
-tar zcvf xxx.tar.gz xxx
-# 解压 *.tar.xz 文件
-tar xf *.tar.xz
-# 解压 *.gz
-gzip -d *.gz
-
-# 批量重命名  
-rename str1 str2 str1* : 把 str1 开头的文件名重命名为 str2 开头
-rename .txt .log *.txt : 把以.txt 为后缀的文件名修改为 .log 后缀
-
-# 查看文件
-more/less fileName  
-空格向下一屏，b 向上一屏  
-
-# 查看隐藏文件
-l. ： 只显示隐藏目录和隐藏文件  
-ll -a : 显示所有文件，包括隐藏目录和隐藏文件
 
 # top命令相关
 top -p PID # 查看进程占用资源情况
