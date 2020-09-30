@@ -1,23 +1,32 @@
 ## 基本
-| 命令                    | 用途                                               |
-| ----------------------- | -------------------------------------------------- |
-| l.                      | 只显示隐藏目录和隐藏文件                           |
-| ll -a                   | 显示所有文件，包括隐藏目录和隐藏文件               |
-| ll -aF                  | -F：显示区分目录和文件，显示目录时带/，软链接时带~ |
-| mkdir -p dir1/dir2/dir3 | 新建多级目录                                       |
-| cp -r dir dst           | 递归拷贝目录                                       |
-| ctrl + r                | 搜索历史命令                                       |
-| ctrl + l                | 清屏                                               |
-| tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                      |
-| tar xf \*.tar.xz         | 解压 .tar.xz 文件                                  |
-| gzip -d \*.gz            | 解压 .gz                                           |
-| rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头             |
-| rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀            |
-| more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏             |
+| 命令                    | 用途                                                         |
+| ----------------------- | ------------------------------------------------------------ |
+| cd                      | 切换到当前用户的 home，相当于 cd ~                           |
+| cd -                    | 切换到上次 cd 过的目录                                       |
+| l.                      | 只显示隐藏目录和隐藏文件                                     |
+| ll -a                   | 显示所有文件，包括隐藏目录和隐藏文件                         |
+| ll -aF                  | -F：显示区分目录和文件，显示目录时带/，软链接时带~           |
+| mkdir -p dir1/dir2/dir3 | 新建多级目录                                                 |
+| cp -r dir dst           | 递归拷贝目录                                                 |
+| ctrl + r                | 搜索历史命令                                                 |
+| ctrl + l                | 清屏                                                         |
+| tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
+| tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
+| gzip -d \*.gz            | 解压 .gz                                                     |
+| rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
+| rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀                      |
+| more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏                       |
+| aa && ls                | 执行 aa 命令成功后，接着执行 ls 命令                         |
+| aa & ls                 | 执行 aa 命令后，就接着执行 ls 命令                           |
+| aa \|\| ls              | 并行执行 aa 和 ls，没有先后顺序                              |
+| > file.txt              | 新建/清空文件，eg: echo "abcd" > file.txt  # 写入内容;  > file.txt  # 清空内容 |
+| >> file.txt             | 新建/追加内容到文件，用法同上                                |
 
 ## 程序
 ```shell
 man ascii  # 查看ascii码表
+
+ctrl + z   # 将当前程序放到后台运行
 
 alias cd2tmp='cd /home/pingz/temp'  # 设置临时别名（常用固定命令可用别名来简化）
 # 设置永久别名（对当前用户一直生效）
