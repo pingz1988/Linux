@@ -124,6 +124,9 @@ kill -l
 # 抓包  
 tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
 
+# 回放包 
+tcpreplay -i p4p2 -p 10000 /home/pingz/ipgroup/*.pcap
+
 # 允许生成core dump文件  
 ulimit -c unlimited
 
