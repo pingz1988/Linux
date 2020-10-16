@@ -1,4 +1,4 @@
-## 基本
+## 基本命令
 | 命令                    | 用途                                                         |
 | ----------------------- | ------------------------------------------------------------ |
 | cd                      | 切换到当前用户的 home，相当于 cd ~                           |
@@ -126,6 +126,7 @@ tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
 
 # 回放包 
 tcpreplay -i p4p2 -p 10000 /home/pingz/ipgroup/*.pcap
+tcpreplay -i p4p2 -p 10000 -l 0 /home/pingz/ipgroup/*.pcap  # -l 0 不停回放包
 
 # 允许生成core dump文件  
 ulimit -c unlimited
