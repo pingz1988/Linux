@@ -17,6 +17,7 @@
 ```shell
 grep [option] pattern file
 grep "Oct\ 26\ 17:52" /var/log/secure  # 过滤带空格的字符串“Oct 26 17:52”，空格需要'\'转义
+grep '^[^#].*$' /etc/ssh/sshd_config  # 输出不以#开头的行
 ```
 
 | option       | description                                            |
