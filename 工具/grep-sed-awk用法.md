@@ -157,6 +157,8 @@ awk -F: '{if($3>10 && $3<1000) print $1,$3}' /etc/passwd  # if-else语句
 awk -F"|" -v OFS="|" '{if($1=="3.txt") $3=1}1' test.txt 1<>test.txt  # 把第一个字段为 3.txt 所在行的第3个字段更新为1。注意需要指定OFS，否则默认以空格为输出的分隔符
 
 cat /var/log/secure | egrep "Oct 26"| awk '$3 >="17:53:00" && $3 <="17:58:00"'  # 过滤指定时间段内的日志
+
+svn up|grep revision|awk -F' ' '{ print $3 }'|awk -F'.' '{print $1}'  # 取SVN版本号
 ```
 
 ### awk 数组
