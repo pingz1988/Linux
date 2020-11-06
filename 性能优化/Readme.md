@@ -44,6 +44,7 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 # 关键点  
 * 数据结构及算法
 * 内存管理(包括对齐、cache、内存分配等）  
+* 锁的运用  
 
 ## 设计层面  
 * 业务流程、架构优化
