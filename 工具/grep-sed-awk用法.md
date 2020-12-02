@@ -161,6 +161,8 @@ awk -F"|" -v OFS="|" '{if($1=="3.txt") $3=1}1' test.txt 1<>test.txt  # 把第一
 cat /var/log/secure | egrep "Oct 26"| awk '$3 >="17:53:00" && $3 <="17:58:00"'  # 过滤指定时间段内的日志
 
 svn up|grep revision|awk -F' ' '{ print $3 }'|awk -F'.' '{print $1}'  # 取SVN版本号
+
+awk -F',' '{print $6}' /mvtech/CSMS/ftplocalpath/du_accesslog_debug_5696pcap/*.AVL | sort    # 对第6个字段输出排序
 ```
 
 ### awk 数组
