@@ -163,6 +163,8 @@ cat /var/log/secure | egrep "Oct 26"| awk '$3 >="17:53:00" && $3 <="17:58:00"'  
 svn up|grep revision|awk -F' ' '{ print $3 }'|awk -F'.' '{print $1}'  # 取SVN版本号
 
 awk -F',' '{print $6}' /mvtech/CSMS/ftplocalpath/du_accesslog_debug_5696pcap/*.AVL | sort    # 对第6个字段输出排序
+
+echo "    a b c  " | awk '{gsub(/^\s+|\s+$/, "");print}'    # 去掉行首行尾空格
 ```
 
 ### awk 数组
