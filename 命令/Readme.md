@@ -40,7 +40,7 @@
 
 
 ## 程序
-```shell
+```powershell
 man ascii  # 查看ascii码表
 date +%s   # 当前时间的时间戳
 
