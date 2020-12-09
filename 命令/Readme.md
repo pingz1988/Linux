@@ -77,6 +77,9 @@ top -p PID # 查看进程占用资源情况
 -n<次数> 循环显示的次数
 -H -p PID top显示进程线程
 
+# 追踪 cpftp_upload_du 程序日志
+journalctl -a -f -u cpftp_upload_du
+
 # 查看进程号  
 pidof xxx  
 ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
@@ -124,7 +127,7 @@ cat /proc/cpuinfo| grep "cpu cores"| uniq  // 每个物理CPU的核数
 kill -l
 
 # 抓包  
-tcpdump -i lo tcp and port 50000 -vv -w 50000.pcap
+tcpdump -i lo tcp and port 50000 -vvv -w 50000.pcap
 
 # 回放包 
 tcpreplay -i p4p2 -p 10000 /home/pingz/ipgroup/*.pcap
