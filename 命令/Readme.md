@@ -139,3 +139,9 @@ ulimit -c unlimited
 # 设置网口mtu
 ifconfig eth1 mtu 9000 up
 ```
+
+## 运维
+```shell
+# 查看程序运行日志
+journalctl -a -f -u cpftp_upload_du
+```
