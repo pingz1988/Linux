@@ -7,7 +7,7 @@ objdump -S <file(s)>: 将代码段反汇编的同时，将反汇编代码与源�
 objdump -C <file(s)>: 将C++符号名逆向解析;  
 objdump -l <file(s)>: 反汇编代码中插入文件名和行号;  
 objdump -j section <file(s)>: 仅反汇编指定的section;   
-objdump -T: 查看程序中有哪些符号（函数、变量）;    
+objdump -t -T: 查看符号表（函数、变量），-t查看所有符号表，-T查看动态符号表。  
 
 ```shell
 #  反汇编代码中混入对应的源代码
