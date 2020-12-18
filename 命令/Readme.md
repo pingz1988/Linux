@@ -10,6 +10,8 @@
 | cat 1.txt 2.txt 3.txt > all.txt         | 合并多个文件到一个文件          |
 | mkdir -p dir1/dir2/dir3 | 新建多级目录                                                 |
 | cp -r dir dst           | 递归拷贝目录                                                 |
+| cp a.log{,.bak} | 拷贝文件时追加.bak后缀                                                |
+| cp a.log{,\_\`date +%m%d\`} | 拷贝文件时追加日期后缀                                    |
 | ctrl + r                | 搜索历史命令                                                 |
 | ctrl + l                | 清屏                                                         |
 | tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
