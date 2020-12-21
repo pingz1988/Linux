@@ -7,3 +7,14 @@ yum install libasan
 gcc -fsanitize=address -fno-omit-frame-pointer -O1 -g mem.c
 
 * Valgrind
+
+
+## 进程间通信状态
+ipcs    # 消息队列、共享内存、信号量
+ipcs -m # 共享内存
+
+## 进程使用内存情况
+pmap -p 37682 | grep total
+
+## CPU使用
+mpstat -P 1,2,3
