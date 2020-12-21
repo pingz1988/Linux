@@ -7,14 +7,14 @@ addr2line 0x417ab3 -e /mvtech/CSMS/bin/csms -f -C -s
 
 例如有如下报错信息：  
 ```powershell
-./csms\[0x417ab3]  
-./csms\[0x512727]  
-./csms\[0x426ca2]  
-./csms\[0x42656d]  
-./csms\[0x57783a]  
-./csms\[0x577b01]  
-/lib64/libc.so.6(\__libc_start_main+0xf5)\[0x7fd9c8b35b35\]  
-./csms\[0x416c19]
+./csms[0x417ab3]  
+./csms[0x512727]  
+./csms[0x426ca2]  
+./csms[0x42656d]  
+./csms[0x57783a]  
+./csms[0x577b01]  
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd9c8b35b35]  
+./csms[0x416c19]
 ```
 
 使用上述 addr2line 命令的显示结果： 
