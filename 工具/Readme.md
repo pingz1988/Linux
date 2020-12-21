@@ -20,6 +20,7 @@ pmap -p 37682 | grep total
 mpstat -P 1,2,3
 
 ## 网络情况
+netstat -l    # 列出所有监听状态的端口
 netstat -a    # 列出所有端口  
 netstat -at   # 列出所有tcp端口  
 netstat -au   # 列出所有udp端口  
