@@ -25,3 +25,4 @@ netstat -a    # 列出所有端口
 netstat -at   # 列出所有tcp端口  
 netstat -au   # 列出所有udp端口  
 netstat -anp  # a所有端口，n不显示别名，p显示进程名  
+netstat -anp | grep ssh  # 显示ssh程序使用的端口  
