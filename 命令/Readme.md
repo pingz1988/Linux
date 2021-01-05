@@ -17,6 +17,7 @@
 | tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
 | tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
 | gzip -d \*.gz            | 解压 .gz                                                     |
+| rz -e xxxFile          | rz 传输乱码时需加 -e 选项                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
 | rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀                      |
 | more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏                       |
