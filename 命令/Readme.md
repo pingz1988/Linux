@@ -30,6 +30,7 @@
 | mkdir \`date +%y%m%d\`  | 创建以当前日期命名的目录,注意 date 后的空格只能这么写                                     |
 | split --numeric-suffixes=1 -l100 http.log | 按第个文件100行分割文件，文件名后缀从数字1开始 |
 | split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
+| grep -C 2 str file1 | 查看文件file1中匹配str以及前后2行 |
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
 | pgrep NAME | 模糊查找 NAME 进程PID，-a 参数显示进程启动完整命令；-w 列出进程所有TID |
 | nl file | 加行号显示文件 |
