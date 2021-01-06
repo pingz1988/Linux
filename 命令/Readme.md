@@ -17,6 +17,7 @@
 | tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
 | tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
 | gzip -d \*.gz            | 解压 .gz                                                     |
+｜unzip xxx.zip ｜解压zip文件 ｜
 | rz -e xxxFile          | rz 传输乱码时需加 -e 选项                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
 | rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀                      |
@@ -32,7 +33,7 @@
 | split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
 | grep -C 2 str file1 | 查看文件file1中匹配str以及前后2行 |
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
-| pgrep NAME | 模糊查找 NAME 进程PID，-a 参数显示进程启动完整命令；-w 列出进程所有TID |
+| pgrep str | 模糊查找进程名中含有str的进程PID，-l 列出PID及进程名；-a 参数显示进程启动完整命令；-w 列出进程所有TID |
 | nl file | 加行号显示文件 |
 | wc | 统计字符数/行数 |
 | sort |  |
