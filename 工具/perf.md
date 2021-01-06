@@ -11,7 +11,7 @@ perf -p \<pid>                                                                  
 perf list \<hw/sw/cache/pmu>                                                                        // 查看当前系统支持的性能事件，即其它命令中的 -e 参数  
 perf test                                                                                           // 对系统进行健全性测试  
 perf stat \[-a/--all-cpus -C \<cpu> -e \<event> -p/--pid \<pid> -t/--tid \<tid>]                    // 性能统计  
-perf top \[-e <event> -p \<pid> -K -U -g]                                                           // 实时查看当前系统进程函数占用率情况, -K 隐藏kernal符号，-U 隐藏user符号  
+perf top \[-e <event> -p \<pid> -K -U -g -F]                                                        // 实时查看当前系统进程函数占用率情况, -K 隐藏kernal符号，-U 隐藏user符号  
 perf lock                                                                                           // 分析锁性能  
 perf mem                                                                                            // 分析内存slab性能  
 pref record \[-e \<event> -a/--all-cpus -p \<pid> -C \<cpu>]                                        // 记录信息到perf.data，可以精确到函数级别  
@@ -32,6 +32,8 @@ perf -h
 perf -h record
 # 查看整体性能（-K, --hide_kernel_symbols）
 perf top -K
+# 查看进程函数调用情况，-F 1 表示频率为1s
+perf top -p 10026 -g -F 1
 
 # 统计cache miss
 perf stat -e cache-misses ./a.out
