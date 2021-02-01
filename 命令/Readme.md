@@ -17,8 +17,8 @@
 | tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
 | tar zxvf xxx.tar.gz | 解压文件                                                |
 | tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
-| zip out xxx         | 压缩 xxx 成 out.zip（自动加zip后缀）                                          |
 | gzip -d \*.gz            | 解压 .gz                                                     |
+| zip out xxx         | 压缩 xxx 成 out.zip（自动加zip后缀）                                          |
 | unzip xxx.zip | 解压zip文件 |
 | rz -e xxxFile          | rz 传输乱码时需加 -e 选项(准备上传的文件最好不要放在中文目录下)                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
@@ -36,6 +36,8 @@
 | grep -C 2 str file1 | 查看文件file1中匹配str以及前后2行 |
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
 | pgrep str | 模糊查找进程名中含有str的进程PID，-l 列出PID及进程名；-a 参数显示进程启动完整命令；-w 列出进程所有TID |
+| tail -f xxx.log  | 跟踪/滚动查看文件                                           |
+| journalctl -a -f -u cpftp_upload_du | 跟踪/滚动查看程序执行 |
 | nl file | 加行号显示文件 |
 | wc | 统计字符数/行数 |
 | sort |  |
