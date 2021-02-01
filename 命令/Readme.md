@@ -23,13 +23,12 @@
 | rz -e xxxFile          | rz 传输乱码时需加 -e 选项(准备上传的文件最好不要放在中文目录下)                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
 | rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀                      |
-| more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏                       |
+| more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏。less 分页查看文件内容（不加载整个文件）。more 命令会加载整个文件                       |
 | aa && ls                | 执行 aa 命令成功后，接着执行 ls 命令                         |
 | aa & ls                 | 执行 aa 命令后，就接着执行 ls 命令                           |
 | aa \|\| ls              | 并行执行 aa 和 ls，没有先后顺序                              |
 | > file.txt              | 新建/清空文件，eg: echo "abcd" > file.txt  # 写入内容;  > file.txt  # 清空内容 |
 | >> file.txt             | 新建/追加内容到文件，用法同上                                |
-| less file | 分页查看文件内容（不加载整个文件）。more 命令会加载整个文件 |
 | mkdir \`date +%y%m%d\`  | 创建以当前日期命名的目录,注意 date 后的空格只能这么写                                     |
 | split --numeric-suffixes=1 -l100 http.log | 按第个文件100行分割文件，文件名后缀从数字1开始 |
 | split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
