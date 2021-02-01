@@ -15,10 +15,12 @@
 | ctrl + r                | 搜索历史命令                                                 |
 | ctrl + l                | 清屏                                                         |
 | tar zcvf xxx.tar.gz xxx | 压缩文件/目录                                                |
+| tar zxvf xxx.tar.gz | 解压文件                                                |
 | tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
+| zip out xxx         | 压缩 xxx 成 out.zip（自动加zip后缀）                                          |
 | gzip -d \*.gz            | 解压 .gz                                                     |
 | unzip xxx.zip | 解压zip文件 |
-| rz -e xxxFile          | rz 传输乱码时需加 -e 选项                                                     |
+| rz -e xxxFile          | rz 传输乱码时需加 -e 选项(准备上传的文件最好不要放在中文目录下)                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
 | rename .txt .log \*.txt  | 把以.txt 为后缀的文件名修改为 .log 后缀                      |
 | more/less fileName      | 查看多页文件，空格向下一屏，b 向上一屏                       |
