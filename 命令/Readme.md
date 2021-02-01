@@ -37,7 +37,7 @@
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
 | pgrep str | 模糊查找进程名中含有str的进程PID，-l 列出PID及进程名；-a 参数显示进程启动完整命令；-w 列出进程所有TID |
 | tail -f xxx.log  | 跟踪/滚动查看文件                                           |
-| lsof | 查看系统打开的文件，lsof -c -p 1234，显示进程号1234打开的文件， lsof +d /usr/local/ 显示目录下被进程开启的文件， lsof -i[46] [protocol][@hostname|hostaddr][:service|port] |
+| lsof 命令 | 查看系统打开的文件，lsof -c -p 1234，显示进程号1234打开的文件， lsof /filepath/file，查看打开该文件的进程； lsof +d /usr/local/ 显示目录下被进程开启的文件；lsof -i[46] [protocol][@hostname|hostaddr][:service|port] |
 | journalctl -a -f -u cpftp_upload_du | 跟踪/滚动查看程序执行 |
 | nl file | 加行号显示文件 |
 | wc | 统计字符数/行数 |
