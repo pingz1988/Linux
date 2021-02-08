@@ -24,7 +24,7 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 # 常用法则  
 ## 空间换时间  
 * 修改数据结构：增加额外信息，便于数据访问  
-* 利用中间结果计算后续结果  
+* 利用中间结果计算后续结果（减少内存访问次数）  
 * cache  
 ## 循环法则  
 * 将代码移出循环体 
@@ -98,21 +98,81 @@ for (i = 1; i < n+1; i++)
     res = res + i;
 }
 
-// 利用寄存器优化  
+// 利用寄存器优化，多路并行  
 for (i = 1; i < n; i+=2)
 {
     res1 = res1 + i;
     res2 = res2 + (i+1);
 }
 ```
+
+* 多路并行  
+```c
+void combine4(vec_ptr v, data_t *dest)
+{
+ long i;
+    long length = vec_length(v);
+    long limit = length-1;
+    data_t *data = get_vec_start(v);
+    data_t acc0 = 0;
+    data_t acc1 = 0;
+    
+    /* 循环展开，并维护两个累计变量 */
+    for (i = 0; i < limit; i+=2) {
+        acc0 = acc0 * data[i];   // 偶数元素累积计算
+        acc1 = acc1 * data[i+1]; // 奇数元素累积计算
+    }
+    /* 完成剩余数组元素的计算 */
+    for (; i < length; i++) {
+        acc0 = acc0 * data[i];
+    }
+    *dest = acc0 * acc1;
+}
+```
+
+* 内存引用  
+```c
+// 改进前  
+void sum_rows1(double *a, double *b, long n) {
+    long i, j;
+    for (i = 0; i < n; i++) {
+ b[i] = 0;
+ for (j = 0; j < n; j++)
+     b[i] += a[i*n + j];  // b[i]有两次内存访问，读取时访问一次，写入时访问一次
+    }
+}
+
+// 改进后
+void sum_rows2(double *a, double *b, long n) {
+    long i, j;
+    for (i = 0; i < n; i++) {
+        double val = 0;
+        for (j = 0; j < n; j++)
+            val += a[i*n + j];
+        b[i] = val;  // 只在需要的时候，写入内存，消除不必要的内存引用
+    }
+}
+```
+
 * 其它  
 循环条件<、>优于<=、>=  
 ++i优于i++
 
 ## 分支预测
 * 排列代码使得分支预测符合静态分支预测结果：静态分支预测**if(condition)中的前向条件为不采取**，可以把逻辑改成**if(!condition)**；静态分支预测while(condition)/for(condition)中的后向条件为采取
-* 尽量减少甚至消除分支（运用上述的循环展开、排列代码方式），尤其在主逻辑中
+* 尽量减少甚至消除分支（运用上述的循环展开、排列代码、条件传送等方式），尤其在主逻辑中
 * if条件出现的概率可预测时，**使用likely、unlikely**，否则不用  
+```c
+void minmax2(long a[],long b[],long n){
+    long i;
+    for(i = 0;i&lt;n;i++){
+        long min = a[i] < b[i] ? a[i]:b[i];  // 不用 if-else 直接作条件判断比较，避免由于分支预测错误引起的执行效率下降
+        long max = a[i] < b[i] ? b[i]:a[i];  // 同上
+        a[i] = min;
+        b[i] = max;
+ }
+}
+```
 
 ## 编译相关  
 * 变量对齐  
