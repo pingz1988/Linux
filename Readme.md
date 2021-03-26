@@ -176,6 +176,7 @@ ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自�
 | b fileName:N | 在文件第N行设置断点 |
 | b Foo::foo | 对命名空间Foo中的foo函数设置断点 |
 | tb(tbreak) N | 让断点只生效一次，断点参数跟break命令一样 |
+| disable/enable N | 禁用/启用断点，不接参数N，禁用/启用所有断点 |
 | i(info) source | 显示源文件信息（全路径、行数、编程语言、预编译宏） |
 | i b | 显示当前所有的断点，断点号，断点位置 |
 | i locals	| 查看当前栈帧局部变量的值 |
