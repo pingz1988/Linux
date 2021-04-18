@@ -56,7 +56,7 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
 
 # 代码层面
 ## 变量 
-* 尽可能用无符号变量
+* 尽可能用无符号变量（无符号运算对应的汇编指令更优，可以做到宏融合）
 * 尽量少用全局变量，可先赋值给局部变量再使用  
 * 尽量使用const、static（本地化）变量 
 * 少用数组，换成指针。用restrict修饰的指针，表明指针所指向的内存只能由该指针来修改，而不能由其它变量或指针来修改，避免指针别名问题，这样做可以让编译器优化代码。 memcpy(void * restrict dest, void * restrict src, size_t n)使用了restrict关键字，不让内存重叠操作。
@@ -87,7 +87,7 @@ https://software.intel.com/en-us/vtune-amplifier-help-amplxe-cl-command-syntax
         int j = ij % 9;
         a[i][j] = b[j] * c[i];
     }
-```  
+```
 * 循环交换  
 交换内外层循环，使外层循环次数少，内层循环次数多.  
 把内层循环可以做的操作放到外层循环。  
@@ -200,7 +200,7 @@ void combine4(vec_ptr v, data_t *dest)
     }
     *dest = acc0 * acc1;
 }
-```
+ ```
   **gcc命令行参数-par_report3打印哪些循环可以并行化、哪些循环不能并行化的详细信息**  
 * 指针或数组别名  
   指针或数组别名是编译器判断代码是否可安全并行的阻碍。restrict关键字修饰指针或数组变量，告诉编译器变量所指的内存只能由这个变量来修改，有利于编译器并行化处理    
@@ -209,11 +209,11 @@ void combine4(vec_ptr v, data_t *dest)
   1、合理划分任务：划分粒度过粗会造成线程的任务负载不均衡，粒度过细带来线程资源等开销.  
   2、线程通信；线程间数据的划分、线程同步操作。  
   3、算法优化  
- 
+
 * 线程等待方式  
   1、忙等spin-wait，在资源持有时间短（1/100s）、很快能获取到资源的情况下使用，此时效率较高  
   2、阻塞，放弃CPU直到资源可用，在长时间获取不到资源时使用  
- 
+
 * 并行方式  
   1、OpenMP指令（编译器不支持时会忽略指令，GCC支持），适用于数据分解，旨在数据并行处理，只需加指令即可，由串行改成并行代码改动小，但它不够灵活，不能动态创建销毁线程、不支持线程优先级等属性的设置。   
   OpenMP官方文档：https://www.openmp.org/specifications/  
