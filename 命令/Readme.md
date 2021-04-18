@@ -33,7 +33,7 @@
 | split --numeric-suffixes=1 -l100 http.log | 按第个文件100行分割文件，文件名后缀从数字1开始 |
 | split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
 | grep -C 2 str file1 | 查看文件file1中匹配str以及前后2行 |
-| grep -E "str1|str2" file1 | 查看文件file1中匹配str1或str2的行 |
+| grep -E "str1\|str2" file1 | 查看文件file1中匹配str1或str2的行 |
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
 | pgrep str | 模糊查找进程名中含有str的进程PID，-l 列出PID及进程名；-a 参数显示进程启动完整命令；-w 列出进程所有TID |
 | tail -f xxx.log  | 跟踪/滚动查看文件                                           |
