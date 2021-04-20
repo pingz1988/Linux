@@ -68,7 +68,7 @@ ldd x.so
 静态库:     
     gcc -c *.c   
     ar  -cr xxx.a *.o  
- 
+
 动态库:  
     gcc -shared -fpic -o xxx.so *.c  
 
@@ -222,8 +222,10 @@ ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自�
 | set scheduler-locking on | 锁定其他线程，只调试当前线程，让其它线程暂停执行 |
 | p $\_exitcode | 程序退出码 |
 | i signals | 查看如何处理信号 |
-| set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |  
+| set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |
 | disas(disassemble) /m func_name | 反汇编函数func_name代码 |
+| si | 汇编调试，进入函数 |
+| ni | 汇编调试，下一条汇编指令 |
 
 # 其它工具  
 * cgdb是gdb的增强版，可以显示源码窗口
