@@ -6,3 +6,6 @@
 4. 进入解压目录，mkdir build && cd build && cmake ..
 5. 如果提示缺少所需库，手动安装，全安装后，执行 cmake..  无报错，进入下一步
 6. make && make install
+7. cd run
+8. ./wireshark 
+9. 附加进程调试，gdb -p  `pidof wireshark  `
