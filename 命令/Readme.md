@@ -46,7 +46,7 @@
 | diff |   | 
 | netstat | 显示与IP、TCP、UDP和ICMP协议相关的统计数据 |
 | at | 在一个指定的时间执行一个指定任务，只能执行一次 |
-| watch -n5 ls | 重复执行 ls 命令5次，默认2s执行一次 |
+| watch -n5 ls | 每5s执行一次 ls 命令，默认2s执行一次 |
 
 
 ## 程序
