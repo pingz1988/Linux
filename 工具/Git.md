@@ -77,6 +77,8 @@ TortoiseGit
   git push "远程分支名"
   ```
 
+  add - commit - push 这是一套提交操作。
+
 * 分支命令
 
   ```shell
