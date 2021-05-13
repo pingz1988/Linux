@@ -68,7 +68,7 @@ git config --global user.name "pingz"
   提交暂存区中的文件到本地，提交后会生成一个新的提交节点
 
   ```shell
-  git commit -m "注释、描述信息"
+  git commit -m "注释、描述信息"  # git 不上传空目录，如果需要上传空目录，在空目录下创建.gitkeep，并配置不忽略此文件
   ```
 
 * push
