@@ -22,8 +22,50 @@ TortoiseGit
 它是针对以下问题（痛点）：
 
 ## 基本操作
-* clone  
-git clone https://github.com/XXX.git   //注意是.git后缀
+* clone
+
+  ```shell
+  git clone https://github.com/XXX.git  # 注意是.git后缀
+  ```
+
+* add
+
+  加入到暂存区
+
+  ```shell
+  git add 文件路径  # 添加某个文件到暂存区
+  git add .  # 添加所有文件到暂存区
+  ```
+
+* 清空暂存区
+
+  ```shell
+  git reset HEAD "文件名"
+  ```
+
+* commit
+
+  提交暂存区中的文件到本地，提交后会生成一个新的提交节点
+
+  ```shell
+  git commit -m "注释、描述信息"
+  ```
+
+* push
+
+  将本地修改推送到远程仓库
+
+  ```shell
+  git push
+  ```
+
+* 分支命令
+
+  ```shell
+  git branch "分支名"  # 创建一个分支后该分支会与HEAD指向同一节点
+  git checkout "分支名"  # 切换分支
+  git branch -d "分支名"  # 删除分支
+  ```
 
 * pull **VS** fetch+merge    
   

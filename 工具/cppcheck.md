@@ -1,3 +1,5 @@
+linux
+
 ```shell
 # 安装
 yum install cppcheck
@@ -11,4 +13,16 @@ cppcheck -DX file.c # 启用宏定义X，并对文件进行检查
 cppcheck -UX file.c # 取消宏定义X，并对文件进行检查
 cppcheck file.c 2> err.txt # 输出错误信息
 ```
+
+windows
+
+**带图形界面运行时，默认启用 -j 选项，即启用多线程检查，会跳过未使用函数的检查**；
+
+在 cmd 中运行以下命令，输出的结果 txt/xml 文件正常；
+
+```powershell
+cppcheck --enable=all --xml-version=2 CHECK_PATH 2>OUT.xml
+```
+
+**但在 powershell 中运行上述命令时，输出的结果 txt/xml 文件会有多余的命令行信息**。
 
