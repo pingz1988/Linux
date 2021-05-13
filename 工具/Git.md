@@ -28,6 +28,24 @@ TortoiseGit
   git clone https://github.com/XXX.git  # 注意是.git后缀
   ```
 
+* fetch
+
+   fetch命令就是一次下载操作，它会将远程新增加的节点以及引用(分支/HEAD)的状态下载到本地。
+
+  ```shell
+  git fetch "远程仓库地址/分支名"
+  ```
+
+   clone 或 fetch 都会将远程仓库的所有提交、引用保存到本地。
+
+* pull
+
+  从远程仓库的某个引用拉取代码（强行拉取），pull 在效果上与 fetch+merge 类似，实则不同，使用时注意区分
+
+  ```shell
+  git pull "远程分支名"
+  ```
+  
 * add
 
   加入到暂存区
@@ -56,7 +74,7 @@ TortoiseGit
   将本地修改推送到远程仓库
 
   ```shell
-  git push
+  git push "远程分支名"
   ```
 
 * 分支命令
@@ -65,6 +83,15 @@ TortoiseGit
   git branch "分支名"  # 创建一个分支后该分支会与HEAD指向同一节点
   git checkout "分支名"  # 切换分支
   git branch -d "分支名"  # 删除分支
+  git merge "分支名/节点哈希值"  # 最常用的合并命令，合并后产生新的节点，每个节点都是严格按照时间排列
+  git rebase "分支名/节点哈希值"  # 合并，合并后不产生新的节点，这使得提交历史看起来更加线性、干净，但提交的节点不是真正的按时间排序，被合并的节点时间不管是在目标分支最后节点的前面或者后面，都会将被合并节点放到目标分支的最后
+  git cherry-pick "节点哈希值"  # 选择节点进行合并
+  ```
+
+* 回退
+  
+  ```shell
+  git reset HEAD~N  # 回退N个提交
   ```
 
 * pull **VS** fetch+merge    
