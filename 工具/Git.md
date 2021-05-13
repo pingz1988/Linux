@@ -27,7 +27,7 @@ git config --global user.name "pingz"
 * clone
 
   ```shell
-  git clone https://github.com/XXX.git  # 注意是.git后缀
+  git clone https://github.com/XXX.git  # .git后缀可带可不带
   ```
 
 * fetch
