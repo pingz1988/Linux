@@ -1,15 +1,5 @@
 Git官方文档： https://git-scm.com/docs
 
-## 安装部署
-* 服务端  
-GitLab: https://docs.gitlab.com/ee/README.html
-* 客户端  
-TortoiseGit
-
-## 概念
-
-## Git **vs** SVN
-
 ## 流程
 * Git flow  
 清晰可控，但相对复杂，需长期维护master、dev这2个分支，适用于版本发布，即一段时间产生一个版本
@@ -21,7 +11,15 @@ TortoiseGit
 11个规则：https://www.cnblogs.com/linuxprobe/p/5778525.html  
 它是针对以下问题（痛点）：
 
+## 配置
+
+```shell
+git config --global user.email "807961446@qq.com"
+git config --global user.name "pingz"
+```
+
 ## 基本操作
+
 * clone
 
   ```shell
@@ -107,6 +105,16 @@ TortoiseGit
 * 忽略文件（不加入版本库）
 
 ## 问题  
+* push 报错
+
+  fatal: unable to access 'https://github.com/pingz1988/Linux/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+  ```shell
+  git config --global http.sslVerify "false"
+  ```
+
+  执行上述命令后，再 push。
+
 * 删除分支后，其它与该分支有关系的分支历史记录会不会被删除？  
 
 * 多产品来自同一个master，此时如何作分支管理？
