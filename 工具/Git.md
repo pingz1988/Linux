@@ -11,6 +11,10 @@ Git官方文档： https://git-scm.com/docs
 11个规则：https://www.cnblogs.com/linuxprobe/p/5778525.html  
 它是针对以下问题（痛点）：
 
+## 文档
+
+安装目录下，D:\Program Files\Git\mingw64\share\doc\git-doc
+
 ## 配置
 
 ```shell
