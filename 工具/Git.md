@@ -85,6 +85,7 @@ git config --global user.name "pingz"
 
   ```shell
   git branch "分支名"  # 创建一个分支后该分支会与HEAD指向同一节点
+  git checkout -b "分支名"  # 创建分支并切换到该分支
   git checkout "分支名"  # 切换分支
   git branch -d "分支名"  # 删除分支
   git merge "分支名/节点哈希值"  # 最常用的合并命令，合并后产生新的节点，每个节点都是严格按照时间排列
