@@ -43,16 +43,17 @@
 | wc | 统计字符数/行数 |
 | sort |  |
 | uniq | 去除文件中相邻的重复行 |
-| diff |   | 
+| diff |   |
 | netstat | 显示与IP、TCP、UDP和ICMP协议相关的统计数据 |
 | at | 在一个指定的时间执行一个指定任务，只能执行一次 |
 | watch -n5 ls | 每5s执行一次 ls 命令，默认2s执行一次 |
 
 
 ## 程序
-```powershell
+```shell
 man ascii  # 查看ascii码表
 date +%s   # 当前时间的时间戳
+date +%Y-%m-%d %H:%M:%S.%3N  # 带3位毫秒时间
 
 &	# 加在一个命令的最后，可以把这个命令放在后台执行
 nohup	# 不挂断的运行命令
@@ -142,6 +143,7 @@ kill -l
 # 抓包  
 tcpdump -i lo tcp and port 50000 -vvv -w 50000.pcap
 
+
 # 回放包 
 tcpreplay -i p4p2 -p 10000 /home/pingz/ipgroup/*.pcap
 tcpreplay -i p4p2 -p 10000 -l 0 /home/pingz/ipgroup/*.pcap  # -l 0 不停回放包
@@ -153,7 +155,142 @@ ulimit -c unlimited
 ifconfig eth1 mtu 9000 up
 ```
 
+## 抓包
+
+01、抓取所有网络包，并在`terminal`中显示抓取的结果，将包以十六进制的形式显示。
+
+```shell
+tcpdump
+```
+
+02、抓取所有的网络包，并存到 `result.cap` 文件中。
+
+```powershell
+tcpdump -w result.cap
+```
+
+03、抓取所有的经过`eth0`网卡的网络包，并存到`result.cap` 文件中。
+
+```powershell
+tcpdump -i eth0 -w result.cap
+```
+
+04、抓取源地址是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+
+```powershell
+tcpdump src host 192.168.1.100 -w result.cap
+```
+
+05、抓取地址包含是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+
+```powershell
+tcpdump host 192.168.1.100 -w result.cap
+```
+
+06、抓取目的地址包含是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+
+```powershell
+tcpdump dest host 192.168.1.100 -w result.cap
+```
+
+07、抓取主机地址为 `192.168.1.100` 的数据包
+
+```powershell
+tcpdump -i eth0 -vnn host 192.168.1.100
+```
+
+08、抓取包含`192.168.1.0/24`网段的数据包
+
+```powershell
+tcpdump -i eth0 -vnn net 192.168.1.0/24
+```
+
+09、抓取网卡`eth0`上所有包含端口`22`的数据包
+
+```powershell
+tcpdump -i eth0 -vnn port 22
+```
+
+10、抓取指定协议格式的数据包，协议格式可以是「udp,icmp,arp,ip」中的任何一种,例如以下命令：
+
+```powershell
+tcpdump udp  -i eth0 -vnn
+```
+
+11、抓取经过 eth0 网卡的源 ip 是 192.168.1.100 数据包，`src`参数表示源
+
+```powershell
+tcpdump -i eth0 -vnn src host 192.168.1.100
+```
+
+12、抓取经过 eth0 网卡目的 ip 是 192.168.1.100 数据包，`dst`参数表示目的
+
+```powershell
+tcpdump -i eth0 -vnn dst host 192.168.1.100
+```
+
+13、抓取源端口是`22`的数据包
+
+```powershell
+tcpdump -i eth0 -vnn src port 22
+```
+
+14、抓取源`ip`是 `192.168.1.100` 且目的`ip`端口是`22`的数据包
+
+```powershell
+tcpdump -i eth0 -vnn src host 192.168.1.100 and dst port 22
+```
+
+15、抓取源`ip``192.168.1.100``22`
+
+```powershell
+tcpdump -i eth0 -vnn src host 192.168.1.100 or port 22
+```
+
+16、抓取源`ip``192.168.1.100``22`
+
+```powershell
+tcpdump -i eth0 -vnn src host 192.168.1.100 and not port 22
+```
+
+17、抓取源`ip`是`192.168.1.100`且目的端口是`22`，或源`ip`是`192.168.1.102`且目的端口是`80`的数据包。
+
+```powershell
+tcpdump -i eth0 -vnn ( src host 192.168.1.100 and dst port 22 ) or ( src host 192.168.1.102 and dst port 80 )
+```
+
+18、把抓取的数据包记录存到`/tmp/result`文件中，当抓取`100`个数据包后就退出程序。
+
+```powershell
+tcpdump –i eth0 -vnn -w /tmp/result -c 100
+```
+
+19、从`/tmp/result`记录中读取`tcp`协议的数据包
+
+```powershell
+tcpdump -i eth0  tcp  -vnn -r /tmp/result
+```
+
+20、想要截获所有`192.168.1.100`的主机收到的和发出的所有的数据包：
+
+```powershell
+tcpdump host 192.168.1.100
+```
+
+21、如果想要获取主机`192.168.1.100`除了和主机`192.168.1.101`之外所有主机通信的ip包，使用命令：
+
+```powershell
+tcpdump ip host 192.168.1.100 and ! 192.168.1.101
+```
+
+22、如果想要获取主机 `192.168.1.100` 接收或发出的 `telnet` 包，使用如下命令：
+
+```powershell
+tcpdump tcp port 23 host 192.168.1.100
+```
+
 ## 运维
+
 ```shell
 # 查看程序运行日志
 journalctl -a -f -u cpftp_upload_du
