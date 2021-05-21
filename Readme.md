@@ -30,7 +30,6 @@ sudo apt-get install libc6-dev
 
 * 缺少io.h文件：  
   使用locate命令查找io.h，如果有这个文件，拷贝到/usr/include/sys目录下，编译时-I包含这个目录 
-  
 # 可执行程序
 * 查看可执行程序有哪些函数  
 objdump -T xxx_exe  
@@ -65,7 +64,7 @@ ldd x.so
 如果有找不到的依赖库拷贝至/usr/lib目录  
 
 * 编译  
-静态库:     
+  静态库:     
     gcc -c *.c   
     ar  -cr xxx.a *.o  
 
@@ -118,21 +117,21 @@ DIR := $(shell dirname $(pwd))  // 相对路径，跟调用者路径相关，最
 
 * make编译输出到文件：<br />
   + 1、想要把make输出的全部信息，输出到某个文件中，最常见的办法就是：<br />
-make xxx > build_output.txt <br />
-此时默认情况是没有改变2=stderr的输出方式，还是屏幕，所以，如果有错误信息，还是可以在屏幕上看到的。<br />
+  make xxx > build_output.txt <br />
+  此时默认情况是没有改变2=stderr的输出方式，还是屏幕，所以，如果有错误信息，还是可以在屏幕上看到的。<br />
   + 2、只需要把make输出中的错误（及警告）信息输出到文件中ing，可以用：<br />
-make xxx 2> build_output.txt <br />
-相应地，由于1=stdout没有变，还是屏幕，所以，那些命令执行时候输出的正常信息，还是会输出到屏幕上，你还是可以在屏幕上看到的。<br />
+  make xxx 2> build_output.txt <br />
+  相应地，由于1=stdout没有变，还是屏幕，所以，那些命令执行时候输出的正常信息，还是会输出到屏幕上，你还是可以在屏幕上看到的。<br />
   * 3、只需要把make输出中的正常（非错误，非警告）的信息输出到文件中，可以用：<br />
-make xxx 1> build_output.txt <br />
-相应地，由于2=stderr没有变，还是屏幕，所以，那些命令执行时候输出的错误信息，还是会输出到屏幕上，你还是可以在屏幕上看到的。<br />
+  make xxx 1> build_output.txt <br />
+  相应地，由于2=stderr没有变，还是屏幕，所以，那些命令执行时候输出的错误信息，还是会输出到屏幕上，你还是可以在屏幕上看到的。<br />
   * 4、想要把正常输出信息和错误信息输出到分别的文件中，可以用：<br />
-make xxx 1> build_output_normal.txt 2>build_output_error.txt <br />
-即联合使用了1和2，正常信息和错误信息，都输出到对应文件中了。<br />
+  make xxx 1> build_output_normal.txt 2>build_output_error.txt <br />
+  即联合使用了1和2，正常信息和错误信息，都输出到对应文件中了。<br />
   * 5、 所有的信息都输出到同一个文件中：<br />
-make xxx > build_output_all.txt 2>&1<br />
-其中的2>&1表示错误信息输出到&1中，而&1，指的是前面的那个文件：build_output_all.txt 。<br />
-注意：上面所有的1,2等数字，后面紧跟着大于号'>' ，中间不能有空格。<br />
+  make xxx > build_output_all.txt 2>&1<br />
+  其中的2>&1表示错误信息输出到&1中，而&1，指的是前面的那个文件：build_output_all.txt 。<br />
+  注意：上面所有的1,2等数字，后面紧跟着大于号'>' ，中间不能有空格。<br />
 
 # 僵尸进程  
 ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自定义字段，ppid即为父进程id，需用命令杀掉父进程 kill -9 ppid
@@ -209,6 +208,8 @@ ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自�
 | set print union | 打印struct时按格式打印内部的union |
 | set follow-fork-mode child | gdb默认只会追踪父进程的运行，子进程会独立运行，要想调试子进程，进入fork()=0逻辑，使用此命令 |
 | set detach-on-fork off | 同时调试父子进程，在调试一个进程时，另外一个进程处于挂起状态 |
+| set print thread-events off | 不打印线程产生和退出提示信息 |
+| set scheduler-locking on | 锁定其他线程，只调试当前线程，让其它线程暂停执行 |
 | x | help x 可以查看x命令用法 |
 | x/16xb a | 以16进制格式打印数组a的前16个byte的值。x/ (n,f,u为可选参数)，n: 需要显示的内存单元个数，也就是从当前地址向后显示几个内存单元的内容，一个内存单元的大小由后面的u定义；f：显示格式，可以是x/u/d/o/c等；u：每个单元的大小，按字节数来计算，默认是4 bytes，可以是b:1 byte h:2 bytes     w:4 bytes g:8 bytes |
 | command | 自动化调试 |
@@ -219,7 +220,6 @@ ps -A -ostat,ppid,pid,cmd | grep -e '^[Zz]'  # 查找僵尸进程，-o定义自�
 | thread ID | 切换调试的线程为指定ID的线程 |
 | b file.c:100 thread all | 在file.c文件第100行处为所有经过这里的线程设置断点 |
 | b frik.c:13 thread 28 if bartab > lim | 为线程28设置条件断点 |
-| set scheduler-locking on | 锁定其他线程，只调试当前线程，让其它线程暂停执行 |
 | p $\_exitcode | 程序退出码 |
 | i signals | 查看如何处理信号 |
 | set logging on | 把执行gdb的过程记录下来，默认生成gdb.txt，也可以用“ set logging file file ”改成别的名字 |

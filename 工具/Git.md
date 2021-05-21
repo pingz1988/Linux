@@ -13,7 +13,9 @@ Git官方文档： https://git-scm.com/docs
 
 ## 文档
 
-安装目录下，D:\Program Files\Git\mingw64\share\doc\git-doc
+位于安装目录下，D:\Program Files\Git\mingw64\share\doc\git-doc
+
+可直接用 git help XXX 来查看相关命令的用法。
 
 ## 配置
 
@@ -23,6 +25,22 @@ git config --global user.name "pingz"
 ```
 
 ## 基本操作
+
+* 查看log
+
+  ```shell
+  git log <--pretty=oneline/fuller>  # 可用pretty指定的参数来显示log
+  ```
+
+  
+
+* 查看当前状态
+
+  ```shell
+  git status
+  ```
+
+  
 
 * clone
 
@@ -69,6 +87,7 @@ git config --global user.name "pingz"
 
   ```shell
   git commit -m "注释、描述信息"  # git 不上传空目录，如果需要上传空目录，在空目录下创建.gitkeep，并配置不忽略此文件
+  git commit -am "注释、描述信息"  # 提交所有修改、要删除的文件，但不添加文件；保险起见，执行 add. 命令
   ```
 
 * push
@@ -96,9 +115,24 @@ git config --global user.name "pingz"
 * 回退
   
   ```shell
-  git reset HEAD~N  # 回退N个提交
+  git log --pretty=oneline  # --pretty 美观显示提交log 
+  git reset HEAD~N  # 回退N个提交，git文档中没查到该用法
+  git reset --hard N  # 回退到指定的提交N
+  git reset --hard HEAD^  # 回退到上一次提交
   ```
-
+  
+* 打 tag
+  
+  ```shell
+  git tag  # 列出已有tag
+  git tag TAG_NAME  # 创建tag
+  git tag -a TAG_NAME -m "描述信息"  # 创建tag，并加注释描述信息
+  git tag -a TAG_NAME N -m "描述信息"  # 给指定的某个commit号N打tag
+  git push origin TAG_NAME  # 推送tag到远程分支
+  ```
+  
+  
+  
 * pull **VS** fetch+merge    
   
   功能上 pull = fetch+merge ，但原理不同：pull命令相当于暴力更新，直接把远程分支的内容更新到本地仓库中的head目录（add/commit操作目录）；fetch命令只是下载远程分支代码到本地仓库中的remote目录，不更新head目录，merge命令是把remote目录合并到head目录。  
