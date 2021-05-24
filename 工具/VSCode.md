@@ -43,9 +43,13 @@
 ## 常用插件
 * 中文  
 * C/C++
-* 代码提示 snip
-* 括号颜色  
-Bracket Pair Colorizer
+* C/C++ Advanced Lint
+* 代码提示 c/c++ snippets
+* 括号颜色  Bracket Pair Colorizer
+* 注释 Better comments
+* Git代码管理 GitLens
+* SVN代码管理 TortoiseSVN
+* 书签 Bookmarks
 * Remote SSH  
 远程调试插件，左侧菜单栏-远程资源管理器-新建连接-选择配置文件-输入登录用户名、密码，连接成功后，可进行远程操作。保存登录密码，在windows主机上输入cmd命令（win10自带ssh client, win7需要手动安解压安装包到 C:\Program Files\OpenSSH,并把这个目录加到系统环境变量path）：  
 ```shell
@@ -70,3 +74,52 @@ ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh
 }
 ```
 
+- 文件（代码）同步 sftp
+
+在vscode中实现远程同步（本地->远程，远程->本地）文件或目录，安装 sftp 插件后，在 sftp.json 中配置如下（uploadOnSave为true表示保存即上传）：
+
+```json
+{
+
+  "name": "编译服务器",
+
+  "host": "10.10.64.214",
+
+  "protocol": "sftp",
+
+  "port": 22,
+
+  "username": "root",
+
+  "password": "topteng1985",
+
+  "remotePath": "/home/zhangping/svn/cmcu_eu_re_ver/code",
+
+  "uploadOnSave": true, 
+
+  "ignore": [
+
+​    "**/.vscode/**",
+
+​    "**/.git/**",
+
+​    "**/.DS_Store"
+
+  ],
+
+  "watcher": {
+
+​    "files": "*",
+
+​    "autoUpload": false,
+
+​    "autoDelete": false
+
+  }
+
+}
+```
+
+注意：
+
+第一次配置后上传文件到远程目录，会报“No such file” 的错误，需要修改文件`C:\Users\Administrator\.vscode\extensions\liximomo.sftp-1.12.9\node_modules\ssh2-streams\lib\sftp.js`，搜索`options.emitClose = false;` 在搜到的两处语句之后，增加一行 `options.autoDestroy = false;` 重启 vscode 即可正常上传。
