@@ -63,7 +63,7 @@ git config --global user.name "pingz"
   从远程仓库的某个引用拉取代码（强行拉取），pull 在效果上与 fetch+merge 类似，实则不同，使用时注意区分
 
   ```shell
-  git pull "远程分支名"
+  git pull "远程分支名（xxx.git URI）"
   ```
   
 * add
@@ -133,6 +133,12 @@ git config --global user.name "pingz"
   
   
   
+* 合并主分支到本地分支
+  
+  git checkout "本地分支名"
+  
+  git pull "远程分支名（xxx.git URI）"
+
 * pull **VS** fetch+merge    
   
   功能上 pull = fetch+merge ，但原理不同：pull命令相当于暴力更新，直接把远程分支的内容更新到本地仓库中的head目录（add/commit操作目录）；fetch命令只是下载远程分支代码到本地仓库中的remote目录，不更新head目录，merge命令是把remote目录合并到head目录。  
