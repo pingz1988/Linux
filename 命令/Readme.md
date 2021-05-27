@@ -97,6 +97,8 @@ journalctl -a -f -u cpftp_upload_du
 # 查看进程号  
 pidof xxx  
 ps -ef | grep xxxExe | grep -v grep | awk '{print $2}'
+# 查看进程中的线程
+ps -T -p PID
 
 # 进程id作为其它命令的参数
 pidstat -p `pidof xxxExe` -t  
