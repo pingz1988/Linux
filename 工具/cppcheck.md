@@ -1,3 +1,5 @@
+在linux运行的程序，最好在Linux上运行cppcheck来检查；同样地，windows程序，最好也在windows上运行cppcheck来检查。
+
 ## linux
 
 ```shell
@@ -19,7 +21,7 @@ cppcheck --enable=all --xml-version=2 CHECK_PATH 2>OUT.xml  # 检查CHECK_PATH�
 xxx/htmlreport/cppcheck-htmlreport --file=err.xml --report-dir=cppcheck  # 将err.xml转换成html，存放到F:/cppcheck
 
 # eg: 检查EU代码
-cppcheck /home/zhangping/svn/cmcu_eu_re_ver/code -DEU_SVN_NUM -i/home/zhangping/svn/cmcu_eu_re_ver/code/baselib -i/home/zhangping/svn/cmcu_eu_re_ver/code/webservice -i/home/zhangping/svn/cmcu_eu_re_ver/code/upload -i/home/zhangping/svn/cmcu_eu_re_ver/code/third-lib -i/home/zhangping/svn/cmcu_eu_re_ver/code/fa --enable=all --xml 2>/home/zhangping/err.xml
+cppcheck /home/zhangping/svn/cmcu_eu_re_ver/code -DEU_SVN_NUM -i/home/zhangping/svn/cmcu_eu_re_ver/code/baselib -i/home/zhangping/svn/cmcu_eu_re_ver/code/webservice -i/home/zhangping/svn/cmcu_eu_re_ver/code/upload -i/home/zhangping/svn/cmcu_eu_re_ver/code/third-lib -i/home/zhangping/svn/cmcu_eu_re_ver/code/fa -i/home/zhangping/svn/cmcu_eu_re_ver/code/policy -i/home/zhangping/svn/cmcu_eu_re_ver/code/batch_do -i/home/zhangping/svn/cmcu_eu_re_ver/code/install --enable=all --xml 2>/home/zhangping/err.xml
 ```
 
 ## windows
