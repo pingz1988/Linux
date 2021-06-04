@@ -168,7 +168,7 @@ tcpdump
 02、抓取所有的网络包，并存到 `result.cap` 文件中。
 
 ```powershell
-tcpdump -w result.cap
+tcpdump -i any -w result.cap
 ```
 
 03、抓取所有的经过`eth0`网卡的网络包，并存到`result.cap` 文件中。
@@ -290,6 +290,14 @@ tcpdump ip host 192.168.1.100 and ! 192.168.1.101
 ```powershell
 tcpdump tcp port 23 host 192.168.1.100
 ```
+
+23、同时抓取多个网口的包
+
+```shell
+tcpdump -i ens1f0 host 117.131.214.29 -w tt0.pcap & tcpdump -i ens1f1 host 117.131.214.29 -w tt1.pcap & tcpdump -i ens1f2 host 117.131.214.29 -w tt2.pcap & tcpdump -i ens1f3 host 117.131.214.29 -w tt3.pcap &
+```
+
+
 
 ## 运维
 
