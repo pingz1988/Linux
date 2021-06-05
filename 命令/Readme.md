@@ -33,11 +33,12 @@
 | split --numeric-suffixes=1 -l100 http.log | 按第个文件100行分割文件，文件名后缀从数字1开始 |
 | split -b 1m http.log | 按第个文件大小为1M来分割文件，类似地，单位可指定为k/m/g/t等 |
 | grep -C 2 str file1 | 查看文件file1中匹配str以及前后2行 |
+| grep -rn "some text" | 在当前目录，递归搜索文本内容，并显示匹配行号 |
 | grep -E "str1\|str2" file1 | 查看文件file1中匹配str1或str2的行 |
 | grep abc$ file1 | 查看文件中以abc结尾的行,fgrep命令类似 |
 | pgrep str | 模糊查找进程名中含有str的进程PID，-l 列出PID及进程名；-a 参数显示进程启动完整命令；-w 列出进程所有TID |
 | tail -f xxx.log  | 跟踪/滚动查看文件                                           |
-| lsof 命令 | 查看系统打开的文件，lsof -c -p 1234，显示进程号1234打开的文件， lsof /filepath/file，查看打开该文件的进程； lsof -c mysql，查看以mysql开头的进程名所打开的文件； lsof +d /usr/local/ 显示目录下被进程开启的文件；lsof -i[46] [protocol][@hostname|hostaddr][:service|port] |
+| lsof 命令 | 查看系统打开的文件，lsof -c -p 1234，显示进程号1234打开的文件， lsof /filepath/file，查看打开该文件的进程； lsof -c mysql，查看以mysql开头的进程名所打开的文件； lsof +d /usr/local/ 显示目录下被进程开启的文件；lsof -i[46] [protocol][@hostname|
 | journalctl -a -f -u cpftp_upload_du | 跟踪/滚动查看程序执行 |
 | nl file | 加行号显示文件 |
 | wc | 统计字符数/行数 |
