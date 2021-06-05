@@ -80,46 +80,31 @@ ssh %REMOTEHOST% "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat ~/tmp.pub >> ~/.ssh
 
 ```json
 {
-
   "name": "编译服务器",
-
   "host": "10.10.64.214",
-
   "protocol": "sftp",
-
   "port": 22,
-
   "username": "root",
-
   "password": "topteng1985",
-
   "remotePath": "/home/zhangping/svn/cmcu_eu_re_ver/code",
-
   "uploadOnSave": true, 
-
   "ignore": [
-
 ​    "**/.vscode/**",
-
 ​    "**/.git/**",
-
 ​    "**/.DS_Store"
-
   ],
-
   "watcher": {
-
 ​    "files": "*",
-
 ​    "autoUpload": false,
-
 ​    "autoDelete": false
-
   }
-
 }
 ```
 
 注意：
 
 第一次配置后上传文件到远程目录，会报“No such file” 的错误，需要修改文件`C:\Users\Administrator\.vscode\extensions\liximomo.sftp-1.12.9\node_modules\ssh2-streams\lib\sftp.js`，搜索`options.emitClose = false;` 在搜到的两处语句之后，增加一行 `options.autoDestroy = false;` 重启 vscode 即可正常上传。
+
+可手动上传文件（夹）：
+
+右键文件（夹）- Sync Local -> Remote
