@@ -14,10 +14,18 @@ man 1 ls
 env  
 env | grep XXX  
 
+* 查看系统安装包
+
+  ```shell
+  rpm -qa | grep glib
+  ```
+
+  
+
 * 打印错误信息  
 perror(argv[0]) ： ./a.out: No such file or directory
 
-* linux下两种 c++ main函数   
+* linux下两种 c++ main函数  
 ```c++
 int main(void)
 int main(int argc, char *argv[])
