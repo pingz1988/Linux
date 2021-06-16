@@ -19,6 +19,7 @@
 | tar xf \*.tar.xz         | 解压 .tar.xz 文件                                            |
 | gzip -d \*.gz            | 解压 .gz                                                     |
 | zip out xxx         | 压缩 xxx 成 out.zip（自动加zip后缀）                                          |
+| zip -j out.zip /home/pingz/xxx.txt | 只压缩文件到zip，压缩文件中不包含原有目录 |
 | unzip xxx.zip | 解压zip文件 |
 | rz -e xxxFile          | rz 传输乱码时需加 -e 选项(准备上传的文件最好不要放在中文目录下)                                                     |
 | rename str1 str2 str1*  | 把 str1 开头的文件名重命名为 str2 开头                       |
