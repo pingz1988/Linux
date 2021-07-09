@@ -6,6 +6,7 @@
 | l.                      | 只显示隐藏目录和隐藏文件                                     |
 | ll -a                   | 显示所有文件，包括隐藏目录和隐藏文件                         |
 | ll -aF                  | -F：显示区分目录和文件，显示目录时带/，软链接时带~           |
+| ls -l \|head -n 5 | 查看 ll 前5行 |
 | cat -b file.txt         | 显示行号及内容          |
 | cat 1.txt 2.txt 3.txt > all.txt         | 合并多个文件到一个文件          |
 | mkdir -p dir1/dir2/dir3 | 新建多级目录                                                 |
@@ -94,7 +95,7 @@ top -p PID # 查看进程占用资源情况
 -H -p PID top显示进程线程
 
 # 追踪 cpftp_upload_du 程序日志
-journalctl -a -f -u cpftp_upload_du
+journalctl -afu cpftp_upload_du
 
 # 查看进程号  
 pidof xxx  
@@ -144,10 +145,6 @@ cat /proc/cpuinfo| grep "cpu cores"| uniq  // 每个物理CPU的核数
 # 查看信号值含义
 kill -l
 
-# 抓包  
-tcpdump -i lo tcp and port 50000 -vvv -w 50000.pcap
-
-
 # 回放包 
 tcpreplay -i p4p2 -p 10000 /home/pingz/ipgroup/*.pcap
 tcpreplay -i p4p2 -p 10000 -l 0 /home/pingz/ipgroup/*.pcap  # -l 0 不停回放包
@@ -157,6 +154,10 @@ ulimit -c unlimited
 
 # 设置网口mtu
 ifconfig eth1 mtu 9000 up
+
+# 自定义系统服务
+cd /lib/systemd/system
+vi xxx.service  # 按 service 脚本编写
 ```
 
 ## 抓包
