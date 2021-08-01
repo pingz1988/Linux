@@ -168,34 +168,34 @@ vi xxx.service  # 按 service 脚本编写
 tcpdump
 ```
 
-02、抓取所有的网络包，并存到 `result.cap` 文件中。
+02、抓取所有的网络包，并存到 `result.pcap` 文件中。
 
 ```powershell
-tcpdump -i any -w result.cap
+tcpdump -i any -w result.pcap
 ```
 
-03、抓取所有的经过`eth0`网卡的网络包，并存到`result.cap` 文件中。
+03、抓取所有的经过`eth0`网卡的网络包，并存到`result.pcap` 文件中。
 
 ```powershell
-tcpdump -i eth0 -w result.cap
+tcpdump -i eth0 -w result.pcap
 ```
 
-04、抓取源地址是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+04、抓取源地址是`192.168.1.100`的包，并将结果保存到 `result.pcap` 文件中。
 
 ```powershell
-tcpdump src host 192.168.1.100 -w result.cap
+tcpdump src host 192.168.1.100 -w result.pcap
 ```
 
-05、抓取地址包含是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+05、抓取地址包含是`192.168.1.100`的包，并将结果保存到 `result.pcap` 文件中。
 
 ```powershell
-tcpdump host 192.168.1.100 -w result.cap
+tcpdump host 192.168.1.100 -w result.pcap
 ```
 
-06、抓取目的地址包含是`192.168.1.100`的包，并将结果保存到 `result.cap` 文件中。
+06、抓取目的地址包含是`192.168.1.100`的包，并将结果保存到 `result.pcap` 文件中。
 
 ```powershell
-tcpdump dest host 192.168.1.100 -w result.cap
+tcpdump dest host 192.168.1.100 -w result.pcap
 ```
 
 07、抓取主机地址为 `192.168.1.100` 的数据包
