@@ -1,9 +1,4 @@
-# 目录  
-- [编译](#编译)  
-- [设置环境](#设置环境)  
-- [常见问题](#常见问题)  
-- [其它命令 ](#其它命令)
-- [DPDK程序优化](#DPDK程序优化)
+[toc] 
 
 # 编译  
 * 安装依赖库 
@@ -62,7 +57,7 @@ insmod ./igb_uio.ko  // 进入DPDK编译目录（./x86_64-native-linux-gcc/kmod�
 ```shell
 cd examples/helloworld  
 make 
-``` 
+```
 
 * 运行程序  
 
@@ -156,5 +151,30 @@ dpdk支持两种模式，可对比测试各自性能
 * Cache预取  
 1. rte_prefetch0() // 预取数据想要重复使用  
 2. rte_prefetch_non_temporal()  // 预存的数据只想用一次或很“短期”的使用，具体参考dpdk api文档    
+
 * 使用dpdk重新实现的库函数  
-比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。 
+  比如 memcpy/malloc/慢速API（如网络序-主机序转换函数） 等其它API使用DPDK实现版本，dpdk作了性能优化，尽量使用rte_malloc/rte_free/rte_memcpy/rte_strcpy这些函数。类似地，还有rte_ring/rte_mempool/rte_hash 等。 
+
+# 实用库
+
+rte_cfgfile.h  // ini 文件解析
+
+rte_string_fns. h  // 字符串分割
+
+rte_log.h  // log
+
+bitmap  // bigmap
+
+timer // 定时器，性能如何？
+
+atomic  // 原子操作
+
+rwlock  // 读写锁，在读多写少的情况下，容易产生写者饥饿
+
+pflock  // 读写交替，解决 rwlock 中的写者饥饿问题
+
+spinlock  // 自旋锁
+
+mcslock  // 可扩展/可伸缩的自旋锁，在CPU/线程局部变量上旋转，避免了昂贵的缓存开销
+
+ticketlock // 公平锁，好比排队，叫到自己的号了才能获致锁（先来先服务）
