@@ -163,6 +163,9 @@ git config --global user.name "pingz"
 
   执行上述命令后，再 push。
 
+* 只能使用token访问
+ git remote set-url origin https://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@github.com/pingz1988/Linux.git/
+
 * 删除分支后，其它与该分支有关系的分支历史记录会不会被删除？  
 
 * 多产品来自同一个master，此时如何作分支管理？
