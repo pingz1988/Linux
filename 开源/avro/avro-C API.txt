@@ -1,0 +1,7 @@
+https://avro.apache.org/docs/current/api/c/index.html
+
+将 avro 数据写入文件的步骤（由上面官网实例得出）：
+0、指定编译解码器CODEC
+1、定义模式schema，调用avro_schema_from_json_literal()生成 avro_schema_t
+2、调用avro_file_writer_create_with_codec(avro_schema_t)创建"database" avro_file_writer_t
+3、调用 avro_file_writer_append_value(avro_file_writer_t, avro_value_t) 追加 avro 数据。其中，avro_value_t 由 avro_generic_class_from_schema() - avro_generic_value_new() 得到，加完数据后，需注意avro内存释放操作

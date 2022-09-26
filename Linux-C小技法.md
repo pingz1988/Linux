@@ -19,6 +19,9 @@ char b[]="xxxx";
 sprintf(a, "%0*d%s", 15-strlen(b), 0, b);  //先计算需要补0的长度
 printf("%s\n",a);
 
+char line[] = "134	1344093	西藏	拉萨	0891"；
+sscanf(line, "%d\t%s\t%*s\t%*s\t%d", &prefix, mobile, &areaCode);  // 只取line中的3个字段，%*s表示过滤对应位置的内容
+
 int k;
 sscanf( "AAA123BBB456" , "%*[^0-9]%i" , &k)；  // 过滤掉字符串中的数字。k要取地址，执行后，k=123
 
